@@ -1,0 +1,166 @@
+import { Link } from 'react-router-dom';
+
+function SectionDivider() {
+  return <hr className="w-20 h-[2px] bg-[rgb(199,90,51)] border-0" />;
+}
+
+export default function Home() {
+  return (
+    <main className="home">
+      {/* Hero */}
+      <section
+        className="relative bg-cover bg-center min-h-[560px] flex items-center"
+        style={{
+          backgroundImage:
+            "url('https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668997.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-white/75" />
+        <div className="relative container max-w-[1100px] px-6 py-16">
+          <div className="max-w-xl bg-white/85 p-6">
+            <h1 className="text-[56px] leading-[1.05] font-normal text-[rgb(38,69,123)] tracking-tight">
+              Aletheia
+              <br /> Integrative
+            </h1>
+            <p className="mt-4 text-[rgb(38,69,123)] uppercase tracking-wider">
+              Family Practice & Direct Primary Care in Lincoln, NE
+            </p>
+            <Link
+              to="/contact-us"
+              className="mt-6 inline-block px-5 py-3 text-white text-sm font-semibold uppercase tracking-wider"
+              style={{ backgroundColor: 'rgb(199,90,51)' }}
+            >
+              get in touch
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Three circular feature tiles */}
+      <section className="py-14">
+        <div className="container max-w-[1100px] px-6">
+          <div className="grid md:grid-cols-3 gap-10 text-center">
+            {[{
+              title: 'Integrative Medicine',
+              href: '/service/primary-care',
+              img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668999.jpg',
+            }, {
+              title: 'Infusion Therapy',
+              href: '/service/infusion-therapy',
+              img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2669002.jpg',
+            }, {
+              title: 'Health Coaching',
+              href: '/content/health-coaching',
+              img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2669004.jpg',
+            }].map((item, idx) => (
+              <Link key={idx} to={item.href} className="group">
+                <div className="mx-auto w-60 h-60 rounded-full overflow-hidden bg-white shadow">
+                  <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition" />
+                </div>
+                <div className="mt-4 uppercase tracking-wider text-[12px] text-[rgb(38,69,123)]">
+                  {item.title} <span className="ml-1">→</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About excerpt */}
+      <section className="py-14">
+        <div className="container max-w-[1100px] px-6 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <img
+              src="https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2669001.jpg"
+              alt="Office"
+              className="w-full h-auto shadow"
+            />
+          </div>
+          <div>
+            <h2 className="text-[32px] text-[rgb(38,69,123)]">About Aletheia Integrative</h2>
+            <SectionDivider />
+            <p className="mt-4 text-slate-700">
+              At Aletheia Integrative experienced family medicine and direct primary care provider Jaime Dodge, MD, and the team including Tim Miller, APRN
+              provide personalized functional medicine to individuals and families in Lincoln, Nebraska, and throughout Lancaster County.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <a href="tel:531-333-2037" className="px-5 py-2 text-white" style={{ backgroundColor: 'rgb(38,69,123)' }}>
+                call us
+              </a>
+              <Link to="/book-online" className="px-5 py-2 text-white" style={{ backgroundColor: 'rgb(38,69,123)' }}>
+                Set Appointment
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services grid (teaser) */}
+      <section className="py-14" style={{ backgroundColor: 'rgba(38,69,123,0.08)' }}>
+        <div className="container max-w-[1100px] px-6">
+          <h2 className="text-center text-[32px] text-[rgb(38,69,123)]">Services</h2>
+          <SectionDivider />
+          <div className="mt-10 grid md:grid-cols-4 gap-6">
+            {[
+              { t: 'Primary Care', s: 'primary-care', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668999.jpg' },
+              { t: 'Hormone Balance Therapy', s: 'hormone-balance-therapy', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2669000.jpg' },
+              { t: 'Vitamins And Supplements', s: 'vitamins-and-supplements', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2669003.jpg' },
+              { t: 'Hyperbaric Oxygen Therapy', s: 'hyperbaric-oxygen-therapy', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2669002.jpg' },
+            ].map((svc, i) => (
+              <Link key={i} to={`/service/${svc.s}`} className="block bg-white shadow hover:shadow-md transition">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={svc.img} alt={svc.t} className="w-full h-full object-cover" />
+                </div>
+                <div className="px-4 py-3 text-center text-[rgb(38,69,123)]">{svc.t}</div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/services" className="inline-block px-6 py-2 text-white" style={{ backgroundColor: 'rgb(199,90,51)' }}>
+              View All Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews teaser (static for now) */}
+      <section className="py-14">
+        <div className="container max-w-[1100px] px-6">
+          <h2 className="text-center text-[32px] text-[rgb(38,69,123)]">Patients Reviews</h2>
+          <SectionDivider />
+          <div className="mt-8 grid md:grid-cols-3 gap-6">
+            {[
+              {
+                name: 'Angela R.',
+                text:
+                  "Dr. Dodge is amazing! She takes the time to listen and truly cares about her patients. I've never felt so heard by a doctor before.",
+              },
+              {
+                name: 'Michael T.',
+                text:
+                  'The team at Aletheia Integrative has completely changed my approach to health. Their holistic methods have helped me feel better than I have in years.',
+              },
+              {
+                name: 'Sarah L.',
+                text:
+                  'I love the direct primary care model. Having 24/7 access to my doctor gives me such peace of mind. Highly recommend!',
+              },
+            ].map((r, i) => (
+              <div key={i} className="bg-white shadow p-6">
+                <div className="flex gap-1 text-yellow-400 mb-3">
+                  {Array.from({ length: 5 }).map((_, j) => (
+                    <svg key={j} viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-slate-700 italic">“{r.text}”</p>
+                <p className="mt-3 font-semibold text-[rgb(38,69,123)]">{r.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
