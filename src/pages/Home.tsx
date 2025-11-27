@@ -124,6 +124,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trusted partner banner (below About) */}
+      <section className="min-h-[253px] bg-[rgb(29,46,76)] w-full flex items-center">
+        <div className="w-full flex items-center justify-center">
+          <div className="text-center max-w-[760px] m-5 px-6 py-6 md:py-8 bg-[rgba(29,46,76,0.55)]">
+            <h2 className="text-white text-[34px] md:text-[50px] leading-tight">
+              A trusted partner on your transformational journey
+            </h2>
+            <hr className="mt-4 h-[2px] w-160 bg-white/70 border-0 mx-auto" />
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Our Provider */}
+      <section className="py-14">
+        <div className="container max-w-[1100px] px-6">
+          <h2 className="text-center text-[32px] text-[rgb(38,69,123)]">Meet Our Provider</h2>
+        
+          <div className="mt-8">
+            <div className="mx-auto max-w-[1000px] shadow-[0_10px_18px_rgba(0,0,0,0.18)]">
+              <div className="grid grid-cols-1 md:grid-cols-[541px_1fr]">
+                {/* Left: Image fixed 541x414 on md+ */}
+                <Link to="/providers" className="block">
+                  <img
+                    src="https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2665886.jpg"
+                    alt="Jaime Dodge, MD"
+                    className="w-full md:w-[541px] md:h-[414px] object-cover object-left"
+                    loading="lazy"
+                  />
+                </Link>
+                {/* Right: Blue panel */}
+                <div className="bg-[rgb(29,46,76)] flex items-center justify-center p-8 md:h-[414px]">
+                  <div className="text-center">
+                    <Link to="/providers" className="block">
+                      <h3 className="text-white text-[20px] md:text-[22px]">Jaime K Dodge, MD</h3>
+                    </Link>
+                    <hr className="mt-4 mb-6 h-[2px] w-48 bg-[#C75A33]/60 border-0 mx-auto" />
+                    <Link
+                      to="/providers"
+                      className="inline-block px-6 py-3 text-white uppercase tracking-[0.1em] bg-[#C75A33] hover:bg-[#B3502E] transition-colors duration-200"
+                    >
+                      Learn more about Dr. Dodge →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services grid (teaser) */}
       <section className="py-14" style={{ backgroundColor: 'rgba(38,69,123,0.08)' }}>
         <div className="container max-w-[1100px] px-6">
