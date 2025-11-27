@@ -66,22 +66,24 @@ export default function Home() {
             {[{
               title: 'Integrative Medicine',
               href: '/service/primary-care',
-              img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668999.jpg',
+              img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/shutterstock_1250158696%20(1).jpg',
             }, {
               title: 'Infusion Therapy',
               href: '/service/infusion-therapy',
-              img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2669002.jpg',
+              img: 'https://sa1s3optim.patientpop.com/768x/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/shutterstock_1921584131.jpg',
             }, {
               title: 'Health Coaching',
               href: '/content/health-coaching',
-              img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2669004.jpg',
+              img: 'https://sa1s3optim.patientpop.com/768x/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/shutterstock_2168252655.jpg',
             }].map((item, idx) => (
               <Link key={idx} to={item.href} className="group">
                 <div className="mx-auto w-60 h-60 rounded-full overflow-hidden bg-white shadow">
                   <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition" />
                 </div>
-                <div className="mt-4 uppercase tracking-wider text-[12px] text-[rgb(38,69,123)]">
-                  {item.title} <span className="ml-1">→</span>
+                <div className="mt-4">
+                  <span className="inline-block px-6 py-3 uppercase tracking-[0.2em] text-[12px] text-[rgb(38,69,123)] transition-colors duration-200 group-hover:bg-[#C75A33] group-hover:text-white">
+                    {item.title} <span className="ml-1">→</span>
+                  </span>
                 </div>
               </Link>
             ))}
@@ -96,21 +98,25 @@ export default function Home() {
             <img
               src="https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2669001.jpg"
               alt="Office"
-              className="w-full h-auto shadow"
+              className="w-full md:w-[550px] h-auto md:h-[505px] object-cover shadow"
             />
           </div>
           <div>
-            <h2 className="text-[32px] text-[rgb(38,69,123)]">About Aletheia Integrative</h2>
-            <SectionDivider />
-            <p className="mt-4 text-slate-700">
+            <h2 className="text-[42px] md:text-[53px] leading-tight text-[rgb(38,69,123)]">
+              About Aletheia
+              <br />
+              Integrative
+            </h2>
+            <hr className="mt-3 mb-4 h-[2px] w-full bg-[rgb(38,69,123)]/70 border-0" />
+            <p className="text-slate-700">
               At Aletheia Integrative experienced family medicine and direct primary care provider Jaime Dodge, MD, and the team including Tim Miller, APRN
               provide personalized functional medicine to individuals and families in Lincoln, Nebraska, and throughout Lancaster County.
             </p>
             <div className="mt-6 flex gap-3">
-              <a href="tel:531-333-2037" className="px-5 py-2 text-white" style={{ backgroundColor: 'rgb(38,69,123)' }}>
+              <a href="tel:531-333-2037" className="px-5 py-2 text-white uppercase tracking-[0.1em] bg-[#C75A33] hover:bg-[#B3502E] transition-colors duration-200">
                 call us
               </a>
-              <Link to="/book-online" className="px-5 py-2 text-white" style={{ backgroundColor: 'rgb(38,69,123)' }}>
+              <Link to="/book-online" className="px-5 py-2 text-white uppercase tracking-[0.1em] bg-[rgb(38,69,123)] hover:bg-[#1F3761] transition-colors duration-200">
                 Set Appointment
               </Link>
             </div>
