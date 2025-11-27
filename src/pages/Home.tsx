@@ -11,6 +11,21 @@ export default function Home() {
     'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/AdobeStock_168081720.jpeg',
   ];
   const [active, setActive] = useState(0);
+  const servicesHome = [
+    { label: 'Primary Care', href: '/service/primary-care', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2665849.jpg' },
+    { label: 'Thermography', href: '/service/thermography', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2807353.png' },
+    { label: 'Wound Care', href: '/service/wound-care', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2818559.png' },
+    { label: 'Hormone Balance Therapy', href: '/service/hormone-balance-therapy', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668320.png' },
+    { label: 'Vasectomies', href: '/service/vasectomies', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668321.png' },
+    { label: 'Vitamins And Supplements', href: '/service/vitamins-and-supplements', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2665851.jpg' },
+    { label: 'Weight Loss', href: '/service/weight-loss', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2665846.jpeg' },
+    { label: 'Hyperbaric Oxygen Therapy', href: '/service/hyperbaric-oxygen-therapy', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2665857.jpg' },
+    { label: 'Lab Services', href: '/service/lab-services', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2696961.png' },
+    { label: 'Red Light Therapy', href: '/service/red-light-therapy', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2696960.png' },
+    { label: 'Autoimmune Diseases', href: '/service/autoimmune-diseases', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2696962.png' },
+    { label: 'Infusion Therapy', href: '/service/infusion-therapy', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2707649.png' },
+    { label: 'Aletheia Cell Therapy', href: '/service/aletheia-cell-therapy', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2707649.png' },
+  ];
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -174,30 +189,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services grid (teaser) */}
-      <section className="py-14" style={{ backgroundColor: 'rgba(38,69,123,0.08)' }}>
+      {/* Services (full grid from Services page) */}
+      <section
+        className="pt-20 pb-20"
+        style={{
+          minHeight: 118,
+          backgroundColor: '#D2D8E9',
+          backgroundImage:
+            "radial-gradient(1200px 600px at -200px 0px, rgba(38,69,123,0.06), rgba(255,255,255,0) 60%), url('https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/Artboard%201m-1693234887334.png')",
+          backgroundRepeat: 'no-repeat, no-repeat',
+          backgroundPosition: 'left top, center',
+          backgroundSize: 'auto, 700px',
+          backgroundAttachment: 'scroll, fixed',
+        }}
+      >
         <div className="container max-w-[1100px] px-6">
           <h2 className="text-center text-[32px] text-[rgb(38,69,123)]">Services</h2>
-          <SectionDivider />
-          <div className="mt-10 grid md:grid-cols-4 gap-6">
-            {[
-              { t: 'Primary Care', s: 'primary-care', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668999.jpg' },
-              { t: 'Hormone Balance Therapy', s: 'hormone-balance-therapy', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2669000.jpg' },
-              { t: 'Vitamins And Supplements', s: 'vitamins-and-supplements', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2669003.jpg' },
-              { t: 'Hyperbaric Oxygen Therapy', s: 'hyperbaric-oxygen-therapy', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2669002.jpg' },
-            ].map((svc, i) => (
-              <Link key={i} to={`/service/${svc.s}`} className="block bg-white shadow hover:shadow-md transition">
+          <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {servicesHome.map((item) => (
+              <Link key={item.href} to={item.href} className="block group bg-white shadow-sm hover:shadow transition">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img src={svc.img} alt={svc.t} className="w-full h-full object-cover" />
+                  <img
+                    src={item.img}
+                    alt={item.label}
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition"
+                    loading={[ '/service/primary-care','/service/thermography','/service/wound-care','/service/hormone-balance-therapy' ].includes(item.href) ? 'eager' : 'lazy'}
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const img = e.currentTarget as HTMLImageElement;
+                      if (img.src.includes('/filters:format(webp)/')) {
+                        img.src = img.src.replace('/filters:format(webp)/', '/1024x/filters:format(webp)/');
+                      }
+                    }}
+                  />
                 </div>
-                <div className="px-4 py-3 text-center text-[rgb(38,69,123)]">{svc.t}</div>
+                <div className="px-4 py-3 text-[rgb(38,69,123)] font-medium">{item.label}</div>
               </Link>
             ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link to="/services" className="inline-block px-6 py-2 text-white" style={{ backgroundColor: 'rgb(199,90,51)' }}>
-              View All Services
-            </Link>
           </div>
         </div>
       </section>
