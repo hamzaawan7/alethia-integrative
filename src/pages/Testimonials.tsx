@@ -1,5 +1,14 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+
+declare global {
+  interface Window {
+    wm?: {
+      initializeManager?: (practiceId: string) => void
+    }
+    triggerCustomEvent?: (callParameter: string, itemData: unknown) => void
+    wmOnScriptLoad?: () => void
+  }
+}
 
 type Review = {
   author: string;
@@ -156,6 +165,13 @@ export default function Testimonials() {
   const [showAll, setShowAll] = useState(false);
   const [cardsPerView, setCardsPerView] = useState(4);
   const [page, setPage] = useState(0);
+  const [wmReady, setWmReady] = useState(false);
+  const [fallbackOpen, setFallbackOpen] = useState(false);
+  const [fallbackSent, setFallbackSent] = useState(false);
+  const [fbName, setFbName] = useState('');
+  const [fbEmail, setFbEmail] = useState('');
+  const [fbRating, setFbRating] = useState(5);
+  const [fbMessage, setFbMessage] = useState('');
 
   useEffect(() => {
     const handler = () => {
@@ -168,6 +184,83 @@ export default function Testimonials() {
     window.addEventListener('resize', handler);
     return () => window.removeEventListener('resize', handler);
   }, []);
+
+  // Load legacy widget manager and init, so we can trigger the same Share Feedback modal
+  useEffect(() => {
+    const PRACTICE_ID = '01e81043-25b6-46c2-bd88-dc1830708de7';
+    const SRC = 'https://d35hk7lgnvai11.cloudfront.net/widgetManager.js';
+    const existing = document.getElementById('wm-script') as HTMLScriptElement | null;
+    const init = () => {
+      try {
+        if (window.wm && typeof window.wm.initializeManager === 'function') {
+          window.wm.initializeManager(PRACTICE_ID);
+          setWmReady(true);
+        }
+      } catch (e) {
+        if (import.meta.env.DEV) {
+          console.warn('Widget manager init failed', e);
+        }
+      }
+    };
+    // Mirror legacy pattern where script tag uses onload="wmOnScriptLoad()"
+    window.wmOnScriptLoad = init;
+    if (!existing) {
+      const s = document.createElement('script');
+      s.src = SRC;
+      s.async = true;
+      s.defer = true;
+      s.id = 'wm-script';
+      s.onload = () => {
+        // Some templates call wmOnScriptLoad(); call our shim
+        window.wmOnScriptLoad?.();
+      };
+      document.body.appendChild(s);
+    } else {
+      init();
+    }
+
+    // Define legacy-compatible trigger function for any listeners expecting it
+    if (!window.triggerCustomEvent) {
+      window.triggerCustomEvent = (callParameter: string, itemData: unknown) => {
+        window.dispatchEvent(new CustomEvent('actionCall', { detail: { callParameter, itemData } }));
+      };
+    }
+  }, []);
+
+  const openShareFeedback = () => {
+    if (import.meta.env.DEV) {
+      console.log('[Testimonials] Share Feedback clicked');
+    }
+    // Matches: triggerCustomEvent('a9a6fab9-c916-4829-8bf9-0682c5d76416', '{}') from the legacy HTML
+    const callParameter = 'a9a6fab9-c916-4829-8bf9-0682c5d76416';
+    const itemData = '{}'; // legacy sends string JSON
+    // If widget manager isn't ready yet, try initializing again then fire
+    if (!wmReady) {
+      // Legacy path first
+      window.triggerCustomEvent?.(callParameter, itemData);
+      // Also dispatch custom event
+      const evt = new CustomEvent('actionCall', { detail: { callParameter, itemData } });
+      window.dispatchEvent(evt);
+      return;
+    }
+    // Fire both forms to be safe
+    window.triggerCustomEvent?.(callParameter, itemData);
+    window.dispatchEvent(new CustomEvent('actionCall', { detail: { callParameter, itemData } }));
+
+    // Retry once if modal container not appended yet
+    setTimeout(() => {
+      const hasModal = !!document.querySelector('[class*="modal" i], [id*="modal" i]');
+      if (!hasModal) {
+        window.triggerCustomEvent?.(callParameter, itemData);
+        window.dispatchEvent(new CustomEvent('actionCall', { detail: { callParameter, itemData } }));
+        // If still nothing after a short delay, open local fallback
+        setTimeout(() => {
+          const stillNoModal = !document.querySelector('[class*="modal" i], [id*="modal" i]');
+          if (stillNoModal) setFallbackOpen(true);
+        }, 500);
+      }
+    }, 400);
+  };
 
   const totalPages = Math.max(1, Math.ceil(reviews.length / cardsPerView));
   const clampedPage = Math.min(page, totalPages - 1);
@@ -202,18 +295,19 @@ export default function Testimonials() {
       <div className="h-16 md:h-20" />
 
       {/* Banner */}
-      <section className="bg-[rgb(38,69,123)] text-white py-16">
+      <section className="relative bg-[rgb(38,69,123)] text-white py-16">
         <div className="container max-w-[1100px] px-6 text-center">
           <h1 className="text-[36px] leading-tight font-semibold tracking-wide">Testimonials</h1>
           <p className="mt-3 text-[15px] opacity-95">Family Practice & Direct Primary Care in Lincoln, NE</p>
-          <div className="mt-6">
-            <Link
-              to="/contact-us"
-              className="inline-block px-4 py-2 text-white text-[12px] tracking-widest uppercase"
+          <div className="mt-6 pointer-events-auto">
+            <button
+              type="button"
+              onClick={openShareFeedback}
+              className="inline-block px-4 py-2 text-white text-[12px] tracking-widest uppercase cursor-pointer"
               style={{ backgroundColor: '#111', letterSpacing: '0.12em' }}
             >
               Share Feedback
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -310,6 +404,60 @@ export default function Testimonials() {
 
       {/* JSON-LD structured data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* Fallback Feedback Modal (dev/local) */}
+      {fallbackOpen && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/50" onClick={() => setFallbackOpen(false)} />
+          <div className="relative bg-white w-[92vw] max-w-[560px] p-6 shadow-lg">
+            <h2 className="text-xl font-semibold text-[rgb(38,69,123)]">Share Feedback</h2>
+            {!fallbackSent ? (
+              <form
+                className="mt-4 space-y-4"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  // No backend yet; mimic success
+                  setFallbackSent(true);
+                }}
+              >
+                <div>
+                  <label className="block text-sm text-slate-600 mb-1">Name</label>
+                  <input value={fbName} onChange={(e) => setFbName(e.target.value)} className="w-full border p-2" required />
+                </div>
+                <div>
+                  <label className="block text-sm text-slate-600 mb-1">Email</label>
+                  <input type="email" value={fbEmail} onChange={(e) => setFbEmail(e.target.value)} className="w-full border p-2" required />
+                </div>
+                <div>
+                  <label className="block text-sm text-slate-600 mb-1">Rating</label>
+                  <select value={fbRating} onChange={(e) => setFbRating(parseInt(e.target.value))} className="w-full border p-2">
+                    {[5,4,3,2,1].map((r) => (
+                      <option key={r} value={r}>{r} Stars</option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm text-slate-600 mb-1">Feedback</label>
+                  <textarea value={fbMessage} onChange={(e) => setFbMessage(e.target.value)} className="w-full border p-2 h-28" required />
+                </div>
+                <div className="flex items-center justify-end gap-3">
+                  <button type="button" onClick={() => setFallbackOpen(false)} className="px-4 py-2 border">Cancel</button>
+                  <button type="submit" className="px-4 py-2 text-white" style={{ backgroundColor: '#111', letterSpacing: '0.12em' }}>
+                    Submit
+                  </button>
+                </div>
+              </form>
+            ) : (
+              <div className="mt-4">
+                <p className="text-slate-700">Thank you for your feedback!</p>
+                <div className="mt-4 flex justify-end">
+                  <button className="px-4 py-2 border" onClick={() => setFallbackOpen(false)}>Close</button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </main>
   );
 }

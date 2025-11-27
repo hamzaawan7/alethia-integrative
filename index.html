@@ -9,9 +9,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?display=swap&family=Open+Sans:400&family=Quicksand:600&family=Bebas+Neue:400" rel="stylesheet">
+    <!-- LeadConnector widgets (from legacy site) -->
+    <script
+      src="https://widgets.leadconnectorhq.com/loader.js"
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+      data-widget-id="681a124f34aa67825b90dc3c">
+    </script>
+    <script
+      src="https://widgets.leadconnectorhq.com/loader.js"
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+      data-widget-id="684311ff7322c267985b3bb3">
+    </script>
+    <!-- Legacy widget manager initializer -->
+    <script>
+      window.wmOnScriptLoad = function () {
+        try {
+          if (window.wm && typeof window.wm.initializeManager === 'function') {
+            window.wm.initializeManager('01e81043-25b6-46c2-bd88-dc1830708de7');
+          }
+        } catch (e) {
+          /* no-op */
+        }
+      };
+    </script>
+    <script src="https://d35hk7lgnvai11.cloudfront.net/widgetManager.js" onload="wmOnScriptLoad()" defer async></script>
+    <script>
+      // Fallback direct init if script loaded before onload handler
+      try { window.wm && window.wm.initializeManager && window.wm.initializeManager('01e81043-25b6-46c2-bd88-dc1830708de7'); } catch (e) {}
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Minimal legacy-compatible site root for widget to hook into -->
+    <div class="website" data-cloaking="false">
+      <div id="root"></div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
