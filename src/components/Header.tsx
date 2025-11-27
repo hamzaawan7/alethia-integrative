@@ -25,17 +25,17 @@ const servicesItems = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const linkClass = "menu-font px-5 py-5 text-[11px] tracking-[0.15em] uppercase font-semibold text-white hover:text-accent transition-colors";
+  const linkClass = "menu-font px-4 py-5 text-[11px] tracking-[0.15em] uppercase font-[900] text-white hover:text-[#C75A33] transition-colors";
 
   return (
     <header className="bg-brand text-white fixed top-0 left-0 right-0 z-[100000]">
-      <div className="flex items-center justify-between px-4 lg:px-6">
+      <div className="h-[103px] flex flex-nowrap items-center justify-between px-2 lg:px-4 overflow-visible">
         {/* Logo */}
-        <Link to="/" className="shrink-0 py-2">
+        <Link to="/" className="shrink-0 py-1">
           <img
             src="https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/Aletheia-Integrative-white-orange-LOGO-wide-1-1693232568127.png"
             alt="Aletheia Integrative"
-            className="h-10 lg:h-12 w-auto"
+            className="h-[64px] lg:h-[72px] w-auto"
           />
         </Link>
 
@@ -52,17 +52,17 @@ export default function Header() {
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center">
-          <nav className="flex items-center">
+          <nav className="flex items-center whitespace-nowrap">
             <NavLink to="/" className={linkClass} end>Home</NavLink>
             
             {/* About with dropdown */}
             <div className="relative group">
               <NavLink to="/about" className={linkClass}>About</NavLink>
               {/* Dropdown */}
-              <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg min-w-[200px] z-50">
+              <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg min-w-[300px] z-50">
                 <Link 
                   to="/providers" 
-                  className="block px-6 py-4 text-[11px] tracking-[0.15em] uppercase font-semibold text-accent hover:bg-gray-50 border-l-2 border-transparent hover:border-accent"
+                  className="block px-10 py-6 text-[13px] tracking-[0.2em] uppercase font-semibold text-[#C75A33] hover:bg-gray-50"
                 >
                   MEET THE PROVIDER
                 </Link>
@@ -73,14 +73,17 @@ export default function Header() {
             <div className="relative group">
               <NavLink to="/services" className={linkClass}>Services</NavLink>
               {/* Dropdown - 3 column grid */}
-              <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg z-50" style={{ width: '700px' }}>
-                <div className="grid grid-cols-3">
+              <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg z-50" style={{ width: '760px' }}>
+                <div className="relative grid grid-cols-3 pl-6 pr-6 gap-x-10">
+                  {/* vertical separators */}
+                  <div className="absolute top-4 bottom-4 left-1/3 w-px bg-gray-200" />
+                  <div className="absolute top-4 bottom-4 left-2/3 w-px bg-gray-200" />
                   {servicesItems.map((item, idx) => (
                     item.label ? (
                       <Link 
                         key={idx}
                         to={item.href} 
-                        className="block px-6 py-4 text-[11px] tracking-[0.1em] uppercase font-semibold text-accent hover:bg-gray-50 border-l-2 border-transparent hover:border-accent whitespace-nowrap"
+                        className={`block py-6 text-left text-[11px] leading-6 tracking-[0.15em] uppercase font-semibold text-[#C75A33] hover:bg-gray-50 whitespace-nowrap ${idx%3===0 ? 'pl-2 pr-14' : ''} ${idx%3===1 ? 'pl-8 pr-12' : ''} ${idx%3===2 ? 'pl-8 pr-4' : ''}`}
                       >
                         {item.label}
                       </Link>
@@ -99,16 +102,16 @@ export default function Header() {
           </nav>
 
           {/* Action buttons */}
-          <div className="flex items-center gap-2 ml-4">
+          <div className="flex items-center gap-2 ml-3 flex-shrink-0 whitespace-nowrap">
             <a 
               href="tel:531-333-2037" 
-              className="px-4 py-2 text-[11px] tracking-[0.1em] uppercase font-semibold border border-white text-white hover:bg-white/10"
+              className="inline-flex items-center justify-center h-[45px] min-w-[141px] text-center px-5 text-[13px] tracking-[0.1em] uppercase font-semibold border-2 border-white text-white hover:bg-[#C75A33]"
             >
               531-333-2037
             </a>
             <Link 
               to="/book-online" 
-              className="px-4 py-2 text-[11px] tracking-[0.1em] uppercase font-semibold bg-[#111] text-white hover:bg-black"
+              className="inline-flex items-center justify-center h-[45px] min-w-[141px] text-center px-5 text-[13px] tracking-[0.1em] uppercase font-semibold bg-[#111] text-white hover:bg-brand"
             >
               Book Online
             </Link>
@@ -116,7 +119,7 @@ export default function Header() {
               href="https://patientportal.kareo.com/aletheia-integrative" 
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 text-[11px] tracking-[0.1em] uppercase font-semibold text-white hover:opacity-90"
+              className="inline-flex items-center justify-center h-[45px] min-w-[141px] text-center px-5 text-[13px] tracking-[0.1em] uppercase font-semibold text-white hover:bg-brand"
               style={{ backgroundColor: '#C75A33' }}
             >
               Patient Portal
