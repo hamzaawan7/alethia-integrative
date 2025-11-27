@@ -33,7 +33,6 @@ export default function Providers() {
           </div>
           <div>
             <h2 className="text-[28px] text-[rgb(38,69,123)] font-semibold">About Jaime K Dodge, MD</h2>
-            <SectionDivider />
             <div className="mt-4 space-y-4 text-slate-700 text-[15px] leading-7">
               <p>With over 20 years in family medicine, hospital medicine, and emergency medicine, Dr. Dodge understands the importance of building a trusting relationship between himself and his patients. This rapport and trust enables patients to communicate freely with their physician and get to the root cause of their concerns. Dr. Dodge’s priority is to respect patients’ freedom when making healthcare decisions.</p>
               <p>Dr. Dodge held several clinical professorships through the Universities of Nebraska, Iowa, and South Dakota. While in South Dakota, Dr. Dodge also taught at a Family Medicine postgraduate training program. After over 12 years of service in the Army National Guard, including three deployments to Iraq and Afghanistan, Dr. Dodge returned to the United States to dedicate himself to Aletheia Integrative and its patients.</p>

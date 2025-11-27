@@ -7,6 +7,9 @@ function SectionDivider() {
 export default function About() {
   return (
     <main>
+      {/* Spacer below fixed header */}
+      <div className="h-16 md:h-20" />
+
       {/* Top banner (matches template) */}
       <section className="bg-[rgb(38,69,123)] text-white py-16">
         <div className="container max-w-[1100px] px-6 text-center">
@@ -27,7 +30,6 @@ export default function About() {
           </div>
           <div>
             <h2 className="text-[28px] text-[rgb(38,69,123)] font-semibold">About Aletheia Integrative</h2>
-            <SectionDivider />
             <div className="mt-4 space-y-4 text-slate-700 text-[15px] leading-7">
               <p>
                 At Aletheia Integrative experienced family medicine and direct primary care provider Jaime Dodge, MD, and the team including Tim Miller, APRN provide personalized functional medicine to individuals and families in Lincoln, Nebraska, and throughout Lancaster County.
