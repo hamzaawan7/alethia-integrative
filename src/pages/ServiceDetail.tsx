@@ -1,4 +1,14 @@
-import { Link, useParams, Navigate } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
+import ServiceHero from '../components/ServiceHero';
+import ServicesGrid from '../components/ServicesGrid';
+import { services as allServices } from '../data/services';
+import PrimaryCareContent from '../service-content/PrimaryCare';
+import InfusionTherapyContent from '../service-content/InfusionTherapy';
+import HormoneBalanceTherapyContent from '../service-content/HormoneBalanceTherapy';
+import LabServicesContent from '../service-content/LabServices';
+import WeightLossContent from '../service-content/WeightLoss';
+import RedLightTherapyContent from '../service-content/RedLightTherapy';
+import VitaminsAndSupplementsContent from '../service-content/VitaminsAndSupplements';
 
 type ServiceInfo = {
   title: string;
@@ -21,7 +31,7 @@ const SERVICE_MAP: Record<string, ServiceInfo> = {
   },
   'hormone-balance-therapy': {
     title: 'Hormone Balance Therapy',
-    img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668320.png',
+    img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2807353.png',
   },
   'vasectomies': {
     title: 'Vasectomies',
@@ -53,7 +63,7 @@ const SERVICE_MAP: Record<string, ServiceInfo> = {
   },
   'infusion-therapy': {
     title: 'Infusion Therapy',
-    img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2707649.png',
+    img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2665851.jpg',
   },
   'aletheia-cell-therapy': {
     title: 'Aletheia Cell Therapy',
@@ -68,69 +78,13 @@ export default function ServiceDetail() {
 
   const renderContent = () => {
     if (slug === 'primary-care') {
-      return (
-        <div className="text-slate-700 space-y-4 mt-4">
-          <p>Routine primary care checkups preserve health and address symptoms at their root.</p>
-          <p>We blend traditional and functional medicine with labs, exams, and lifestyle review.</p>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>After-hours access</li>
-            <li>Discounts on therapies/supplements</li>
-            <li>True partnership in your health</li>
-          </ul>
-          <div className="mt-6 p-6" style={{ background: 'rgba(38,69,123,.20)' }}>
-            <h3 className="text-[20px] text-[rgb(38,69,123)] font-semibold">What We Offer</h3>
-            <ul className="list-disc pl-5 space-y-2 mt-3">
-              <li>Employee wellness programs</li>
-              <li>Comprehensive physical exams</li>
-              <li>Functional lab testing</li>
-            </ul>
-          </div>
-          <h3 className="text-[20px] text-[rgb(38,69,123)] font-semibold mt-6">Why DPC?</h3>
-          <ul className="list-disc pl-5 space-y-2">
-            <li><strong>After‑hours access</strong></li>
-            <li><strong>Longer appointments</strong></li>
-            <li><strong>Easy scheduling</strong></li>
-            <li><strong>Transparent pricing</strong></li>
-            <li><strong>Discounts</strong></li>
-            <li><strong>Care coordination</strong></li>
-          </ul>
-          <h2 className="text-[28px] text-[rgb(199,90,51)] font-semibold mt-8">Primary Care Q&A</h2>
-          <div className="mt-3 p-6" style={{ background: '#D2D8E9' }}>
-            <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">Is primary care necessary?</h3>
-            <p className="mt-2">Absolutely—prevention, early detection, and whole‑body support.</p>
-          </div>
-        </div>
-      );
+      return <PrimaryCareContent />;
     }
     if (slug === 'infusion-therapy') {
-      return (
-        <div className="text-slate-700 space-y-4 mt-4">
-          <p>Medical‑grade IV therapy for rapid absorption and targeted benefits.</p>
-          <div className="mt-3 p-6" style={{ background: 'rgba(38,69,123,.20)' }}>
-            <h3 className="text-[20px] text-[rgb(38,69,123)] font-semibold">Popular Infusions</h3>
-            <ul className="list-disc pl-5 space-y-2 mt-3">
-              <li>Immune support (C, Zinc, B‑complex)</li>
-              <li>Energy & recovery (B‑12, aminos, electrolytes)</li>
-              <li>Hydration therapy</li>
-            </ul>
-          </div>
-        </div>
-      );
+      return <InfusionTherapyContent />;
     }
     if (slug === 'hormone-balance-therapy') {
-      return (
-        <div className="text-slate-700 space-y-4 mt-4">
-          <p>Restore balance to address fatigue, mood, sleep, and metabolic changes.</p>
-          <div className="mt-3 p-6" style={{ background: 'rgba(38,69,123,.20)' }}>
-            <h3 className="text-[20px] text-[rgb(38,69,123)] font-semibold">Our Approach</h3>
-            <ul className="list-disc pl-5 space-y-2 mt-3">
-              <li>Comprehensive labs (thyroid, sex hormones, adrenal)</li>
-              <li>Personalized plans (lifestyle, supplements, meds when needed)</li>
-              <li>Ongoing monitoring</li>
-            </ul>
-          </div>
-        </div>
-      );
+      return <HormoneBalanceTherapyContent />;
     }
     if (slug === 'hyperbaric-oxygen-therapy') {
       return (
@@ -148,75 +102,16 @@ export default function ServiceDetail() {
       );
     }
     if (slug === 'vitamins-and-supplements') {
-      return (
-        <div className="text-slate-700 space-y-4 mt-4">
-          <p>
-            Targeted supplementation can correct nutrient gaps and support energy, immunity, cognition, and
-            metabolic health. We use high‑quality, clinically backed products.
-          </p>
-          <div className="mt-3 p-6" style={{ background: 'rgba(38,69,123,.20)' }}>
-            <h3 className="text-[20px] text-[rgb(38,69,123)] font-semibold">Personalized Plans</h3>
-            <ul className="list-disc pl-5 space-y-2 mt-3">
-              <li>Review of labs to identify deficiencies</li>
-              <li>Evidence‑based dosing and product selection</li>
-              <li>Ongoing follow‑up and adjustments</li>
-            </ul>
-          </div>
-        </div>
-      );
+      return <VitaminsAndSupplementsContent />;
     }
     if (slug === 'weight-loss') {
-      return (
-        <div className="text-slate-700 space-y-4 mt-4">
-          <p>
-            A root‑cause approach to sustainable weight loss that considers hormones, metabolism, sleep, stress,
-            and nutrition—beyond simple calorie counting.
-          </p>
-          <div className="mt-3 p-6" style={{ background: 'rgba(38,69,123,.20)' }}>
-            <h3 className="text-[20px] text-[rgb(38,69,123)] font-semibold">Program Elements</h3>
-            <ul className="list-disc pl-5 space-y-2 mt-3">
-              <li>Comprehensive labs and metabolic assessment</li>
-              <li>Nutrition coaching and movement guidance</li>
-              <li>Tools and medications when appropriate</li>
-            </ul>
-          </div>
-        </div>
-      );
+      return <WeightLossContent />;
     }
     if (slug === 'lab-services') {
-      return (
-        <div className="text-slate-700 space-y-4 mt-4">
-          <p>
-            We offer standard and advanced functional lab testing to uncover drivers of symptoms and tailor care.
-          </p>
-          <div className="mt-3 p-6" style={{ background: 'rgba(38,69,123,.20)' }}>
-            <h3 className="text-[20px] text-[rgb(38,69,123)] font-semibold">Common Panels</h3>
-            <ul className="list-disc pl-5 space-y-2 mt-3">
-              <li>Thyroid, lipid, glucose/insulin resistance</li>
-              <li>Micronutrients, inflammation, gut health</li>
-              <li>Hormone and cardiometabolic risk</li>
-            </ul>
-          </div>
-        </div>
-      );
+      return <LabServicesContent />;
     }
     if (slug === 'red-light-therapy') {
-      return (
-        <div className="text-slate-700 space-y-4 mt-4">
-          <p>
-            Red light therapy (photobiomodulation) uses specific wavelengths to support cellular energy, recovery,
-            skin health, and mood.
-          </p>
-          <div className="mt-3 p-6" style={{ background: 'rgba(38,69,123,.20)' }}>
-            <h3 className="text-[20px] text-[rgb(38,69,123)] font-semibold">Common Uses</h3>
-            <ul className="list-disc pl-5 space-y-2 mt-3">
-              <li>Muscle recovery and joint comfort</li>
-              <li>Skin rejuvenation and wound support</li>
-              <li>Energy, mood, and sleep support</li>
-            </ul>
-          </div>
-        </div>
-      );
+      return <RedLightTherapyContent />;
     }
     if (slug === 'autoimmune-diseases') {
       return (
@@ -319,13 +214,7 @@ export default function ServiceDetail() {
       {/* Spacer below fixed header */}
       <div className="h-16 md:h-20" />
 
-      {/* Banner */}
-      <section className="bg-[rgb(38,69,123)] text-white py-16">
-        <div className="container max-w-[1100px] px-6 text-center">
-          <h1 className="text-[36px] leading-tight font-semibold tracking-wide">{svc.title}</h1>
-          <p className="mt-3 text-[15px] opacity-95">Family Practice & Direct Primary Care located in Lincoln, NE</p>
-        </div>
-      </section>
+      <ServiceHero title={svc.title} subtitle="Family Practice & Direct Primary Care located in Lincoln, NE" />
 
       {/* Body */}
       <section className="py-12" style={{ backgroundColor: '#f8fafc' }}>
@@ -349,7 +238,47 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {/* Related Services grid (same as Services.tsx) */}
+      {/* Lab Services wellness block full-width (no card) */}
+      {slug === 'lab-services' && (
+        <section className="py-10">
+          <div className="container max-w-[1100px] px-6">
+            <div className="space-y-6">
+              <p>
+                At Aletheia, we make it our mission to understand our patients' health status and guide them towards their desired
+                outcomes. During our wellness exams, we take a personalized approach to determine which tests would be most relevant
+                for each patient's health goals or underlying factors contributing to any health concerns.
+              </p>
+              <p>
+                We believe that true health is more than just the absence of disease, it is a holistic approach that encompasses
+                the physical, mental, and emotional wellbeing of our patients. Our team of dedicated healthcare professionals is
+                committed to providing comprehensive care that addresses all aspects of our patients' health.
+              </p>
+              <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">Our approach to patient wellness includes:</h3>
+              <ul className="list-disc pl-6 space-y-4 text-slate-700">
+                <li>
+                  <strong>Personalized Wellness Exams:</strong> Our team takes the time to understand each patient's unique health
+                  status and goals to create a personalized plan that addresses their specific needs.
+                </li>
+                <li>
+                  <strong>Comprehensive Testing:</strong> We utilize the latest technology and diagnostic tools to provide a
+                  thorough evaluation of our patients' health status.
+                </li>
+                <li>
+                  <strong>Collaborative Care:</strong> We work closely with other healthcare providers to ensure our patients
+                  receive the best possible care.
+                </li>
+                <li>
+                  <strong>Education and Support:</strong> We provide our patients with the information and resources they need to
+                  make informed decisions about their health and support them every step of the way.
+                </li>
+              </ul>
+              <p>At Aletheia, we are committed to helping our patients achieve optimal health and wellbeing.</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related Services grid */}
       <section
         className="pt-20 pb-20"
         style={{
@@ -363,35 +292,7 @@ export default function ServiceDetail() {
         }}
       >
         <div className="container max-w-[1100px] px-6">
-          <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { label: 'Primary Care', href: '/service/primary-care', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2665849.jpg' },
-              { label: 'Thermography', href: '/service/thermography', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2807353.png' },
-              { label: 'Wound Care', href: '/service/wound-care', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2818559.png' },
-              { label: 'Hormone Balance Therapy', href: '/service/hormone-balance-therapy', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668320.png' },
-              { label: 'Vasectomies', href: '/service/vasectomies', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668321.png' },
-              { label: 'Vitamins And Supplements', href: '/service/vitamins-and-supplements', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2665851.jpg' },
-              { label: 'Weight Loss', href: '/service/weight-loss', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2665846.jpeg' },
-              { label: 'Hyperbaric Oxygen Therapy', href: '/service/hyperbaric-oxygen-therapy', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2665857.jpg' },
-              { label: 'Lab Services', href: '/service/lab-services', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2696961.png' },
-              { label: 'Red Light Therapy', href: '/service/red-light-therapy', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2696960.png' },
-              { label: 'Autoimmune Diseases', href: '/service/autoimmune-diseases', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2696962.png' },
-              { label: 'Infusion Therapy', href: '/service/infusion-therapy', img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2707649.png' },
-              { label: 'Aletheia Cell Therapy', href: '/service/aletheia-cell-therapy', img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2707649.png' },
-            ].map((item) => (
-              <Link key={item.href} to={item.href} className="block group bg-white shadow-sm hover:shadow transition">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={item.img}
-                    alt={item.label}
-                    className="w-full h-full object-cover group-hover:scale-[1.03] transition"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="px-4 py-3 text-[rgb(38,69,123)] font-medium">{item.label}</div>
-              </Link>
-            ))}
-          </div>
+          <ServicesGrid items={allServices} />
         </div>
       </section>
     </main>
