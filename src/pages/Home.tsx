@@ -1,30 +1,53 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 function SectionDivider() {
   return <hr className="w-20 h-[2px] bg-[rgb(199,90,51)] border-0" />;
 }
 
 export default function Home() {
+  const slides = [
+    'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/AdobeStock_185411450.jpeg',
+    'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/AdobeStock_168081720.jpeg',
+  ];
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActive((i) => (i + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [slides.length]);
+
   return (
     <main className="home">
       {/* Hero */}
-      <section
-        className="relative bg-cover bg-center min-h-[560px] flex items-center"
-        style={{
-          backgroundImage:
-            "url('https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668997.jpg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-white/75" />
-        <div className="relative container max-w-[1100px] px-6 py-16">
-          <div className="max-w-xl bg-white/85 p-6">
-            <h1 className="text-[56px] leading-[1.05] font-normal text-[rgb(38,69,123)] tracking-tight">
+      <section className="relative min-h-[680px] flex items-center overflow-hidden">
+        {/* Slides */}
+        <div className="absolute inset-0">
+          {slides.map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt="hero"
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === active ? 'opacity-100' : 'opacity-0'}`}
+              loading={i === 0 ? 'eager' : 'lazy'}
+            />
+          ))}
+        </div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-white/55" />
+        {/* Text */}
+        <div className="relative w-full max-w-[1200px] px-5 md:px-8 py-24 mx-auto">
+          <div className="max-w-[760px] bg-white/55 p-8 mt-24 ml-[-26px]">
+            <h1 className="text-[72px] leading-[1.05] font-semibold text-[rgb(38,69,123)] tracking-tight">
               Aletheia
               <br /> Integrative
             </h1>
-            <p className="mt-4 text-[rgb(38,69,123)] uppercase tracking-wider">
+            <p className="mt-4 text-[rgb(38,69,123)] uppercase tracking-[0.2em]">
               Family Practice & Direct Primary Care in Lincoln, NE
             </p>
+            <hr className="mt-6 h-[2px] w-150 bg-[rgb(38,69,123)]/45 border-0" />
             <Link
               to="/contact-us"
               className="mt-6 inline-block px-5 py-3 text-white text-sm font-semibold uppercase tracking-wider"
