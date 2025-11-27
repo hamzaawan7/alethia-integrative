@@ -15,6 +15,9 @@ import Schedule from './pages/Schedule'
 import Services from './pages/Services'
 import ServiceDetail from './pages/ServiceDetail'
 import Testimonials from './pages/Testimonials'
+import TherapeuticServices from './pages/TherapeuticServices'
+import InfusionTherapy from './pages/InfusionTherapy'
+import HealthCoaching from './pages/HealthCoaching'
 import TherapyPricelist from './pages/TherapyPricelist'
 import YourPrivacy from './pages/YourPrivacy'
 import AccessibilityStatement from './pages/AccessibilityStatement'
@@ -41,6 +44,9 @@ export default function App() {
         <Route path="services" element={<Services />} />
         <Route path="service/:slug" element={<ServiceDetail />} />
         <Route path="testimonials" element={<Testimonials />} />
+        <Route path="therapeutic-services" element={<TherapeuticServices />} />
+        <Route path="infusion-therapy" element={<InfusionTherapy />} />
+        <Route path="health-coaching" element={<HealthCoaching />} />
         <Route path="therapy-pricelist" element={<TherapyPricelist />} />
         <Route path="your-privacy" element={<YourPrivacy />} />
         <Route path="accessibility-statement" element={<AccessibilityStatement />} />
