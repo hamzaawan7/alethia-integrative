@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# Aletheia Integrative – React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript app bootstrapped with Vite that mirrors the legacy Aletheia template and integrates the Tebra booking modal, AudioEye accessibility widget, and LeadConnector chat.
 
-Currently, two official plugins are available:
+## Prerequisites
+- Node.js 18+ and npm 9+
+- Git
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 1) Clone
+```bash
+git clone <your-repo-url>
+cd alethia-integrative
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 2) Install dependencies
+```bash
+npm install
 ```
+
+## 3) Start dev server
+```bash
+npm run dev
+```
+- Vite will print a local dev URL (e.g. http://localhost:5173).
+- The Tebra booking modal opens from the Home page “Get in touch” button.
+
+## 4) Build for production
+```bash
+npm run build
+npm run preview   # optional: serve the production build locally
+```
+
+## Environment notes (widgets)
+The following third‑party widgets load from index.html:
+- Tebra WidgetManager (booking modal)
+- AudioEye (accessibility)
+- LeadConnector chat
+
+These vendors may behave differently on localhost vs. the live domain. For full functionality, deploy under an approved/staging domain that the vendors recognize.
+
+## Troubleshooting
+- Modal behind header: we enforce a fixed top offset in index.html.
+- Chat/accessibility icons missing: ensure the vendor scripts are not blocked by extensions and your network allows their domains.
+- Port conflicts: set Vite port with `--port` (package.json) or use a different free port.
+
+## Scripts
+- `npm run dev` – start dev server
+- `npm run build` – build production assets
+- `npm run preview` – serve the built app locally

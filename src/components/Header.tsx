@@ -28,7 +28,7 @@ export default function Header() {
   const linkClass = "menu-font px-4 py-5 text-[11px] tracking-[0.15em] uppercase font-[900] text-white hover:text-[#C75A33] transition-colors";
 
   return (
-    <header className="bg-brand text-white fixed top-0 left-0 right-0 z-[100000]">
+    <header className="bg-brand text-white fixed top-0 left-0 right-0 z-[900]">
       <div className="h-[103px] flex flex-nowrap items-center justify-between px-2 lg:px-4 overflow-visible">
         {/* Logo */}
         <Link to="/" className="shrink-0 py-1">
@@ -116,7 +116,7 @@ export default function Header() {
               Book Online
             </Link>
             <a 
-              href="https://patientportal.kareo.com/aletheia-integrative" 
+              href="https://aletheia.md-hq.com/" 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center h-[45px] min-w-[141px] text-center px-5 text-[13px] tracking-[0.1em] uppercase font-semibold text-white hover:bg-brand"

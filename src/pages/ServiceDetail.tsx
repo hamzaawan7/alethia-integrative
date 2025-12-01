@@ -57,7 +57,7 @@ const SERVICE_MAP: Record<string, ServiceInfo> = {
     img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2696961.png',
   },
   'red-light-therapy': {
-    title: 'Red Light Therapy',
+    title: 'Near Infrared Light Therapy',
     img: 'https://sa1s3optim.patientpop.com/1280x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668321.png',
   },
   'autoimmune-diseases': {
@@ -310,6 +310,89 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      {/* Red Light Therapy Q&A full-width */}
+      {slug === 'red-light-therapy' && (
+        <section className="py-12">
+          <div className="container max-w-[1100px] px-6 space-y-8">
+            <h2 className="text-[32px] text-[rgb(199,90,51)] font-semibold">Red Light Therapy Q&amp;A</h2>
+
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+              <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">How does red light therapy promote healing?</h3>
+              <p>
+                Red light therapy uses low‑wavelength red light to activate the mitochondria — the “power plant” inside of your body’s
+                cells. Your cells that are exposed to red light absorb its energy and begin working more efficiently. In other words,
+                increasing the amount of energy inside your cells lets your body repair itself more effectively.
+              </p>
+              <p>
+                The Aletheia Integrative team uses red light therapy to reduce inflammation, increase circulation, and encourage collagen
+                production. When combined, these factors promote healing and offer anti‑aging effects.
+              </p>
+            </div>
+
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+              <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What types of medical issues can benefit from red light therapy?</h3>
+              <p>Red Light Therapy can benefit a wide range of health and cosmetic concerns, including:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Chronic joint or muscle pain</li>
+                <li>Inflammation and tissue injury</li>
+                <li>Fatigue and mitochondrial dysfunction</li>
+                <li>Skin rejuvenation, wrinkles, and fine lines</li>
+                <li>Acne, rosacea, and scarring</li>
+                <li>Wound healing and post‑procedure recovery</li>
+                <li>Mood and cognitive function support</li>
+              </ul>
+              <p>
+                By improving <strong>circulation, collagen production, and cellular energy (ATP)</strong>, this therapy helps your body restore itself
+                naturally from the inside out.
+              </p>
+              <p>
+                Red light therapy can also be used to promote hair growth in people with androgenic alopecia (male pattern baldness). When
+                used in combination with platelet‑rich plasma (PRP) therapy, it can provide thicker, healthier hair.
+              </p>
+            </div>
+
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+              <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What happens during red light therapy?</h3>
+              <p>
+                You will relax and lie down while the light shines onto your skin. The device emits low‑wavelength red light that penetrates
+                your skin and activates healing at the cellular level. More specifically, the wavelengths increase blood flow to the area
+                and encourage the production of new cells and tissue. Each session lasts for about 20–40 minutes.
+              </p>
+            </div>
+
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+              <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">How many red light therapy treatments will I need?</h3>
+              <p>
+                The number of red light therapy treatments you need depends on several things, including your age, the severity of your
+                symptoms, and your goals.
+              </p>
+              <p>
+                Red light therapy is a cumulative treatment, so the results add up over time. The Aletheia Integrative team typically
+                recommends a series of weekly red light therapy treatments over the course of one to four months. Some people experience
+                noticeable results after the first few treatments, but for others, it takes longer.
+              </p>
+              <p>
+                At Aletheia Integrative, we don’t just offer Red Light Therapy as a stand‑alone service — we integrate it into comprehensive
+                care plans for whole‑body healing. Whether you're recovering from illness, managing chronic inflammation, or pursuing graceful
+                aging, this therapy enhances other treatments like <strong>IV therapy</strong>, <strong>HBOT</strong>, and <strong>nutritional protocols</strong>.
+              </p>
+            </div>
+
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+              <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">Is red light therapy safe?</h3>
+              <p>
+                Red light therapy is safe and usually well‑tolerated. Because the treatment is noninvasive, you don’t have to worry about
+                infection or scarring.
+              </p>
+              <p>
+                Call Aletheia Integrative today to schedule a red light therapy consultation or book your appointment online.
+              </p>
+              <p className="text-sm opacity-80">*Individual treatment plans may vary.</p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Aletheia Cell Therapy Q&A full-width */}
       {slug === 'aletheia-cell-therapy' && (

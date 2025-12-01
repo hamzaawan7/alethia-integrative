@@ -108,6 +108,25 @@ export default function Home() {
     return () => clearInterval(id);
   }, [slides.length]);
 
+  // Open the legacy Tebra modal via the same custom event used on the legacy site
+  const openTebraModal = () => {
+    try {
+      const ev = new CustomEvent('actionCall', {
+        detail: { callParameter: 'c94c6f5b-e23a-44fa-94f6-759bf4ad676d' },
+      });
+      window.dispatchEvent(ev);
+    } catch (e) {
+      // no-op if CustomEvent unsupported
+    }
+    // Fallback: if WidgetManager isn't ready, route to Contact page after a short delay
+    setTimeout(() => {
+      const wm: any = (window as any).WidgetManager;
+      if (!wm || typeof wm.widgetClick !== 'function') {
+        window.location.assign('/contact-us');
+      }
+    }, 2000);
+  };
+
   return (
     <main className="home">
       {/* Hero */}
@@ -137,13 +156,14 @@ export default function Home() {
               Family Practice & Direct Primary Care in Lincoln, NE
             </p>
             <hr className="mt-6 h-[2px] w-150 bg-[rgb(38,69,123)]/45 border-0" />
-            <Link
-              to="/contact-us"
+            <button
+              type="button"
+              onClick={openTebraModal}
               className="mt-6 inline-block px-5 py-3 text-white text-sm font-semibold uppercase tracking-wider"
               style={{ backgroundColor: 'rgb(199,90,51)' }}
             >
               get in touch
-            </Link>
+            </button>
           </div>
         </div>
       </section>

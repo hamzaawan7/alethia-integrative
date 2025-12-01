@@ -9,7 +9,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?display=swap&family=Open+Sans:400&family=Quicksand:600&family=Bebas+Neue:400" rel="stylesheet">
-    <!-- LeadConnector widgets (from legacy site) -->
+    <!-- Icon library to match legacy template -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+      /* Minimal: keep the booking modal above header and pushed below it */
+      section[data-position="popup"] { position: fixed !important; z-index: 2147483647 !important; }
+      section[data-position="popup"].show-section { top: 148px !important; left: 50% !important; transform: translateX(-50%) !important; }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Physician",
+        "@id": "https://www.aletheia.md/01e81043-25b6-46c2-bd88-dc1830708de7",
+        "url": "https://www.aletheia.md",
+        "name": ["Jaime Dodge, MD"]
+      }
+    </script>
+    <!-- LeadConnector chat widgets (match legacy; required for chat bubble icon/UI) -->
     <script
       src="https://widgets.leadconnectorhq.com/loader.js"
       data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
@@ -20,29 +36,32 @@
       data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
       data-widget-id="684311ff7322c267985b3bb3">
     </script>
-    <!-- Legacy widget manager initializer -->
-    <script>
-      window.wmOnScriptLoad = function () {
-        try {
-          if (window.wm && typeof window.wm.initializeManager === 'function') {
-            window.wm.initializeManager('01e81043-25b6-46c2-bd88-dc1830708de7');
-          }
-        } catch (e) {
-          /* no-op */
-        }
-      };
-    </script>
+    <script>"use strict";window.wm=window.wm||{};const initTebraWidgetManager=()=>{const wmDeferredCommands=[];const TEBRA_WIDGET_MANAGER_METHODS=["initializeManager","registerWidget","broadcastMessage"];window.wmOnScriptLoad=()=>{window.addEventListener("actionCall",e=>{return window.WidgetManager.widgetClick(e.detail.callParameter)});wmDeferredCommands.forEach(cmd=>{window.WidgetManager[cmd.command](...cmd.args)})};TEBRA_WIDGET_MANAGER_METHODS.forEach(wmMethod=>{window.wm[wmMethod]=(...args)=>{const deferredCommand={command:wmMethod,args};if(window.WidgetManager&&window.WidgetManager[deferredCommand.command]){window.WidgetManager[deferredCommand.command](...deferredCommand.args)}else{wmDeferredCommands.push(deferredCommand)}}})};initTebraWidgetManager();</script>
     <script src="https://d35hk7lgnvai11.cloudfront.net/widgetManager.js" onload="wmOnScriptLoad()" defer async></script>
-    <script>
-      // Fallback direct init if script loaded before onload handler
-      try { window.wm && window.wm.initializeManager && window.wm.initializeManager('01e81043-25b6-46c2-bd88-dc1830708de7'); } catch (e) {}
-    </script>
+    <script>window.wm.initializeManager('01e81043-25b6-46c2-bd88-dc1830708de7');</script>
+    <!-- Removed dynamic positioner scripts; minimal CSS offset is sufficient -->
   </head>
   <body>
     <!-- Minimal legacy-compatible site root for widget to hook into -->
-    <div class="website" data-cloaking="false">
+    <div class="website" id="01e81043-25b6-46c2-bd88-dc1830708de7" data-cloaking="false">
       <div id="root"></div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- AudioEye accessibility widget (match legacy; required for accessibility icon/UI) -->
+    <script>
+      (function(){
+        var init = function(){
+          window.__AudioEyeSiteHash = "a43c0f058917af595346a950e3ba3eec";
+          var s = document.createElement("script");
+          s.src = "https://wsmcdn.audioeye.com/aem.js";
+          s.type = "text/javascript";
+          s.setAttribute("async", "");
+          document.body.appendChild(s);
+        };
+        if (document.readyState !== 'complete') {
+          window.addEventListener ? window.addEventListener('load', init) : window.attachEvent && window.attachEvent('onload', init);
+        } else { init(); }
+      })();
+    </script>
   </body>
 </html>

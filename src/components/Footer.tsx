@@ -47,14 +47,6 @@ export default function Footer() {
           <div className="text-center text-xs text-white/60 mt-1"> {year} Aletheia Integrative</div>
         </div>
       </div>
-
-      {/* Floating icons (visual parity placeholders) */}
-      <button aria-label="Accessibility" className="hidden md:inline-flex items-center justify-center rounded-full h-10 w-10 bg-[#1f6cff] text-white shadow-lg fixed left-4 bottom-6">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6"><path d="M12 2a2 2 0 110 4 2 2 0 010-4zm8 7h-5v13h-2V9H4V7h16v2z"/></svg>
-      </button>
-      <button aria-label="Chat" className="hidden md:inline-flex items-center justify-center rounded-full h-10 w-10 bg-[#2563eb] text-white shadow-lg fixed right-4 bottom-6">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6"><path d="M2 3h20v14H6l-4 4V3z"/></svg>
-      </button>
     </footer>
   );
 }
