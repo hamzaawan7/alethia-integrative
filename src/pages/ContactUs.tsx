@@ -18,43 +18,24 @@ export default function ContactUs() {
       <section className="py-14">
         <div className="container max-w-[1100px] px-6">
           <h2 className="text-center text-[36px] text-[rgb(38,69,123)]">Send A Message To Aletheia Integrative</h2>
-          <div className="mt-8 max-w-3xl mx-auto bg-white shadow p-8">
-            <form className="grid md:grid-cols-2 gap-5">
-              <div className="col-span-1">
-                <label className="block text-slate-700 text-sm">First Name *</label>
-                <input className="mt-2 w-full border border-slate-300 px-3 py-2" placeholder="First Name" />
-              </div>
-              <div className="col-span-1">
-                <label className="block text-slate-700 text-sm">Last Name *</label>
-                <input className="mt-2 w-full border border-slate-300 px-3 py-2" placeholder="Last Name" />
-              </div>
-              <div className="col-span-1">
-                <label className="block text-slate-700 text-sm">Phone *</label>
-                <input className="mt-2 w-full border border-slate-300 px-3 py-2" placeholder="Phone" />
-              </div>
-              <div className="col-span-1">
-                <label className="block text-slate-700 text-sm">Email *</label>
-                <input type="email" className="mt-2 w-full border border-slate-300 px-3 py-2" placeholder="Email" />
-              </div>
-              <div className="col-span-2 md:col-span-1">
-                <label className="block text-slate-700 text-sm">Interested In: *</label>
-                <select className="mt-2 w-full border border-slate-300 px-3 py-2">
-                  <option>Primary Care</option>
-                  <option>Infusion Therapy</option>
-                  <option>Hyperbaric Oxygen Therapy</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div className="col-span-2">
-                <label className="block text-slate-700 text-sm">Message</label>
-                <textarea className="mt-2 w-full border border-slate-300 px-3 py-2" rows={6} placeholder="Message" />
-              </div>
-              <div className="col-span-2">
-                <button type="submit" className="px-6 py-3 text-white" style={{ backgroundColor: 'rgb(199,90,51)' }}>
-                  Submit
-                </button>
-              </div>
-            </form>
+          <div className="mt-8 max-w-3xl mx-auto bg-white shadow p-0" style={{ overflow: 'hidden' }}>
+            <iframe
+              src="https://link.aletheia.md/widget/form/SaqVCVsIaMkH2arPe2iz"
+              style={{ width: '100%', height: 772, border: 'none', borderRadius: 3 }}
+              id="inline-SaqVCVsIaMkH2arPe2iz"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Contact us form for site"
+              data-height="772"
+              data-layout-iframe-id="inline-SaqVCVsIaMkH2arPe2iz"
+              data-form-id="SaqVCVsIaMkH2arPe2iz"
+              title="Contact us form for site"
+            ></iframe>
           </div>
         </div>
       </section>
