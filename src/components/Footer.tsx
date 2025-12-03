@@ -43,7 +43,6 @@ export default function Footer() {
       {/* Bottom credit */}
       <div className="bg-[#0b0b0b]">
         <div className="container py-4">
-          <div className="text-center text-xs text-white/60">Medical Websites Powered by TEBRA</div>
           <div className="text-center text-xs text-white/60 mt-1"> {year} Aletheia Integrative</div>
         </div>
       </div>
