@@ -32,3 +32,11 @@ body { margin: 0; background-color: #ffffff; color: rgb(30 41 59); -webkit-font-
   right: 0;
   z-index: 999;
 }
+
+/* Ensure vendor form iframes cannot be hidden by third-party JS/extensions */
+#inline-book-SaqVCVsIaMkH2arPe2iz,
+#inline-SaqVCVsIaMkH2arPe2iz {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}

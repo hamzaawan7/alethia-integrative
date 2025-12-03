@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "../components/Header";
+import ThirdPartyLoader from "../components/ThirdPartyLoader";
 import Footer from "../components/Footer";
 
 export default function RootLayout() {
@@ -12,6 +13,7 @@ export default function RootLayout() {
 
   return (
     <div className="app">
+      <ThirdPartyLoader />
       <Header />
       <main style={{ minHeight: "60vh" }}>
         <Outlet />

@@ -25,14 +25,7 @@
         "name": ["Jaime Dodge, MD"]
       }
     </script>
-    <!-- LeadConnector chat widget (client-provided) -->
-    <script
-      src="https://widgets.leadconnectorhq.com/loader.js"
-      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-      data-widget-id="684311ff7322c267985b3bb3">
-    </script>
-    <!-- Intake form embed loader (client-provided) -->
-    <script src="https://link.aletheia.md/js/form_embed.js"></script>
+    <!-- Third-party chat and form embeds are loaded conditionally in React -->
     <script>"use strict";window.wm=window.wm||{};const initTebraWidgetManager=()=>{const wmDeferredCommands=[];const TEBRA_WIDGET_MANAGER_METHODS=["initializeManager","registerWidget","broadcastMessage"];window.wmOnScriptLoad=()=>{window.addEventListener("actionCall",e=>{return window.WidgetManager.widgetClick(e.detail.callParameter)});wmDeferredCommands.forEach(cmd=>{window.WidgetManager[cmd.command](...cmd.args)})};TEBRA_WIDGET_MANAGER_METHODS.forEach(wmMethod=>{window.wm[wmMethod]=(...args)=>{const deferredCommand={command:wmMethod,args};if(window.WidgetManager&&window.WidgetManager[deferredCommand.command]){window.WidgetManager[deferredCommand.command](...deferredCommand.args)}else{wmDeferredCommands.push(deferredCommand)}}})};initTebraWidgetManager();</script>
     <script src="https://d35hk7lgnvai11.cloudfront.net/widgetManager.js" onload="wmOnScriptLoad()" defer async></script>
     <script>window.wm.initializeManager('01e81043-25b6-46c2-bd88-dc1830708de7');</script>
