@@ -1,9 +1,5 @@
 import { Link } from 'react-router-dom';
 
-function SectionDivider() {
-  return <hr className="w-20 h-[2px] bg-[rgb(199,90,51)] border-0" />;
-}
-
 export default function About() {
   return (
     <main>

@@ -1,8 +1,4 @@
-import { Link } from 'react-router-dom';
-
-function SectionDivider() {
-  return <hr className="w-24 h-px bg-slate-300 border-0" />;
-}
+//
 
 export default function Providers() {
   return (

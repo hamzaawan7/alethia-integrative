@@ -1,10 +1,6 @@
 import { services } from '../data/services';
 import ServicesGrid from '../components/ServicesGrid';
 
-function SectionDivider() {
-  return <hr className="w-20 h-[2px] bg-[rgb(199,90,51)] border-0" />;
-}
-
 export default function Services() {
   return (
     <main>
