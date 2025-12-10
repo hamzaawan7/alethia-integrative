@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Services dropdown items - exactly matching real template
 const servicesItems = [
@@ -26,6 +26,29 @@ const servicesItems = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const linkClass = "menu-font px-4 py-5 text-[11px] tracking-[0.15em] uppercase font-[900] text-white hover:text-[#C75A33] transition-colors";
+
+  // Prevent background (page) scrolling when mobile menu is open
+  useEffect(() => {
+    const html = document.documentElement;
+    const body = document.body;
+    const prevHtmlOverflow = html.style.overflow;
+    const prevBodyOverflow = body.style.overflow;
+    const prevHtmlTouchAction = html.style.touchAction as string;
+    const prevBodyTouchAction = body.style.touchAction as string;
+    if (mobileOpen) {
+      html.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';
+      // Disallow horizontal gestures on the page underneath
+      html.style.touchAction = 'none';
+      body.style.touchAction = 'none';
+    }
+    return () => {
+      html.style.overflow = prevHtmlOverflow;
+      body.style.overflow = prevBodyOverflow;
+      html.style.touchAction = prevHtmlTouchAction || '';
+      body.style.touchAction = prevBodyTouchAction || '';
+    };
+  }, [mobileOpen]);
 
   return (
     <header className="bg-brand text-white fixed top-0 left-0 right-0 z-[900]">
@@ -128,9 +151,26 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <div className={`lg:hidden ${mobileOpen ? "block" : "hidden"} bg-brand border-t border-white/20`}>
-        <nav className="py-4 px-4">
+      {/* Mobile menu overlay */}
+      <div
+        className={`lg:hidden ${mobileOpen ? "block" : "hidden"}`}
+        style={{
+          position: 'fixed',
+          top: 103, // below header height
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 901,
+          backgroundColor: 'rgb(38,69,123)',
+          width: '100vw',
+          overflowY: 'auto',
+          overflowX: 'hidden',
+          WebkitOverflowScrolling: 'touch',
+          touchAction: 'pan-y',
+          overscrollBehavior: 'contain'
+        }}
+      >
+        <nav className="py-4 px-4 pb-8">
           <NavLink to="/" className="block py-3 text-sm uppercase tracking-wider text-white" onClick={() => setMobileOpen(false)}>Home</NavLink>
           <NavLink to="/about" className="block py-3 text-sm uppercase tracking-wider text-white" onClick={() => setMobileOpen(false)}>About</NavLink>
           <NavLink to="/providers" className="block py-3 pl-4 text-xs uppercase tracking-wider text-white/80" onClick={() => setMobileOpen(false)}>Meet the Provider</NavLink>
@@ -143,7 +183,6 @@ export default function Header() {
           <a href="https://aletheiawellness.com/" target="_blank" rel="noopener noreferrer" className="block py-3 text-sm uppercase tracking-wider text-white">Supplements</a>
           <NavLink to="/contact-us" className="block py-3 text-sm uppercase tracking-wider text-white" onClick={() => setMobileOpen(false)}>Contact</NavLink>
           <div className="mt-4 space-y-2">
-            <a href="tel:531-333-2037" className="block py-2 text-sm uppercase tracking-wider text-white">531-333-2037</a>
             <NavLink
               to="/book-online"
               className="block py-2 text-sm uppercase tracking-wider text-white"
@@ -165,6 +204,12 @@ export default function Header() {
               className="block py-2 text-sm uppercase tracking-wider text-white"
             >
               Patient Portal (Login)
+            </a>
+          </div>
+          {/* Phone as a regular last item (non-sticky) to avoid overlay issues */}
+          <div className="mt-6">
+            <a href="tel:531-333-2037" className="block py-2 text-sm uppercase tracking-wider text-white text-center border border-white/30">
+              531-333-2037
             </a>
           </div>
         </nav>

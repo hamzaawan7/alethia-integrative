@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 declare global {
   interface Window {
@@ -162,6 +163,7 @@ function Stars({ value }: { value: number }) {
 }
 
 export default function Testimonials() {
+  const navigate = useNavigate();
   const [showAll, setShowAll] = useState(false);
   const [cardsPerView, setCardsPerView] = useState(4);
   const [page, setPage] = useState(0);
@@ -228,38 +230,8 @@ export default function Testimonials() {
   }, []);
 
   const openShareFeedback = () => {
-    if (import.meta.env.DEV) {
-      console.log('[Testimonials] Share Feedback clicked');
-    }
-    // Matches: triggerCustomEvent('a9a6fab9-c916-4829-8bf9-0682c5d76416', '{}') from the legacy HTML
-    const callParameter = 'a9a6fab9-c916-4829-8bf9-0682c5d76416';
-    const itemData = '{}'; // legacy sends string JSON
-    // If widget manager isn't ready yet, try initializing again then fire
-    if (!wmReady) {
-      // Legacy path first
-      window.triggerCustomEvent?.(callParameter, itemData);
-      // Also dispatch custom event
-      const evt = new CustomEvent('actionCall', { detail: { callParameter, itemData } });
-      window.dispatchEvent(evt);
-      return;
-    }
-    // Fire both forms to be safe
-    window.triggerCustomEvent?.(callParameter, itemData);
-    window.dispatchEvent(new CustomEvent('actionCall', { detail: { callParameter, itemData } }));
-
-    // Retry once if modal container not appended yet
-    setTimeout(() => {
-      const hasModal = !!document.querySelector('[class*="modal" i], [id*="modal" i]');
-      if (!hasModal) {
-        window.triggerCustomEvent?.(callParameter, itemData);
-        window.dispatchEvent(new CustomEvent('actionCall', { detail: { callParameter, itemData } }));
-        // If still nothing after a short delay, open local fallback
-        setTimeout(() => {
-          const stillNoModal = !document.querySelector('[class*="modal" i], [id*="modal" i]');
-          if (stillNoModal) setFallbackOpen(true);
-        }, 500);
-      }
-    }, 400);
+    // Temporarily route to Contact page until a new feedback destination (e.g., Google Reviews) is confirmed
+    navigate('/contact-us');
   };
 
   const totalPages = Math.max(1, Math.ceil(reviews.length / cardsPerView));
