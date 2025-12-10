@@ -20,16 +20,23 @@ jobs:
           cache: 'npm'
 
       - name: Preflight — check required secrets and DNS
+        shell: bash
         run: |
-          test -n "${{ secrets.FTP_HOST }}" || (echo "Missing FTP_HOST" && exit 1)
-          test -n "${{ secrets.FTP_USERNAME }}" || (echo "Missing FTP_USERNAME" && exit 1)
-          test -n "${{ secrets.FTP_PASSWORD }}" || (echo "Missing FTP_PASSWORD" && exit 1)
-          echo "FTP_HOST length: ${#FTP_HOST}"
+          set -euo pipefail
+          HOST='156.67.67.67'
+          USER='${{ secrets.FTP_USERNAME }}'
+          PASS='${{ secrets.FTP_PASSWORD }}'
+          [ -n "$HOST" ] || { echo "Missing FTP_HOST"; exit 1; }
+          [ -n "$USER" ] || { echo "Missing FTP_USERNAME"; exit 1; }
+          [ -n "$PASS" ] || { echo "Missing FTP_PASSWORD"; exit 1; }
+
           sudo apt-get update -y >/dev/null 2>&1 || true
           sudo apt-get install -y dnsutils curl >/dev/null 2>&1 || true
-          nslookup "${{ secrets.FTP_HOST }}" || (echo "DNS lookup failed for FTP_HOST" && exit 1)
+
+          # HOST is an IP so skip DNS lookup
+
           # Quick auth probe (no file changes)
-          curl --silent --show-error --ftp-pasv --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_HOST }}/" --list-only >/dev/null || (echo "FTP auth failed (verify username/password and user directory)" && exit 1)
+          curl --silent --show-error --ftp-pasv --user "$USER:$PASS" "ftp://$HOST/" --list-only >/dev/null || { echo "FTP auth failed (verify username/password)"; exit 1; }
 
       - name: Install dependencies
         run: npm ci
@@ -46,13 +53,13 @@ jobs:
       - name: Deploy via FTP to Hostinger public_html
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_HOST }}
+          server: 156.67.67.67
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: 21
           local-dir: dist/
-          server-dir: /home/u938549775/domains/aletheia.md/public_html/
+          server-dir: /public_html/
           # Keep existing files unless overwritten
           dangerous-clean-slate: false
           # Passive mode for Hostinger
