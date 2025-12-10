@@ -19,6 +19,18 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      - name: Preflight — check required secrets and DNS
+        run: |
+          test -n "${{ secrets.FTP_HOST }}" || (echo "Missing FTP_HOST" && exit 1)
+          test -n "${{ secrets.FTP_USERNAME }}" || (echo "Missing FTP_USERNAME" && exit 1)
+          test -n "${{ secrets.FTP_PASSWORD }}" || (echo "Missing FTP_PASSWORD" && exit 1)
+          echo "FTP_HOST length: ${#FTP_HOST}"
+          sudo apt-get update -y >/dev/null 2>&1 || true
+          sudo apt-get install -y dnsutils curl >/dev/null 2>&1 || true
+          nslookup "${{ secrets.FTP_HOST }}" || (echo "DNS lookup failed for FTP_HOST" && exit 1)
+          # Quick auth probe (no file changes)
+          curl --silent --show-error --ftp-pasv --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" "ftp://${{ secrets.FTP_HOST }}/" --list-only >/dev/null || (echo "FTP auth failed (verify username/password and user directory)" && exit 1)
+
       - name: Install dependencies
         run: npm ci
 
