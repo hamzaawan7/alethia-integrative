@@ -167,7 +167,6 @@ export default function Testimonials() {
   const [showAll, setShowAll] = useState(false);
   const [cardsPerView, setCardsPerView] = useState(4);
   const [page, setPage] = useState(0);
-  const [wmReady, setWmReady] = useState(false);
   const [fallbackOpen, setFallbackOpen] = useState(false);
   const [fallbackSent, setFallbackSent] = useState(false);
   const [fbName, setFbName] = useState('');
@@ -196,7 +195,6 @@ export default function Testimonials() {
       try {
         if (window.wm && typeof window.wm.initializeManager === 'function') {
           window.wm.initializeManager(PRACTICE_ID);
-          setWmReady(true);
         }
       } catch (e) {
         if (import.meta.env.DEV) {
