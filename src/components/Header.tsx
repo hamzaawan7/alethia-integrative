@@ -144,8 +144,28 @@ export default function Header() {
           <NavLink to="/contact-us" className="block py-3 text-sm uppercase tracking-wider text-white" onClick={() => setMobileOpen(false)}>Contact</NavLink>
           <div className="mt-4 space-y-2">
             <a href="tel:531-333-2037" className="block py-2 text-sm uppercase tracking-wider text-white">531-333-2037</a>
-            <NavLink to="/book-online" className="block py-2 text-sm uppercase tracking-wider text-white" onClick={() => setMobileOpen(false)}>Book Online</NavLink>
-            <a href="https://patientportal.kareo.com/aletheia-integrative" target="_blank" rel="noopener noreferrer" className="block py-2 text-sm uppercase tracking-wider text-white">Patient Portal</a>
+            <NavLink
+              to="/book-online"
+              className="block py-2 text-sm uppercase tracking-wider text-white"
+              onClick={() => setMobileOpen(false)}
+            >
+              Book Online
+            </NavLink>
+            <NavLink
+              to="/contact-us"
+              className="block py-2 text-sm uppercase tracking-wider text-white"
+              onClick={() => setMobileOpen(false)}
+            >
+              Get in Touch
+            </NavLink>
+            <a
+              href="https://aletheia.md-hq.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block py-2 text-sm uppercase tracking-wider text-white"
+            >
+              Patient Portal (Login)
+            </a>
           </div>
         </nav>
       </div>
