@@ -4,7 +4,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-[#111] text-white mt-12 relative">
-      <div className="container py-8">
+      <div className="container py-8 px-6">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           {/* Left: Practice info */}
           <div className="max-w-md">
@@ -17,7 +17,7 @@ export default function Footer() {
 
           {/* Right block: stars + links */}
           <div className="flex-1">
-            <div className="flex items-center gap-6 justify-start md:justify-center">
+            <div className="flex items-center justify-start md:justify-center gap-4 md:gap-6 flex-wrap">
               {/* Vertical divider */}
               <span className="hidden md:inline-block h-12 w-px bg-white/30" />
               {/* Stars */}
@@ -29,11 +29,11 @@ export default function Footer() {
                 ))}
               </div>
               {/* Links row */}
-              <nav className="flex items-center gap-8 text-sm font-medium tracking-wide text-white/90">
-                <Link to="/your-privacy" className="hover:text-white">Privacy</Link>
-                <Link to="/our-terms" className="hover:text-white">Terms & Conditions</Link>
-                <Link to="/accessibility-statement" className="hover:text-white">Accessibility</Link>
-                <Link to="/contact-us" className="hover:text-white">Contact Us</Link>
+              <nav className="flex items-center flex-wrap gap-4 md:gap-8 text-[13px] md:text-sm font-medium tracking-wide text-white/90">
+                <Link to="/your-privacy" className="hover:text-white py-2">Privacy</Link>
+                <Link to="/our-terms" className="hover:text-white py-2">Terms & Conditions</Link>
+                <Link to="/accessibility-statement" className="hover:text-white py-2">Accessibility</Link>
+                <Link to="/contact-us" className="hover:text-white py-2">Contact Us</Link>
               </nav>
             </div>
           </div>
