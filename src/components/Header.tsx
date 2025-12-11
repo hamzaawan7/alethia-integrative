@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 // Services dropdown items - exactly matching real template
@@ -26,6 +26,23 @@ const servicesItems = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const linkClass = "menu-font px-4 py-5 text-[11px] tracking-[0.15em] uppercase font-[900] text-white hover:text-[#C75A33] transition-colors";
+  const navigate = useNavigate();
+
+  const openGetInTouchModal = () => {
+    const ev = new CustomEvent('actionCall', {
+      detail: { callParameter: 'c94c6f5b-e23a-44fa-94f6-759bf4ad676d' },
+    });
+    window.dispatchEvent(ev);
+    // Fallback: if widget manager isn't ready, route to Contact page shortly
+    setTimeout(() => {
+      type WidgetManagerType = { widgetClick?: (...args: unknown[]) => unknown } | undefined;
+      const wm = (window as Window & typeof globalThis & { WidgetManager?: WidgetManagerType }).WidgetManager;
+      if (!wm || typeof wm.widgetClick !== 'function') {
+        navigate('/contact-us');
+      }
+    }, 800);
+    setMobileOpen(false);
+  };
 
   // Prevent background (page) scrolling when mobile menu is open
   useEffect(() => {
@@ -190,13 +207,13 @@ export default function Header() {
             >
               Book Online
             </NavLink>
-            <NavLink
-              to="/contact-us"
-              className="block py-2 text-sm uppercase tracking-wider text-white"
-              onClick={() => setMobileOpen(false)}
+            <button
+              type="button"
+              className="block w-full text-left py-2 text-sm uppercase tracking-wider text-white"
+              onClick={openGetInTouchModal}
             >
               Get in Touch
-            </NavLink>
+            </button>
             <a
               href="https://aletheia.md-hq.com/"
               target="_blank"
