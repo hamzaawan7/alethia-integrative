@@ -6,12 +6,12 @@ import { services as allServices } from '../data/services';
 import PrimaryCareContent from '../service-content/PrimaryCare';
 import InfusionTherapyContent from '../service-content/InfusionTherapy';
 import HormoneBalanceTherapyContent from '../service-content/HormoneBalanceTherapy';
-import LabServicesContent from '../service-content/LabServices';
 import WeightLossContent from '../service-content/WeightLoss';
 import RedLightTherapyContent from '../service-content/RedLightTherapy';
 import VitaminsAndSupplementsContent from '../service-content/VitaminsAndSupplements';
 import WoundCareContent from '../service-content/WoundCare';
 import VasectomiesContent from '../service-content/Vasectomies';
+import IntegrativeMedicineIntensiveContent from '../service-content/IntegrativeMedicineIntensive';
 
 type ServiceInfo = {
   title: string;
@@ -33,7 +33,7 @@ const SERVICE_MAP: Record<string, ServiceInfo> = {
     img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2818559.png',
   },
   'hormone-balance-therapy': {
-    title: 'Hormone Balance Therapy',
+    title: 'Hormone Optimization Therapy',
     img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2807353.png',
   },
   'vasectomies': {
@@ -52,37 +52,35 @@ const SERVICE_MAP: Record<string, ServiceInfo> = {
     title: 'Hyperbaric Oxygen Therapy',
     img: 'https://sa1s3optim.patientpop.com/1280x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668320.png',
   },
-  'lab-services': {
-    title: 'Lab Services',
-    img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2696961.png',
-  },
   'red-light-therapy': {
     title: 'Near Infrared Light Therapy',
     img: 'https://sa1s3optim.patientpop.com/1280x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668321.png',
-  },
-  'autoimmune-diseases': {
-    title: 'Autoimmune Diseases',
-    img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2696962.png',
   },
   'infusion-therapy': {
     title: 'Infusion Therapy',
     img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2665851.jpg',
   },
   'aletheia-cell-therapy': {
-    title: 'Aletheia Cell Therapy',
+    title: 'Regenerative Medicine',
     img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2707649.png',
+  },
+  'integrative-medicine-intensive': {
+    title: 'Integrative Medicine 90 Day Intensive',
+    img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/AdobeStock_185411450.jpeg',
   },
 };
 
 export default function ServiceDetail() {
   const { slug } = useParams();
-  if (!slug || !SERVICE_MAP[slug]) return <Navigate to="/services" replace />;
-  const svc = SERVICE_MAP[slug];
+  const svc = slug ? SERVICE_MAP[slug] : undefined;
 
   // Always start each service detail at the top
   useEffect(() => {
+    if (!slug) return;
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, [slug]);
+
+  if (!slug || !svc) return <Navigate to="/services" replace />;
 
   const renderContent = () => {
     if (slug === 'primary-care') {
@@ -118,11 +116,11 @@ export default function ServiceDetail() {
     if (slug === 'weight-loss') {
       return <WeightLossContent />;
     }
-    if (slug === 'lab-services') {
-      return <LabServicesContent />;
-    }
     if (slug === 'red-light-therapy') {
       return <RedLightTherapyContent />;
+    }
+    if (slug === 'integrative-medicine-intensive') {
+      return <IntegrativeMedicineIntensiveContent />;
     }
     if (slug === 'aletheia-cell-therapy') {
       return (
@@ -150,31 +148,6 @@ export default function ServiceDetail() {
     }
     if (slug === 'vasectomies') {
       return <VasectomiesContent />;
-    }
-    if (slug === 'autoimmune-diseases') {
-      return (
-        <div className="text-slate-700 mt-4 max-w-[620px] space-y-4">
-          <p>
-            At Aletheia we address immune support with comprehensive and personalized protocols. We partner with our patients to
-            find the root causes of immune system imbalances. Our functional medicine approach helps optimize the body’s natural
-            defenses and promote overall well‑being.
-          </p>
-          <p>
-            We believe that patient wellness is not just about treating symptoms but about addressing the root causes of immune
-            system imbalances. Our approach is based on functional medicine, which takes a holistic view of the patient’s health and
-            considers all aspects of their lifestyle, environment, and genetics.
-          </p>
-          <p>
-            We work closely with each patient to develop a personalized protocol that addresses their unique needs. Our
-            comprehensive approach includes not just medical treatments but also lifestyle modifications, nutritional counseling,
-            and stress management techniques.
-          </p>
-          <p>
-            We aim to optimize the body’s natural defenses and promote overall well‑being by addressing factors such as chronic
-            inflammation, food sensitivities, gut health, and environmental toxins.
-          </p>
-        </div>
-      );
     }
     if (slug === 'thermography') {
       return (
@@ -277,12 +250,8 @@ export default function ServiceDetail() {
                   ? 'aspect-[550/1196]'
                   : slug === 'weight-loss'
                   ? 'aspect-[550/538]'
-                  : slug === 'lab-services'
-                  ? 'aspect-[550/780]'
                   : slug === 'red-light-therapy'
                   ? 'aspect-[550/588]'
-                  : slug === 'autoimmune-diseases'
-                  ? 'aspect-[550/832]'
                   : slug === 'infusion-therapy'
                   ? 'aspect-[550/2263]'
                   : slug === 'aletheia-cell-therapy'
@@ -300,7 +269,7 @@ export default function ServiceDetail() {
             </div>
           </div>
           <div>
-            {slug !== 'primary-care' && slug !== 'thermography' && slug !== 'wound-care' && slug !== 'hormone-balance-therapy' && slug !== 'vasectomies' && slug !== 'vitamins-and-supplements' && slug !== 'weight-loss' && slug !== 'hyperbaric-oxygen-therapy' && slug !== 'lab-services' && slug !== 'red-light-therapy' && slug !== 'autoimmune-diseases' && slug !== 'infusion-therapy' && slug !== 'aletheia-cell-therapy' && (
+            {slug !== 'primary-care' && slug !== 'thermography' && slug !== 'wound-care' && slug !== 'hormone-balance-therapy' && slug !== 'vasectomies' && slug !== 'vitamins-and-supplements' && slug !== 'weight-loss' && slug !== 'hyperbaric-oxygen-therapy' && slug !== 'red-light-therapy' && slug !== 'infusion-therapy' && slug !== 'aletheia-cell-therapy' && slug !== 'integrative-medicine-intensive' && (
               <>
                 <h2 className="text-[28px] text-[rgb(38,69,123)] font-semibold">About {svc.title}</h2>
                 <hr className="w-20 h-[2px] bg-[rgb(199,90,51)] border-0 mt-2" />
@@ -463,46 +432,6 @@ export default function ServiceDetail() {
         </section>
       )}
 
-      {/* Lab Services wellness block full-width (no card) */}
-      {slug === 'lab-services' && (
-        <section className="py-10">
-          <div className="container max-w-[1100px] px-6">
-            <div className="space-y-6">
-              <p>
-                At Aletheia, we make it our mission to understand our patients' health status and guide them towards their desired
-                outcomes. During our wellness exams, we take a personalized approach to determine which tests would be most relevant
-                for each patient's health goals or underlying factors contributing to any health concerns.
-              </p>
-              <p>
-                We believe that true health is more than just the absence of disease, it is a holistic approach that encompasses
-                the physical, mental, and emotional wellbeing of our patients. Our team of dedicated healthcare professionals is
-                committed to providing comprehensive care that addresses all aspects of our patients' health.
-              </p>
-              <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">Our approach to patient wellness includes:</h3>
-              <ul className="list-disc pl-6 space-y-4 text-slate-700">
-                <li>
-                  <strong>Personalized Wellness Exams:</strong> Our team takes the time to understand each patient's unique health
-                  status and goals to create a personalized plan that addresses their specific needs.
-                </li>
-                <li>
-                  <strong>Comprehensive Testing:</strong> We utilize the latest technology and diagnostic tools to provide a
-                  thorough evaluation of our patients' health status.
-                </li>
-                <li>
-                  <strong>Collaborative Care:</strong> We work closely with other healthcare providers to ensure our patients
-                  receive the best possible care.
-                </li>
-                <li>
-                  <strong>Education and Support:</strong> We provide our patients with the information and resources they need to
-                  make informed decisions about their health and support them every step of the way.
-                </li>
-              </ul>
-              <p>At Aletheia, we are committed to helping our patients achieve optimal health and wellbeing.</p>
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* Infusion Therapy Q&A full-width */}
       {slug === 'infusion-therapy' && (
         <section className="py-12">
@@ -564,62 +493,6 @@ export default function ServiceDetail() {
               <p>At the beginning of treatment, your Aletheia Integrative provider prepares the drip. Then, they clean your arm and carefully insert a very thin needle into a vein in your inner elbow. The needle connects to a catheter attached to the IV drip. The IV slowly lets nutrients into your bloodstream, where they’re processed by your cells.</p>
               <p>You can read a book, listen to music, or take a nap during treatment. Once the drip finishes, your provider removes the needle, bandages your arm, and provides recovery instructions.</p>
               <p>Call Aletheia Integrative today to schedule an infusion therapy appointment or book your visit online.</p>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {slug === 'autoimmune-diseases' && (
-        <section className="py-12">
-          <div className="container max-w-[1100px] px-6 space-y-8">
-            <h2 className="text-[32px] text-[rgb(199,90,51)] font-semibold">Unlock Your Health’s Potential</h2>
-
-            <div className="space-y-6 text-slate-700">
-              <p>
-                In functional medicine, testing for autoimmune diseases involves a comprehensive and individualized approach to
-                understand the underlying factors contributing to immune system dysfunction. Rather than just focusing on symptom
-                management, we aim to identify and address the root causes of autoimmune conditions. Our personalized protocol
-                utilizes:
-              </p>
-
-              <div className="space-y-4">
-                <div>
-                  <p className="font-semibold">1. A Comprehensive Assessment</p>
-                  <p>Beginning with a thorough patient history, examining lifestyle, stress levels, diet, sleep patterns, and environmental exposures. Also assessing for any underlying conditions or chronic stressors.</p>
-                </div>
-                <div>
-                  <p className="font-semibold">2. Nutrient Optimization</p>
-                  <p>Ensure optimal levels of key nutrients essential for immune function, such as vitamins A, C, D, and zinc. Customized infusions designed to replenish depleted nutrients, boost immune support and reduce oxidative stress may be offered. Individualized supplementation may be recommended based on blood tests.</p>
-                </div>
-                <div>
-                  <p className="font-semibold">3. Gut Health Optimization</p>
-                  <p>Your gut plays a significant role in immune function. We’ll focus on gut health through probiotics, prebiotics, and dietary measures. Identifying and addressing any imbalances in the gut microbiome.</p>
-                </div>
-                <div>
-                  <p className="font-semibold">4. Stress Management</p>
-                  <p>Implementing stress reduction techniques, as chronic stress can suppress the immune system. This may include mindfulness practices, relaxation techniques, and lifestyle modifications.</p>
-                </div>
-                <div>
-                  <p className="font-semibold">5. Optimizing Sleep Patterns</p>
-                  <p>Prioritizing adequate and quality sleep, as it plays a crucial role in immune function. We’ll address sleep hygiene, circadian rhythms, and any underlying sleep disorders.</p>
-                </div>
-                <div>
-                  <p className="font-semibold">6. Detoxification Support</p>
-                  <p>Evaluating exposure to environmental toxins and supporting the body’s natural detoxification pathways. This may involve dietary changes, targeted supplementation, and lifestyle modifications.</p>
-                </div>
-                <div>
-                  <p className="font-semibold">7. Individualized Herbal and Supplement Support</p>
-                  <p>Incorporating immune‑modulating herbs based on individual needs. Echinacea, astragalus, and medicinal mushrooms like reishi and shiitake are prime examples.</p>
-                </div>
-              </div>
-
-              <p>
-                We’ll continuously assess the effectiveness of the protocol through regular follow‑ups and appropriate testing,
-                adjusting the approach based on your individual response and addressing any emerging imbalances or changing needs.
-              </p>
-              <p>
-                Book a free initial consultation to learn more about our approach! 531‑333‑2037
-              </p>
             </div>
           </div>
         </section>

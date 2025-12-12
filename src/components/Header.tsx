@@ -1,26 +1,23 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-// Services dropdown items - exactly matching real template
+// Services dropdown items
+// Order is row-based to create a balanced 4-per-row dropdown
 const servicesItems = [
   { label: "PRIMARY CARE", href: "/service/primary-care" },
   { label: "THERMOGRAPHY", href: "/service/thermography" },
-  { label: "WOUND CARE", href: "/service/wound-care" },
-  { label: "HORMONE BALANCE THERAPY", href: "/service/hormone-balance-therapy" },
+  { label: "HORMONE OPTIMIZATION THERAPY", href: "/service/hormone-balance-therapy" },
   { label: "VASECTOMIES", href: "/service/vasectomies" },
-  { label: "", href: "" }, // empty cell
+
   { label: "VITAMINS AND SUPPLEMENTS", href: "/service/vitamins-and-supplements" },
   { label: "WEIGHT LOSS", href: "/service/weight-loss" },
-  { label: "", href: "" }, // empty cell
+  { label: "WOUND CARE", href: "/service/wound-care" },
+  { label: "INTEGRATIVE MEDICINE 90 DAY INTENSIVE", href: "/service/integrative-medicine-intensive" },
+
   { label: "HYPERBARIC OXYGEN THERAPY", href: "/service/hyperbaric-oxygen-therapy" },
-  { label: "LAB SERVICES", href: "/service/lab-services" },
-  { label: "", href: "" }, // empty cell
   { label: "RED LIGHT THERAPY", href: "/service/red-light-therapy" },
-  { label: "AUTOIMMUNE DISEASES", href: "/service/autoimmune-diseases" },
-  { label: "", href: "" }, // empty cell
   { label: "INFUSION THERAPY", href: "/service/infusion-therapy" },
-  { label: "ALETHEIA CELL THERAPY", href: "/service/aletheia-cell-therapy" },
-  { label: "", href: "" }, // empty cell
+  { label: "REGENERATIVE MEDICINE", href: "/service/aletheia-cell-therapy" },
 ];
 
 export default function Header() {
@@ -114,22 +111,19 @@ export default function Header() {
               <NavLink to="/services" className={linkClass}>Services</NavLink>
               {/* Dropdown - 3 column grid */}
               <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg z-50" style={{ width: '760px' }}>
-                <div className="relative grid grid-cols-3 pl-6 pr-6 gap-x-10">
+                <div className="relative grid grid-cols-3 grid-rows-4 grid-flow-col pl-6 pr-6 gap-x-10">
                   {/* vertical separators */}
                   <div className="absolute top-4 bottom-4 left-1/3 w-px bg-gray-200" />
                   <div className="absolute top-4 bottom-4 left-2/3 w-px bg-gray-200" />
                   {servicesItems.map((item, idx) => (
-                    item.label ? (
-                      <Link 
-                        key={idx}
-                        to={item.href} 
-                        className={`block py-6 text-left text-[11px] leading-6 tracking-[0.15em] uppercase font-semibold text-[#C75A33] hover:bg-gray-50 whitespace-nowrap ${idx%3===0 ? 'pl-2 pr-14' : ''} ${idx%3===1 ? 'pl-8 pr-12' : ''} ${idx%3===2 ? 'pl-8 pr-4' : ''}`}
-                      >
-                        {item.label}
-                      </Link>
-                    ) : (
-                      <div key={idx} className="px-6 py-4"></div>
-                    )
+                    <Link
+                      key={idx}
+                      to={item.href}
+                      className="block py-4 text-left text-[10px] leading-4 tracking-[0.14em] uppercase font-semibold text-[#C75A33] hover:bg-gray-50 whitespace-normal break-words"
+                      style={{ maxWidth: 190 }}
+                    >
+                      {item.label}
+                    </Link>
                   ))}
                 </div>
               </div>

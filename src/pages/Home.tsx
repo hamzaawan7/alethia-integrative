@@ -144,10 +144,10 @@ export default function Home() {
           ))}
         </div>
         {/* Overlay */}
-        <div className="absolute inset-0 bg-white/55" />
+        <div className="absolute inset-0 bg-white/45" />
         {/* Text */}
         <div className="relative w-full max-w-[1200px] px-5 md:px-8 py-24 mx-auto">
-          <div className="max-w-[760px] bg-white/55 p-8 mt-24 ml-[-26px]">
+          <div className="max-w-[760px] bg-white/45 p-8 mt-24 ml-[-26px]">
             <h1 className="text-[72px] leading-[1.05] font-semibold text-[rgb(38,69,123)] tracking-tight">
               Aletheia
               <br /> Integrative
@@ -177,13 +177,13 @@ export default function Home() {
               href: '/therapeutic-services',
               img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/shutterstock_1250158696%20(1).jpg',
             }, {
-              title: 'Infusion Therapy',
-              href: '/service/infusion-therapy',
-              img: 'https://sa1s3optim.patientpop.com/768x/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/shutterstock_1921584131.jpg',
+              title: 'Regenerative Medicine',
+              href: '/service/aletheia-cell-therapy',
+              img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/AdobeStock_168081720.jpeg',
             }, {
-              title: 'Health Coaching',
-              href: '/health-coaching',
-              img: 'https://sa1s3optim.patientpop.com/768x/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/shutterstock_2168252655.jpg',
+              title: 'Hormone Optimization Therapy',
+              href: '/service/hormone-balance-therapy',
+              img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/shutterstock_2111443934.jpg',
             }].map((item, idx) => (
               <Link key={idx} to={item.href} className="group">
                 <div className="mx-auto w-60 h-60 rounded-full overflow-hidden bg-white shadow">
@@ -218,7 +218,7 @@ export default function Home() {
             </h2>
             <hr className="mt-3 mb-4 h-[2px] w-full bg-[rgb(38,69,123)]/70 border-0" />
             <p className="text-slate-700">
-              At Aletheia Integrative experienced family medicine and direct primary care provider Jaime Dodge, MD, and the team including Tim Miller, APRN
+              At Aletheia Integrative experienced family medicine and direct primary care provider Jaime Dodge, MD, and the team
               provide personalized functional medicine to individuals and families in Lincoln, Nebraska, and throughout Lancaster County.
             </p>
             <div className="mt-6 flex gap-3">
@@ -365,52 +365,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SEE THE SAVINGS! */}
-      <section className="py-14">
-        <div className="container max-w-[1100px] px-6 grid md:grid-cols-2 gap-10 items-center">
-          {/* Left: copy */}
-          <div>
-            <h3 className="text-[rgb(38,69,123)] text-[36px] md:text-[40px] font-semibold">SEE THE SAVINGS!</h3>
-            <div className="text-[rgb(199,90,51)] text-[22px] md:text-[26px] mt-1">Comparison of average costs</div>
-            <hr className="mt-3 h-[2px] w-full bg-[rgb(38,69,123)]/30 border-0" />
-            <div className="mt-4 text-slate-700 space-y-3">
-              <p>
-                On average, Direct Primary Care patients spend less on health care and less time in the hospital than in traditional
-                offices. Working directly with you means we pass the savings on to you. With traditional insurance, you may get one free
-                visit per year. As an Aletheia member, you can see us as often as you need with no doctor fee charges or co‑pays.
-              </p>
-              <p className="font-semibold">This chart uses the following amounts:</p>
-              <div className="space-y-2 text-[15px]">
-                <p>The average costs for the following insurances used in this graphic are (looking at a 40 year old insured in Nebraska):</p>
-                <p>
-                  Traditional Insurance premium is $6,804/year with average out‑of‑pocket expenses at $8,575. This includes the cost of
-                  $126 for a typical 30 min. visit to a physician in Nebraska (Bestcare.org) after the once a year covered visit.
-                </p>
-                <p>High Deductible Coverage premium is $3,204/year. Health Share Plan premium is $3,000/year.</p>
-                <p>An Aletheia membership is $1,440/year.</p>
-              </div>
-            </div>
-            <div className="mt-6">
-              <Link
-                to="/contact-us"
-                className="inline-block px-6 py-3 text-white uppercase tracking-[0.1em] bg-[rgb(38,69,123)] hover:bg-[#1F3761] transition-colors duration-200"
-              >
-                contact us
-              </Link>
-            </div>
-          </div>
-          {/* Right: chart image */}
-          <div>
-            <img
-              src="https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/Screen Shot 2023-08-28 at 9.14.46 AM.png"
-              alt="Comparison chart"
-              className="w-full h-auto object-contain"
-              loading="eager"
-            />
           </div>
         </div>
       </section>

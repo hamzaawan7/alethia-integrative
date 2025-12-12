@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Header from "../components/Header";
 import ThirdPartyLoader from "../components/ThirdPartyLoader";
 import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function RootLayout() {
   // Temporarily disable third‑party widgets in dev to prevent loader/runtime errors.
@@ -13,6 +14,7 @@ export default function RootLayout() {
 
   return (
     <div className="app">
+      <ScrollToTop />
       <ThirdPartyLoader />
       <Header />
       <main style={{ minHeight: "60vh" }}>
