@@ -174,7 +174,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-10 text-center">
             {[{
               title: 'Integrative Medicine',
-              href: '/therapeutic-services',
+              href: '/service/primary-care',
               img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/shutterstock_1250158696%20(1).jpg',
             }, {
               title: 'Regenerative Medicine',

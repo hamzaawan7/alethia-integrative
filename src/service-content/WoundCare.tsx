@@ -31,11 +31,16 @@ export default function WoundCareContent() {
       <p>
         Together, we can help you get back to living your best life, free from the pain and worry of non‑healing wounds.
       </p>
-      <p className="underline">
-        <a href="https://aletheia.reliefdiscovery.com/wc-consult" target="_self" rel="noopener noreferrer">
-          Ready to connect? Schedule your free consult here
+      <div>
+        <a
+          href="https://aletheia.reliefdiscovery.com/wc-consult"
+          target="_self"
+          rel="noopener noreferrer"
+          className="inline-block px-6 py-3 text-white uppercase tracking-[0.1em] bg-[rgb(38,69,123)] hover:bg-[#1F3761] transition-colors duration-200"
+        >
+          Ready to connect?
         </a>
-      </p>
+      </div>
     </div>
   );
 }

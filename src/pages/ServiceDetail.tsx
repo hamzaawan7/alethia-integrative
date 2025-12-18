@@ -247,7 +247,7 @@ export default function ServiceDetail() {
                   : slug === 'vasectomies'
                   ? 'aspect-[550/538]'
                   : slug === 'vitamins-and-supplements'
-                  ? 'aspect-[550/1196]'
+                  ? 'aspect-[550/700]'
                   : slug === 'weight-loss'
                   ? 'aspect-[550/538]'
                   : slug === 'red-light-therapy'
@@ -859,11 +859,16 @@ export default function ServiceDetail() {
                 <p><strong>Q:</strong> Can all wounds be healed?</p>
                 <p><strong>A:</strong> While our healing rate is 97%, some wounds may not fully heal due to underlying conditions. Our goal is to optimize quality of life, prevent complications, manage pain, and maintain the best possible wound condition. We also provide palliative wound care when appropriate.</p>
               </div>
-              <p className="underline">
-                <a href="https://aletheia.reliefdiscovery.com/wc-consult" target="_self" rel="noopener noreferrer">
+              <div>
+                <a
+                  href="https://aletheia.reliefdiscovery.com/wc-consult"
+                  target="_self"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 text-white uppercase tracking-[0.1em] bg-[rgb(38,69,123)] hover:bg-[#1F3761] transition-colors duration-200"
+                >
                   Click here for more information
                 </a>
-              </p>
+              </div>
             </div>
           </div>
         </section>
