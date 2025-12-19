@@ -26,18 +26,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   const openGetInTouchModal = () => {
-    const ev = new CustomEvent('actionCall', {
-      detail: { callParameter: 'c94c6f5b-e23a-44fa-94f6-759bf4ad676d' },
-    });
-    window.dispatchEvent(ev);
-    // Fallback: if widget manager isn't ready, route to Contact page shortly
-    setTimeout(() => {
-      type WidgetManagerType = { widgetClick?: (...args: unknown[]) => unknown } | undefined;
-      const wm = (window as Window & typeof globalThis & { WidgetManager?: WidgetManagerType }).WidgetManager;
-      if (!wm || typeof wm.widgetClick !== 'function') {
-        navigate('/contact-us');
-      }
-    }, 800);
+    navigate('/book-online');
     setMobileOpen(false);
   };
 

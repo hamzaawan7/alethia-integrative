@@ -92,21 +92,6 @@ export default function BookOnline() {
             el.style.opacity = '1';
           }}
         />
-
-        {/* Fallback calendar / booking link while branded LeadConnector domain is not resolving */}
-        <div className="mt-8 text-center">
-          <p className="text-sm text-gray-700 mb-3">
-            If the embedded booking form does not load, you can also schedule through our main booking calendar.
-          </p>
-          <a
-            href="https://www.aletheia.md/schedule?utm_medium=markup"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold uppercase tracking-[0.15em] bg-[rgb(38,69,123)] text-white hover:bg-[rgb(30,55,98)]"
-          >
-            Open Booking Calendar
-          </a>
-        </div>
       </section>
     </main>
   )

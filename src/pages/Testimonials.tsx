@@ -1,16 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-declare global {
-  interface Window {
-    wm?: {
-      initializeManager?: (practiceId: string) => void
-    }
-    triggerCustomEvent?: (callParameter: string, itemData: unknown) => void
-    wmOnScriptLoad?: () => void
-  }
-}
-
 type Review = {
   author: string;
   body: string;
@@ -184,47 +174,6 @@ export default function Testimonials() {
     handler();
     window.addEventListener('resize', handler);
     return () => window.removeEventListener('resize', handler);
-  }, []);
-
-  // Load legacy widget manager and init, so we can trigger the same Share Feedback modal
-  useEffect(() => {
-    const PRACTICE_ID = '01e81043-25b6-46c2-bd88-dc1830708de7';
-    const SRC = 'https://d35hk7lgnvai11.cloudfront.net/widgetManager.js';
-    const existing = document.getElementById('wm-script') as HTMLScriptElement | null;
-    const init = () => {
-      try {
-        if (window.wm && typeof window.wm.initializeManager === 'function') {
-          window.wm.initializeManager(PRACTICE_ID);
-        }
-      } catch (e) {
-        if (import.meta.env.DEV) {
-          console.warn('Widget manager init failed', e);
-        }
-      }
-    };
-    // Mirror legacy pattern where script tag uses onload="wmOnScriptLoad()"
-    window.wmOnScriptLoad = init;
-    if (!existing) {
-      const s = document.createElement('script');
-      s.src = SRC;
-      s.async = true;
-      s.defer = true;
-      s.id = 'wm-script';
-      s.onload = () => {
-        // Some templates call wmOnScriptLoad(); call our shim
-        window.wmOnScriptLoad?.();
-      };
-      document.body.appendChild(s);
-    } else {
-      init();
-    }
-
-    // Define legacy-compatible trigger function for any listeners expecting it
-    if (!window.triggerCustomEvent) {
-      window.triggerCustomEvent = (callParameter: string, itemData: unknown) => {
-        window.dispatchEvent(new CustomEvent('actionCall', { detail: { callParameter, itemData } }));
-      };
-    }
   }, []);
 
   const openShareFeedback = () => {
