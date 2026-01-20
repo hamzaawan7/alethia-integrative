@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Blog from './pages/Blog'
 import BlogArchive from './pages/BlogArchive'
+import BlogDetail from './pages/BlogDetail'
 import BookOnline from './pages/BookOnline'
 import ContactUs from './pages/ContactUs'
 import Contents from './pages/Contents'
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="about" element={<About />} />
         <Route path="blog" element={<Blog />} />
         <Route path="blog-archive" element={<BlogArchive />} />
+        <Route path="post/:slug" element={<BlogDetail />} />
         <Route path="book-online" element={<BookOnline />} />
         <Route path="contact-us" element={<ContactUs />} />
         <Route path="contact" element={<Navigate to="/contact-us" replace />} />
