@@ -1,35 +1,5 @@
 import { Link } from 'react-router-dom'
-
-type Post = {
-  title: string
-  date: string // ISO-like for dateTime
-  excerpt: string
-  slug: string
-}
-
-const posts: Post[] = [
-  {
-    title: 'How Regenerative Cell Therapy Helps Athletes Recover From Sports Injuries In Lincoln NE',
-    date: '2025-11-14',
-    excerpt:
-      'At Aletheia Integrative, we know how deeply frustrating injuries can be. For active people in Lincoln who thrive on movement — pain and downtime can feel like losing a part of yourself.',
-    slug: 'how-regenerative-cell-therapy-helps-athletes-recover-from-sports-injuries-in-lincoln-ne',
-  },
-  {
-    title: 'How Regenerative Cell Therapy Can Transform Joint Pain Relief In Lincoln, NE',
-    date: '2025-11-14',
-    excerpt:
-      "At Aletheia Integrative, we understand that joint pain isn’t just physical — it’s emotional. It can rob you of the activities and confidence that make life enjoyable.",
-    slug: 'how-regenerative-cell-therapy-can-transform-joint-pain-relief-in-lincoln-ne',
-  },
-  {
-    title: 'Red Light Therapy: A Natural Way To Support Skin, Energy, And Pain Relief',
-    date: '2025-11-13',
-    excerpt:
-      'Red light therapy is a noninvasive treatment that uses light to help support your skin, boost your energy, and combat pain. Read on to learn how it works.',
-    slug: 'red-light-therapy-a-natural-way-to-support-skin-energy-and-pain-relief',
-  },
-]
+import { blogPosts } from '../data/blogPosts'
 
 export default function Blog() {
   const fmt = (iso: string) =>
@@ -38,6 +8,12 @@ export default function Blog() {
       day: '2-digit',
       year: 'numeric',
     }).format(new Date(iso))
+
+  // Sort posts by date (newest first) and take first 6 for the main page
+  const sortedPosts = [...blogPosts].sort((a, b) => 
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+  ).slice(0, 6)
+
   return (
     <main>
       {/* Spacer below fixed header */}
@@ -60,8 +36,18 @@ export default function Blog() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {posts.map((p) => (
+            {sortedPosts.map((p) => (
               <article key={p.slug} className="bg-[#eef2f6] p-8">
+                <div className="aspect-video mb-4 overflow-hidden">
+                  <img 
+                    src={p.image} 
+                    alt={p.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = '/images/blog/placeholder.svg'
+                    }}
+                  />
+                </div>
                 <Link to={`/post/${p.slug}`} className="block">
                   <h2 className="text-[18px] leading-6 text-slate-800 font-semibold">{p.title}</h2>
                 </Link>
@@ -69,7 +55,7 @@ export default function Blog() {
                   <time dateTime={p.date}>{fmt(p.date)}</time>
                 </Link>
                 <hr className="mt-3 mb-4 border-slate-200" />
-                <p className="text-slate-600 leading-7">{p.excerpt}</p>
+                <p className="text-slate-600 leading-7 line-clamp-3">{p.excerpt}</p>
                 <div className="mt-6">
                   <Link
                     to={`/post/${p.slug}`}
