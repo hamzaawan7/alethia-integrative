@@ -1,9 +1,17 @@
 import { useParams, Link } from 'react-router-dom'
 import { blogPosts } from '../data/blogPosts'
+import { useDocumentHead } from '../hooks/useDocumentHead'
 
 export default function BlogDetail() {
   const { slug } = useParams<{ slug: string }>()
   const post = blogPosts.find((p) => p.slug === slug)
+
+  // Set document head meta tags
+  useDocumentHead({
+    title: post?.metaTitle || post?.title ? `${post?.metaTitle || post?.title} | Aletheia Integrative` : 'Blog | Aletheia Integrative',
+    description: post?.metaDescription || post?.excerpt,
+    keywords: post?.keywords
+  })
 
   if (!post) {
     return (

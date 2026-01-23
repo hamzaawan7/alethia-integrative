@@ -6,6 +6,9 @@ export type BlogPost = {
   slug: string
   image: string
   content: string
+  metaTitle?: string
+  metaDescription?: string
+  keywords?: string
 }
 
 export const blogPosts: BlogPost[] = [
@@ -122,7 +125,10 @@ export const blogPosts: BlogPost[] = [
 <h2>Ready to Start Healing with HBOT?</h2>
 <p>You don't have to settle for chronic symptoms. You don't have to "wait it out" while your body struggles to catch up.</p>
 <p>If you're ready to feel better—and stay better—<strong>Hyperbaric Oxygen Therapy at Aletheia Integrative</strong> might be the answer you've been looking for.</p>
-<p>Let the team guide you through a personalized healing process that combines science, compassion, and results. <a href="/contact-us">Contact us today to schedule your consultation</a></p>`
+<p>Let the team guide you through a personalized healing process that combines science, compassion, and results. <a href="/contact-us">Contact us today to schedule your consultation</a></p>`,
+    metaTitle: "Hyperbaric Oxygen Therapy Lincoln NE | HBOT Treatment | Aletheia Integrative",
+    metaDescription: "Discover the healing power of Hyperbaric Oxygen Therapy (HBOT) at Aletheia Integrative in Lincoln, NE. Treat chronic pain, slow-healing wounds, fatigue & more with our integrative approach.",
+    keywords: "hyperbaric oxygen therapy Lincoln NE, HBOT Lincoln Nebraska, hyperbaric chamber Lincoln, oxygen therapy for wounds, chronic pain treatment Lincoln, Aletheia Integrative"
   },
   {
     id: 2,
@@ -203,7 +209,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 <h2>Ready to Experience the Healing Power of NIR Light?</h2>
 <p>If you're tired of being told to "just live with it" or "take this prescription," you're not alone. At Aletheia Integrative, we offer a better way.</p>
 <p>Our team is here to support your wellness journey every step of the way—and we'd love to help you explore whether <strong>Near Infrared Light Therapy in Lincoln, NE</strong> is right for you.</p>
-<p><a href="/contact-us">Contact us today to schedule a consultation</a> and find out how light can help you feel like yourself again.</p>`
+<p><a href="/contact-us">Contact us today to schedule a consultation</a> and find out how light can help you feel like yourself again.</p>`,
+    metaTitle: "Near Infrared Light Therapy Lincoln NE | NIR Therapy | Aletheia Integrative",
+    metaDescription: "Discover the healing benefits of Near Infrared Light Therapy at Aletheia Integrative in Lincoln, NE. Non-invasive treatment for chronic pain, inflammation, and faster healing.",
+    keywords: "near infrared light therapy Lincoln NE, NIR therapy Lincoln Nebraska, photobiomodulation therapy, red light therapy, chronic pain treatment, inflammation relief, Aletheia Integrative"
   },
   {
     id: 3,
@@ -275,7 +284,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 
 <h2>Reclaim Your Movement and Your Life</h2>
 <p>Joint pain shouldn't define your future. With regenerative medicine, you can move beyond limitations and rediscover what it feels like to live without constant discomfort.</p>
-<p>If you're ready to take the next step toward freedom from pain, contact us to set up a consultation today.</p>`
+<p>If you're ready to take the next step toward freedom from pain, contact us to set up a consultation today.</p>`,
+    metaTitle: "Regenerative Cell Therapy Lincoln NE | Joint Pain Relief | Aletheia Integrative",
+    metaDescription: "Transform joint pain relief with regenerative cell therapy at Aletheia Integrative in Lincoln, NE. Natural healing for arthritis, inflammation & joint injuries.",
+    keywords: "regenerative cell therapy Lincoln NE, joint pain relief Lincoln Nebraska, stem cell therapy joints, arthritis treatment Lincoln, regenerative medicine, Aletheia Integrative"
   },
   {
     id: 4,
@@ -350,7 +362,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 <p>If you're tired of guessing which vitamins might work or wondering why you still feel "off," it's time to get real answers and personalized guidance.</p>
 <p>Let's uncover what your body truly needs to thrive.</p>
 <p><strong>At Aletheia Integrative, we make wellness simple, scientific, and personalized.</strong></p>
-<p>To learn more about how personalized supplement recommendations can help you feel your best again, <a href="https://www.aletheia.md/book-online">click here to set up a consultation</a> today.</p>`
+<p>To learn more about how personalized supplement recommendations can help you feel your best again, <a href="https://www.aletheia.md/book-online">click here to set up a consultation</a> today.</p>`,
+    metaTitle: "Nutritional Supplement Recommendations Lincoln NE | Aletheia Integrative",
+    metaDescription: "Get personalized nutritional supplement recommendations at Aletheia Integrative in Lincoln, NE. Bounce back naturally from fatigue, brain fog & nutrient deficiencies.",
+    keywords: "nutritional supplements Lincoln NE, vitamin recommendations Lincoln Nebraska, personalized supplements, functional medicine nutrition, fatigue treatment, Aletheia Integrative"
   },
   {
     id: 5,
@@ -409,7 +424,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 
 <h2>Conclusion</h2>
 <p>At <strong>Aletheia Integrative</strong>, we're here to help patients in Lincoln heal better, not just faster. Our <a href="https://www.aletheia.md/service/hyperbaric-oxygen-therapy?utm_source=chatgpt.com">Hyperbaric Oxygen Therapy</a> service is designed to support your body's natural ability to recover after surgery, giving you the oxygen, strength, and confidence you need for the next chapter of your life.</p>
-<p>If you've recently had surgery and are struggling with recovery, don't wait any longer. We'd love to talk with you about how HBOT can help. Simply <a href="https://www.aletheia.md/book-online">click here to set up a consultation</a></p>`
+<p>If you've recently had surgery and are struggling with recovery, don't wait any longer. We'd love to talk with you about how HBOT can help. Simply <a href="https://www.aletheia.md/book-online">click here to set up a consultation</a></p>`,
+    metaTitle: "Post-Surgical Recovery HBOT Lincoln NE | Hyperbaric Oxygen Therapy | Aletheia Integrative",
+    metaDescription: "Speed up post-surgical recovery with Hyperbaric Oxygen Therapy at Aletheia Integrative in Lincoln, NE. Reduce infection risk, swelling & heal faster.",
+    keywords: "post surgical recovery Lincoln NE, HBOT surgery recovery, hyperbaric oxygen therapy healing, wound healing after surgery, faster recovery Lincoln, Aletheia Integrative"
   },
   {
     id: 6,
@@ -533,7 +551,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 <h2>Conclusion: Boost Your Immunity with Aletheia Integrative</h2>
 <p>If you're ready to give your immune system the boost it needs, <a href="https://www.aletheia.md/service/infusion-therapy?utm_source=chatgpt.com">IV Immune Support Infusions at Aletheia Integrative</a> in Lincoln, NE provide a safe, effective, and personalized solution.</p>
 <p>Our team is dedicated to helping you feel your best and stay healthy year-round. Don't wait until you're sick to take care of your immune health.</p>
-<p><a href="https://www.aletheia.md/book-online">Click here to set up a consultation</a> and start your journey toward stronger immunity and better wellness today</p>`
+<p><a href="https://www.aletheia.md/book-online">Click here to set up a consultation</a> and start your journey toward stronger immunity and better wellness today</p>`,
+    metaTitle: "IV Immune Support Infusions Lincoln NE | Vitamin Therapy | Aletheia Integrative",
+    metaDescription: "Boost your immune system with IV Immune Support Infusions at Aletheia Integrative in Lincoln, NE. Custom vitamin blends for cold & flu season protection.",
+    keywords: "IV immune support Lincoln NE, vitamin infusions Lincoln Nebraska, immune boosting therapy, IV vitamin therapy, cold flu prevention, Aletheia Integrative"
   },
   {
     id: 7,
@@ -628,7 +649,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 
 <h2>Ready to Recharge?</h2>
 <p>If you're tired of being tired… if your mind feels foggy… if you're looking for natural ways to age better, feel stronger, and think clearer—NAD+ Infusion Therapy at Aletheia Integrative might be the solution you've been looking for.</p>
-<p><a href="https://www.aletheia.md/book-online">Contact us today to schedule your consultation</a>. Let's unlock the power of NAD+—and help your body feel like it's working with you again.</p>`
+<p><a href="https://www.aletheia.md/book-online">Contact us today to schedule your consultation</a>. Let's unlock the power of NAD+—and help your body feel like it's working with you again.</p>`,
+    metaTitle: "NAD+ Infusion Therapy Lincoln NE | Anti-Aging & Energy | Aletheia Integrative",
+    metaDescription: "Recharge your mind and body with NAD+ Infusion Therapy at Aletheia Integrative in Lincoln, NE. Feel younger, clearer & stronger with cellular regeneration.",
+    keywords: "NAD+ infusion therapy Lincoln NE, NAD therapy Lincoln Nebraska, anti-aging therapy, cellular regeneration, energy boost infusion, brain fog treatment, Aletheia Integrative"
   },
   {
     id: 8,
@@ -719,7 +743,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 <p>If you've been feeling like something's off… if you've been trying to power through brain fog, exhaustion, or low motivation… it's time to stop pushing and start replenishing.</p>
 <p><strong>IV Infusion Therapy</strong> can be a powerful step toward feeling whole again. And at Aletheia Integrative, we make that step simple, supportive, and entirely focused on you.</p>
 <p>Ready to see how nutrient infusions could support your goals?</p>
-<p><strong><a href="https://www.aletheia.md/book-online">Call us today or schedule your consultation online.</a></strong> Let's talk through your symptoms, your needs, and your goals—then build an IV plan that's aligned with your wellness journey.</p>`
+<p><strong><a href="https://www.aletheia.md/book-online">Call us today or schedule your consultation online.</a></strong> Let's talk through your symptoms, your needs, and your goals—then build an IV plan that's aligned with your wellness journey.</p>`,
+    metaTitle: "IV Infusion Therapy Lincoln NE | Vitamin Drip | Aletheia Integrative",
+    metaDescription: "Rebuild your energy with IV Infusion Therapy at Aletheia Integrative in Lincoln, NE. Custom vitamin drips for fatigue, immunity, hydration & wellness.",
+    keywords: "IV infusion therapy Lincoln NE, vitamin drip Lincoln Nebraska, IV hydration therapy, energy boost IV, wellness infusions, Aletheia Integrative"
   },
   {
     id: 9,
@@ -778,7 +805,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 <h2>Reclaim Your Strength and Confidence</h2>
 <p>Sports injuries shouldn't define your future. With <strong>pulled muscle recovery with regenerative medicine in Lincoln NE</strong>, you can rebuild stronger than before.</p>
 <p>Our mission at <strong>Aletheia Integrative</strong> is to help your body heal naturally—through innovative regenerative therapies that get you back in motion quickly and safely.</p>
-<p>If you're tired of sitting on the sidelines or dealing with recurring pain, now is the time to take action. <a href="https://www.aletheia.md/book-online">Click here to set up a consultation</a> and learn how regenerative cell therapy can help you move better, heal faster, and feel like yourself again.</p>`
+<p>If you're tired of sitting on the sidelines or dealing with recurring pain, now is the time to take action. <a href="https://www.aletheia.md/book-online">Click here to set up a consultation</a> and learn how regenerative cell therapy can help you move better, heal faster, and feel like yourself again.</p>`,
+    metaTitle: "Sports Injury Cell Therapy Lincoln NE | Regenerative Medicine | Aletheia Integrative",
+    metaDescription: "Recover faster from sports injuries with regenerative cell therapy at Aletheia Integrative in Lincoln, NE. Natural healing for athletes & active adults.",
+    keywords: "sports injury cell therapy Lincoln NE, regenerative medicine Lincoln Nebraska, pulled muscle recovery, athletic injury treatment, stem cell sports injuries, Aletheia Integrative"
   },
   {
     id: 10,
@@ -876,7 +906,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 <p>If you're ready to understand what's really behind your fatigue, we're here to help. At Aletheia Integrative, our functional primary care team takes the time to find the why — so you can finally experience sustainable energy, focus, and vitality.</p>
 <p>Don't settle for just "getting through" each day. You deserve to feel strong, alert, and alive.</p>
 <p>Let's uncover what your body needs to thrive.</p>
-<p>To learn more about our Functional Primary Care in Lincoln, NE, or to begin your personalized care plan, <a href="https://www.aletheia.md/book-online">click here to set up a consultation today</a>.</p>`
+<p>To learn more about our Functional Primary Care in Lincoln, NE, or to begin your personalized care plan, <a href="https://www.aletheia.md/book-online">click here to set up a consultation today</a>.</p>`,
+    metaTitle: "Chronic Fatigue Treatment Lincoln NE | Functional Primary Care | Aletheia Integrative",
+    metaDescription: "Discover why you're still tired with functional primary care at Aletheia Integrative in Lincoln, NE. Uncover root causes of chronic fatigue & regain energy.",
+    keywords: "chronic fatigue treatment Lincoln NE, functional primary care Lincoln Nebraska, fatigue specialist, root cause medicine, energy restoration, Aletheia Integrative"
   },
   {
     id: 11,
@@ -886,7 +919,7 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
     slug: "tired-of-migraines-and-fatigue-running-your-life-iv-therapy-could-be-the-relief-you-need",
     image: "/images/blog/2nd-sep-image.jpg",
     content: `<p>If you've ever had a migraine, you know it's more than just a headache. It's the kind of pain that steals your day, forces you into a dark room, and keeps you from being there for the people you love. Add chronic fatigue into the mix, and it can feel impossible to get through the demands of work, kids, and daily responsibilities.</p>
-<p>At <strong>Aletheia Integrative</strong> in Lincoln, Nebraska, we hear these struggles every day. That's why we offer <strong>IV Infusion Therapy</strong> as a solution for both <strong>migraine relief</strong> and fatigue. Unlike over-the-counter medications or quick fixes that barely scratch the surface, IV therapy delivers real, lasting support directly into your bloodstream.</p>
+<p>At <strong>Aletheia Integrative</strong> in Lincoln, Nebraska, we hear these struggles every day. That's why we offer <a href="https://www.aletheia.md/service/infusion-therapy?utm_source=chatgpt.com"><strong>IV Infusion Therapy</strong></a> as a solution for both <strong>migraine relief</strong> and fatigue. Unlike over-the-counter medications or quick fixes that barely scratch the surface, IV therapy delivers real, lasting support directly into your bloodstream.</p>
 <p>Imagine being able to get out of bed without pain, have the energy to get through the day, and finally feel like yourself again. That's what IV therapy can do.</p>
 
 <h2>Why Migraines and Fatigue Are So Common</h2>
@@ -925,7 +958,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 
 <h2>Conclusion</h2>
 <p>Migraines and chronic fatigue don't have to run your life. At Aletheia Integrative, our IV Infusion Therapy services are designed to help you feel better, faster. With custom blends that restore hydration, replenish nutrients, and relieve symptoms, you can finally take back your days.</p>
-<p>If you're ready to experience life without constant pain or exhaustion, we'd love to help. Simply <a href="https://www.aletheia.md/book-online">click here to set up a consultation</a>.</p>`
+<p>If you're ready to experience life without constant pain or exhaustion, we'd love to help. Simply <a href="https://www.aletheia.md/book-online">click here to set up a consultation</a>.</p>`,
+    metaTitle: "Migraine Relief IV Therapy Lincoln NE | Fatigue Treatment | Aletheia Integrative",
+    metaDescription: "Get relief from migraines and fatigue with IV Therapy at Aletheia Integrative in Lincoln, NE. Custom vitamin infusions for pain relief & energy restoration.",
+    keywords: "migraine IV therapy Lincoln NE, fatigue treatment Lincoln Nebraska, headache relief infusion, vitamin IV migraine, energy boost therapy, Aletheia Integrative"
   },
   {
     id: 12,
@@ -934,7 +970,7 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
     excerpt: "If you've been dealing with a diabetic ulcer or chronic wound that just won't heal, you're not alone—and we want you to know that there's hope. At Aletheia Integrative, we specialize in helping the body heal using Hyperbaric Oxygen Therapy.",
     slug: "hyperbaric-oxygen-therapy-for-diabetic-wounds-lincoln-ne",
     image: "/images/blog/aug-blog-image.jpg",
-    content: `<p>If you've been dealing with a diabetic ulcer or chronic wound that just won't heal, you're not alone—and we want you to know that there's hope. At <strong>Aletheia Integrative</strong>, we specialize in helping the body do what it was designed to do: heal. One of the most effective tools we offer for that healing process is <strong>Hyperbaric Oxygen Therapy</strong>, or HBOT.</p>
+    content: `<p>If you've been dealing with a diabetic ulcer or chronic wound that just won't heal, you're not alone—and we want you to know that there's hope. At <strong>Aletheia Integrative</strong>, we specialize in helping the body do what it was designed to do: heal. One of the most effective tools we offer for that healing process is <a href="https://www.aletheia.md/service/hyperbaric-oxygen-therapy?utm_source=chatgpt.com"><strong>Hyperbaric Oxygen Therapy</strong></a>, or HBOT.</p>
 <p>Hyperbaric Oxygen Therapy isn't just a futuristic concept—it's real science, grounded in evidence, and we've seen it change lives right here in Lincoln, NE. Whether you're newly diagnosed with diabetes or have been living with it for years, wounds that don't respond to traditional treatments are frustrating, painful, and can seriously impact your quality of life. That's where we come in.</p>
 <p>Through safe, medically supervised sessions in our pressurized oxygen chamber, we help your body absorb up to 15 times more oxygen than it normally can. Why does that matter? Because oxygen is the number one nutrient your body needs to repair damaged tissue—and for people with diabetes, that's often exactly where the problem begins.</p>
 <p>Let's talk about why <strong>Hyperbaric Oxygen Therapy for Diabetic Wounds in Lincoln NE</strong> is an essential step in restoring your health—and how we at Aletheia Integrative support you every step of the way.</p>
@@ -1024,7 +1060,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 
 <h2>Take the First Step Toward Healing</h2>
 <p>At Aletheia Integrative, we believe your body was designed to heal—it just needs the right support. With <strong>Hyperbaric Oxygen Therapy for Diabetic Wounds Lincoln NE</strong>, we're helping patients accelerate that healing process naturally, safely, and effectively.</p>
-<p>If you're ready to finally see progress with your wound, or want to learn more about how HBOT fits into your larger wellness plan, <a href="https://www.aletheia.md/book-online">click here to set up a consultation</a>. We're ready to walk with you on your path toward healing.</p>`
+<p>If you're ready to finally see progress with your wound, or want to learn more about how HBOT fits into your larger wellness plan, <a href="https://www.aletheia.md/book-online">click here to set up a consultation</a>. We're ready to walk with you on your path toward healing.</p>`,
+    metaTitle: "Diabetic Wound HBOT Lincoln NE | Hyperbaric Oxygen Therapy | Aletheia Integrative",
+    metaDescription: "Heal diabetic wounds faster with Hyperbaric Oxygen Therapy at Aletheia Integrative in Lincoln, NE. HBOT for diabetic ulcers, chronic wounds & faster recovery.",
+    keywords: "diabetic wound treatment Lincoln NE, HBOT diabetic ulcer, hyperbaric oxygen therapy wounds, chronic wound healing Lincoln, diabetic foot ulcer treatment, Aletheia Integrative"
   },
   {
     id: 13,
@@ -1041,7 +1080,7 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 
 <h2>Understanding Why Vasectomy Misinformation Spreads So Easily</h2>
 <p>Before diving into specific myths, it helps to understand why misinformation is so common. Vasectomy is a topic people joke about, tease each other over, or share exaggerated stories about—not because they truly understand the procedure, but because it's an easy subject to sensationalize.</p>
-<p>Additionally, older surgical techniques once came with more discomfort, swelling, or downtime. Modern vasectomy approaches—like the ones we provide here at Aletheia Integrative—are far safer, simpler, and less invasive than they were a generation ago. Yet many misconceptions from decades past continue to circulate today.</p>
+<p>Additionally, older surgical techniques once came with more discomfort, swelling, or downtime. Modern vasectomy approaches—like the ones we provide here at Aletheia Integrative—are far <strong>safer, simpler, and less invasive</strong> than they were a generation ago. Yet many misconceptions from decades past continue to circulate today.</p>
 <p>That's exactly where the confusion starts, which is why it's so important to separate old fears from present-day facts.</p>
 
 <h2>Myth: "A vasectomy will ruin my sex life."</h2>
@@ -1176,7 +1215,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 <h2>Conclusion</h2>
 <p>If you've been hesitant about vasectomy because of conflicting stories or myths, we hope this guide has brought you a clearer understanding of the truth. The reality is far simpler, safer, and more empowering than many men initially expect.</p>
 <p>At Aletheia Integrative, we're here to help you make an informed, confident decision about your reproductive health. Our vasectomy services are designed to be safe, compassionate, and centered around your long-term wellbeing.</p>
-<p>If you're ready to learn more or take the next step, <a href="https://www.aletheia.md/book-online">click here to set up a consultation</a>. We'd be honored to support you in making the best decision for your future.</p>`
+<p>If you're ready to learn more or take the next step, <a href="https://www.aletheia.md/book-online">click here to set up a consultation</a>. We'd be honored to support you in making the best decision for your future.</p>`,
+    metaTitle: "Vasectomy Myths Facts Lincoln NE | Men's Reproductive Health | Aletheia Integrative",
+    metaDescription: "Get the truth behind vasectomy myths at Aletheia Integrative in Lincoln, NE. Safe, effective vasectomy procedures with compassionate care for Lincoln men.",
+    keywords: "vasectomy Lincoln NE, vasectomy myths facts, men's reproductive health Lincoln, vasectomy procedure Nebraska, safe vasectomy Lincoln, Aletheia Integrative"
   },
   {
     id: 14,
@@ -1254,7 +1296,7 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 
 <h2>The Final Question That Reveals Readiness</h2>
 <p>After weighing your emotions, goals, conversations, beliefs, and future plans, ask yourself this:</p>
-<p><em>"Does choosing a vasectomy feel like a clear, responsible, empowering step toward the future I want?"</em></p>
+<p><em><strong>"Does choosing a vasectomy feel like a clear, responsible, empowering step toward the future I want?"</strong></em></p>
 <p>If your answer leans toward yes — even if you still have natural nerves — you may be fully ready to move forward.</p>
 
 <h2>Why Men in Lincoln Trust Aletheia Integrative</h2>
@@ -1265,7 +1307,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 <p>If you've been searching for guidance, wondering whether you're truly ready, or asking "<strong>should I get a vasectomy Lincoln NE</strong>?", we hope this expanded guide has offered clarity and direction. Making the decision is deeply personal, and readiness comes from understanding your values, goals, emotions, and long-term vision.</p>
 <p>When you are ready to discuss this decision with a medical team that respects your autonomy and provides expert, compassionate care, we're here for you.</p>
 <p>To take the next step or schedule a consultation, <a href="https://www.aletheia.md/book-online">click here to set up a consultation</a>.</p>
-<p>We'll walk with you through every step of this important choice — with respect, clarity, and care.</p>`
+<p>We'll walk with you through every step of this important choice — with respect, clarity, and care.</p>`,
+    metaTitle: "Vasectomy Decision Guide Lincoln NE | Are You Ready? | Aletheia Integrative",
+    metaDescription: "How to know if you're ready for a vasectomy. Complete decision-making guide for Lincoln men from Aletheia Integrative. Compassionate vasectomy consultation.",
+    keywords: "vasectomy decision Lincoln NE, ready for vasectomy, vasectomy consultation Lincoln, men's health decision, family planning Lincoln Nebraska, Aletheia Integrative"
   },
   {
     id: 15,
@@ -1281,14 +1326,14 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 <p>Non-healing wounds are rarely about willpower, hygiene, or effort. They are about biology. When healing stalls, there is almost always a reason. And when that reason is identified and treated correctly, the body often regains its ability to heal.</p>
 
 <h2>When a Wound Crosses the Line From Slow to Chronic</h2>
-<p>Not every slow-healing wound is a chronic wound. However, when a wound has not shown meaningful improvement after four to six weeks of appropriate care, it is no longer behaving like a normal injury. At that point, it deserves closer evaluation.</p>
+<p>Not every slow-healing wound is a chronic wound. However, when a wound has not shown meaningful improvement after <strong>four to six weeks</strong> of appropriate care, it is no longer behaving like a normal injury. At that point, it deserves closer evaluation.</p>
 <p>Healing is not random. The body follows a carefully coordinated process that relies on blood flow, oxygen delivery, immune signaling, and cellular communication. When one or more of those systems breaks down, healing can stall indefinitely.</p>
 <p>This is when <strong>non healing wound treatment in Lincoln NE</strong> requires a different level of expertise — one that looks deeper than the surface.</p>
 
 <h2>Why "Doing Everything Right" Still Isn't Enough</h2>
 <p>One of the most emotionally difficult parts of living with a non-healing wound is the feeling that you've done something wrong. Many people blame themselves. They wonder if they walked too much, changed the dressing incorrectly, or waited too long to seek help.</p>
 <p>In reality, chronic wounds do not persist because of neglect. They persist because the wound environment itself is broken. The signals that tell tissue how to repair are disrupted. The immune system may be overwhelmed. Oxygen may not be reaching the area. Bacteria may be protected in ways that antibiotics cannot reach.</p>
-<p>When healing stalls, it is not a discipline problem. It is a physiology problem.</p>
+<p>When healing stalls, it is not a discipline problem. It is a <strong>physiology problem</strong>.</p>
 
 <h2>The Hidden Biology Behind Stalled Healing</h2>
 <p>Healthy wound healing happens in stages. First comes inflammation, which clears debris and bacteria. Then tissue begins to rebuild. Finally, the wound remodels and strengthens. Chronic wounds get stuck — most often in the inflammatory stage.</p>
@@ -1375,7 +1420,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 <p>At Aletheia Integrative, we offer <strong>advanced wound healing treatments in Lincoln NE</strong> designed to address the real reasons wounds stall. As <strong>chronic wound care specialists in Lincoln Nebraska</strong>, our mission is to help you move forward with clarity, confidence, and hope.</p>
 <p>Healing is often still possible — even when it feels out of reach.</p>
 <p>If your wound has not healed after several weeks of standard care, the next step matters.</p>
-<p><a href="https://www.aletheia.md/book-online">Click here to set up a consultation</a> and let us help restart the healing process.</p>`
+<p><a href="https://www.aletheia.md/book-online">Click here to set up a consultation</a> and let us help restart the healing process.</p>`,
+    metaTitle: "Non-Healing Wound Treatment Lincoln NE | Chronic Wound Care | Aletheia Integrative",
+    metaDescription: "Why some wounds won't heal and what modern medicine can do. Advanced non-healing wound treatment at Aletheia Integrative in Lincoln, NE. Chronic wound specialists.",
+    keywords: "non healing wound treatment Lincoln NE, chronic wound care Lincoln Nebraska, wound care specialists, advanced wound healing, growth factor therapy wounds, Aletheia Integrative"
   },
   {
     id: 16,
@@ -1401,7 +1449,7 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
   <li>microbial barriers like biofilm</li>
   <li>exhausted or damaged tissue</li>
 </ul>
-<p>In many cases, the wound isn't failing because the body can't heal — it's failing because the instructions for healing are no longer being delivered clearly.</p>
+<p>In many cases, the wound isn't failing because the body can't heal — it's failing because the <strong>instructions for healing are no longer being delivered clearly</strong>.</p>
 
 <h2>The Missing Language of Healing</h2>
 <p>Growth factors are proteins that act like messengers. They tell cells when to move, when to multiply, and how to rebuild tissue. They coordinate every stage of wound repair.</p>
@@ -1499,7 +1547,10 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
 <p>At Aletheia Integrative, we use <strong>growth factor therapy for wound healing in Lincoln NE</strong> to restore that communication. Combined with <strong>cellular tissue products for chronic wounds Lincoln Nebraska</strong> and comprehensive advanced care, this approach helps restart healing where standard treatments have failed.</p>
 <p>If you or someone you care about is dealing with a wound that has stopped responding, there may still be a path forward.</p>
 <p>Healing often resumes when the right signals are restored.</p>
-<p>To explore whether growth factor therapy is appropriate for your wound, <a href="https://www.aletheia.md/book-online">click here to set up a consultation</a>.</p>`
+<p>To explore whether growth factor therapy is appropriate for your wound, <a href="https://www.aletheia.md/book-online">click here to set up a consultation</a>.</p>`,
+    metaTitle: "Growth Factor Therapy Lincoln NE | Wound Healing | Aletheia Integrative",
+    metaDescription: "Growth factor therapy for wounds that won't heal at Aletheia Integrative in Lincoln, NE. Advanced cellular tissue products for chronic wound healing.",
+    keywords: "growth factor therapy Lincoln NE, wound healing therapy Lincoln Nebraska, cellular tissue products wounds, chronic wound treatment, advanced wound care, Aletheia Integrative"
   }
 ]
 
