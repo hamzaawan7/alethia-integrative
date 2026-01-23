@@ -1315,7 +1315,7 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
   {
     id: 15,
     title: "Why Some Wounds Just Won't Heal — And What Modern Medicine Can Finally Do About It",
-    date: "2025-01-10",
+    date: "2026-01-10",
     excerpt: "When a wound refuses to heal, it can feel like your body has forgotten how to do something it once did effortlessly. At Aletheia Integrative, we use growth factor therapy and advanced techniques to restart the healing process.",
     slug: "why-some-wounds-just-wont-heal-and-what-modern-medicine-can-finally-do-about-it",
     image: "/images/blog/Jan-blog-1-image.jpg",
@@ -1428,7 +1428,7 @@ A: Because it's part of our <strong>Direct Primary Care model</strong>, treatmen
   {
     id: 16,
     title: "Growth Factor Therapy: The Science Behind Healing Wounds That Have Stopped Responding to Standard Care",
-    date: "2025-01-15",
+    date: "2026-01-15",
     excerpt: "When a wound refuses to heal, it can feel like your body has forgotten how to repair itself. At Aletheia Integrative, growth factor therapy works by restoring the biological messages that tell your body how to heal.",
     slug: "growth-factor-therapy-the-science-behind-healing-wounds-that-have-stopped-responding-to-standard-care",
     image: "/images/blog/jan-blog-2-image.jpg",
