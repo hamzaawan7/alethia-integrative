@@ -739,7 +739,7 @@ export default function ServiceDetail() {
                 </div>
                 <div>
                   <p className="font-semibold">Q: Is hormone therapy safe?</p>
-                  <p>When closely managed by an experienced provider like Tim Miller, APRN‑FNP, MSN, RN, hormone therapy is safe and carefully monitored.</p>
+                  <p>When closely managed by an experienced provider, hormone therapy is safe and carefully monitored.</p>
                 </div>
                 <div>
                   <p className="font-semibold">Q: What’s the difference between bioidentical hormones and synthetic hormones?</p>

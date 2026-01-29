@@ -28,7 +28,7 @@ export default function About() {
             <h2 className="text-[28px] text-[rgb(38,69,123)] font-semibold">About Aletheia Integrative</h2>
             <div className="mt-4 space-y-4 text-slate-700 text-[15px] leading-7">
               <p>
-                At Aletheia Integrative experienced family medicine and direct primary care provider Jaime Dodge, MD, and the team including Tim Miller, APRN provide personalized functional medicine to individuals and families in Lincoln, Nebraska, and throughout Lancaster County.
+                At Aletheia Integrative experienced family medicine and direct primary care provider Jaime Dodge, MD, and the team provide personalized functional medicine to individuals and families in Lincoln, Nebraska, and throughout Lancaster County.
               </p>
               <p>
                 Aletheia Integrative is a full-service, direct primary care practice. Paying a small monthly or annual fee gives patients 24/7 access to the team, including functional medicine, cutting-edge restorative treatments, and primary care.
