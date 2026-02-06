@@ -3,15 +3,18 @@ import { useEffect } from 'react';
 import ServiceHero from '../components/ServiceHero';
 import ServicesGrid from '../components/ServicesGrid';
 import { services as allServices } from '../data/services';
-import PrimaryCareContent from '../service-content/PrimaryCare';
-import InfusionTherapyContent from '../service-content/InfusionTherapy';
+import PrimaryCareContent, { PrimaryCareFullContent } from '../service-content/PrimaryCare';
+import InfusionTherapyContent, { InfusionTherapyFullContent } from '../service-content/InfusionTherapy';
 import HormoneBalanceTherapyContent from '../service-content/HormoneBalanceTherapy';
 import WeightLossContent from '../service-content/WeightLoss';
 import RedLightTherapyContent from '../service-content/RedLightTherapy';
 import VitaminsAndSupplementsContent from '../service-content/VitaminsAndSupplements';
 import WoundCareContent from '../service-content/WoundCare';
 import VasectomiesContent from '../service-content/Vasectomies';
-import IntegrativeMedicineIntensiveContent from '../service-content/IntegrativeMedicineIntensive';
+import IntegrativeMedicineIntensiveContent, { IntegrativeMedicineIntensiveFullContent } from '../service-content/IntegrativeMedicineIntensive';
+import FoundationalHealthShiftContent, { FoundationalHealthShiftFullContent } from '../service-content/FoundationalHealthShift';
+import HormoneBalanceVitalityContent, { HormoneBalanceVitalityFullContent } from '../service-content/HormoneBalanceVitality';
+import RegenerativeRestorationContent, { RegenerativeRestorationFullContent } from '../service-content/RegenerativeRestoration';
 
 type ServiceInfo = {
   title: string;
@@ -21,7 +24,7 @@ type ServiceInfo = {
 // Map each template page (aletheia/service/*.html) to a slug, title, and hero image
 const SERVICE_MAP: Record<string, ServiceInfo> = {
   'primary-care': {
-    title: 'Primary Care',
+    title: 'Direct Primary Care Membership',
     img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2665849.jpg',
   },
   'thermography': {
@@ -57,7 +60,7 @@ const SERVICE_MAP: Record<string, ServiceInfo> = {
     img: 'https://sa1s3optim.patientpop.com/1280x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2668321.png',
   },
   'infusion-therapy': {
-    title: 'Infusion Therapy',
+    title: 'IV Therapy',
     img: 'https://sa1s3optim.patientpop.com/640x/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2665851.jpg',
   },
   'aletheia-cell-therapy': {
@@ -65,8 +68,20 @@ const SERVICE_MAP: Record<string, ServiceInfo> = {
     img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2707649.png',
   },
   'integrative-medicine-intensive': {
-    title: 'Integrative Medicine 90 Day Intensive',
+    title: 'Integrative Medicine Intensives',
     img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/AdobeStock_185411450.jpeg',
+  },
+  'foundational-health-shift': {
+    title: 'IMI: Foundational Health Shift',
+    img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/shutterstock_1250158696%20(1).jpg',
+  },
+  'hormone-balance-vitality': {
+    title: 'IMI: Hormone Balance & Vitality',
+    img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/shutterstock_2111443934.jpg',
+  },
+  'regenerative-restoration': {
+    title: 'IMI: Regenerative Restoration',
+    img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2707649.png',
   },
 };
 
@@ -121,6 +136,15 @@ export default function ServiceDetail() {
     }
     if (slug === 'integrative-medicine-intensive') {
       return <IntegrativeMedicineIntensiveContent />;
+    }
+    if (slug === 'foundational-health-shift') {
+      return <FoundationalHealthShiftContent />;
+    }
+    if (slug === 'hormone-balance-vitality') {
+      return <HormoneBalanceVitalityContent />;
+    }
+    if (slug === 'regenerative-restoration') {
+      return <RegenerativeRestorationContent />;
     }
     if (slug === 'aletheia-cell-therapy') {
       return (
@@ -237,7 +261,7 @@ export default function ServiceDetail() {
               className={
                 'overflow-hidden ' +
                 (slug === 'primary-care'
-                  ? 'aspect-[550/1336]'
+                  ? 'aspect-[4/3]'
                   : slug === 'thermography'
                   ? 'aspect-[550/538]'
                   : slug === 'hormone-balance-therapy'
@@ -253,7 +277,7 @@ export default function ServiceDetail() {
                   : slug === 'red-light-therapy'
                   ? 'aspect-[550/588]'
                   : slug === 'infusion-therapy'
-                  ? 'aspect-[550/2263]'
+                  ? 'aspect-[4/3]'
                   : slug === 'aletheia-cell-therapy'
                   ? 'aspect-[550/820]'
                   : 'aspect-[4/3]')
@@ -269,7 +293,7 @@ export default function ServiceDetail() {
             </div>
           </div>
           <div>
-            {slug !== 'primary-care' && slug !== 'thermography' && slug !== 'wound-care' && slug !== 'hormone-balance-therapy' && slug !== 'vasectomies' && slug !== 'vitamins-and-supplements' && slug !== 'weight-loss' && slug !== 'hyperbaric-oxygen-therapy' && slug !== 'red-light-therapy' && slug !== 'infusion-therapy' && slug !== 'aletheia-cell-therapy' && slug !== 'integrative-medicine-intensive' && (
+            {slug !== 'primary-care' && slug !== 'thermography' && slug !== 'wound-care' && slug !== 'hormone-balance-therapy' && slug !== 'vasectomies' && slug !== 'vitamins-and-supplements' && slug !== 'weight-loss' && slug !== 'hyperbaric-oxygen-therapy' && slug !== 'red-light-therapy' && slug !== 'infusion-therapy' && slug !== 'aletheia-cell-therapy' && slug !== 'integrative-medicine-intensive' && slug !== 'hormone-balance-vitality' && slug !== 'foundational-health-shift' && slug !== 'regenerative-restoration' && (
               <>
                 <h2 className="text-[28px] text-[rgb(38,69,123)] font-semibold">About {svc.title}</h2>
                 <hr className="w-20 h-[2px] bg-[rgb(199,90,51)] border-0 mt-2" />
@@ -279,6 +303,36 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      {/* Primary Care Full Content */}
+      {slug === 'primary-care' && (
+        <PrimaryCareFullContent />
+      )}
+
+      {/* Infusion Therapy Full Content */}
+      {slug === 'infusion-therapy' && (
+        <InfusionTherapyFullContent />
+      )}
+
+      {/* IMI: Hormone Balance & Vitality Full Content */}
+      {slug === 'hormone-balance-vitality' && (
+        <HormoneBalanceVitalityFullContent />
+      )}
+
+      {/* IMI: Integrative Medicine Intensive Full Content */}
+      {slug === 'integrative-medicine-intensive' && (
+        <IntegrativeMedicineIntensiveFullContent />
+      )}
+
+      {/* IMI: Foundational Health Shift Full Content */}
+      {slug === 'foundational-health-shift' && (
+        <FoundationalHealthShiftFullContent />
+      )}
+
+      {/* IMI: Regenerative Restoration Full Content */}
+      {slug === 'regenerative-restoration' && (
+        <RegenerativeRestorationFullContent />
+      )}
 
       {/* Red Light Therapy Q&A full-width */}
       {slug === 'red-light-therapy' && (

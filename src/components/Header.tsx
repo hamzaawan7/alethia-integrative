@@ -1,23 +1,24 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-// Services dropdown items
-// Order is row-based to create a balanced 4-per-row dropdown
+// Services dropdown items - organized by category
 const servicesItems = [
-  { label: "PRIMARY CARE", href: "/service/primary-care" },
-  { label: "THERMOGRAPHY", href: "/service/thermography" },
-  { label: "HORMONE OPTIMIZATION THERAPY", href: "/service/hormone-balance-therapy" },
-  { label: "VASECTOMIES", href: "/service/vasectomies" },
-
-  { label: "VITAMINS AND SUPPLEMENTS", href: "/service/vitamins-and-supplements" },
-  { label: "WEIGHT LOSS", href: "/service/weight-loss" },
-  { label: "WOUND CARE", href: "/service/wound-care" },
-  { label: "INTEGRATIVE MEDICINE 90 DAY INTENSIVE", href: "/service/integrative-medicine-intensive" },
-
+  // Base Camp
+  { label: "DIRECT PRIMARY CARE", href: "/service/primary-care" },
+  
+  // Summit Paths - IMI Packages
+  { label: "INTEGRATIVE MEDICINE INTENSIVES", href: "/service/integrative-medicine-intensive" },
+  { label: "IMI: FOUNDATIONAL HEALTH SHIFT", href: "/service/foundational-health-shift" },
+  { label: "IMI: HORMONE BALANCE & VITALITY", href: "/service/hormone-balance-vitality" },
+  { label: "IMI: REGENERATIVE RESTORATION", href: "/service/regenerative-restoration" },
+  
+  // Supporting Therapies & Services
+  { label: "IV THERAPY", href: "/service/infusion-therapy" },
   { label: "HYPERBARIC OXYGEN THERAPY", href: "/service/hyperbaric-oxygen-therapy" },
-  { label: "RED LIGHT THERAPY", href: "/service/red-light-therapy" },
-  { label: "INFUSION THERAPY", href: "/service/infusion-therapy" },
-  { label: "REGENERATIVE MEDICINE", href: "/service/aletheia-cell-therapy" },
+  { label: "NEAR INFRARED LIGHT THERAPY", href: "/service/red-light-therapy" },
+  { label: "THERMOGRAPHY", href: "/service/thermography" },
+  { label: "VASECTOMIES", href: "/service/vasectomies" },
+  { label: "VITAMINS AND SUPPLEMENTS", href: "/service/vitamins-and-supplements" },
 ];
 
 export default function Header() {
@@ -100,7 +101,7 @@ export default function Header() {
               <NavLink to="/services" className={linkClass}>Services</NavLink>
               {/* Dropdown - 3 column grid */}
               <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg z-50" style={{ width: '760px' }}>
-                <div className="relative grid grid-cols-3 grid-rows-4 grid-flow-col pl-6 pr-6 gap-x-10">
+                <div className="relative grid grid-cols-3 grid-flow-row-dense pl-6 pr-6 gap-x-10 pb-2">
                   {/* vertical separators */}
                   <div className="absolute top-4 bottom-4 left-1/3 w-px bg-gray-200" />
                   <div className="absolute top-4 bottom-4 left-2/3 w-px bg-gray-200" />

@@ -22,6 +22,8 @@ import HealthCoaching from './pages/HealthCoaching'
 import TherapyPricelist from './pages/TherapyPricelist'
 import YourPrivacy from './pages/YourPrivacy'
 import AccessibilityStatement from './pages/AccessibilityStatement'
+import YourJourney from './pages/YourJourney'
+import LetsTalk from './pages/LetsTalk'
 import NotFound from './pages/NotFound'
 import './App.css'
 
@@ -52,6 +54,8 @@ export default function App() {
         <Route path="therapy-pricelist" element={<TherapyPricelist />} />
         <Route path="your-privacy" element={<YourPrivacy />} />
         <Route path="accessibility-statement" element={<AccessibilityStatement />} />
+        <Route path="your-journey" element={<YourJourney />} />
+        <Route path="lets-talk" element={<LetsTalk />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
