@@ -198,7 +198,7 @@ export function FoundationalHealthShiftFullContent() {
       </section>
 
       {/* Who This Is For */}
-      <section className="py-20 bg-[rgba(38,69,123,0.05)]">
+      <section className="py-20 bg-gray-100">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-[#C75A33] text-[12px] uppercase tracking-[0.2em] font-semibold text-center">Who This Is For</p>
           <h2 className="mt-4 text-[32px] md:text-[40px] font-semibold text-[rgb(38,69,123)] text-center leading-tight">
@@ -339,7 +339,7 @@ export function FoundationalHealthShiftFullContent() {
       </section>
 
       {/* Why Foundational Health Shift */}
-      <section className="py-20 bg-[rgba(38,69,123,0.05)]">
+      <section className="py-20 bg-gray-100">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-[32px] md:text-[40px] font-semibold text-[rgb(38,69,123)] text-center leading-tight">
             This isn't another doctor's appointment.<br />It's a different level of care.

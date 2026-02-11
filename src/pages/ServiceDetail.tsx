@@ -15,6 +15,11 @@ import IntegrativeMedicineIntensiveContent, { IntegrativeMedicineIntensiveFullCo
 import FoundationalHealthShiftContent, { FoundationalHealthShiftFullContent } from '../service-content/FoundationalHealthShift';
 import HormoneBalanceVitalityContent, { HormoneBalanceVitalityFullContent } from '../service-content/HormoneBalanceVitality';
 import RegenerativeRestorationContent, { RegenerativeRestorationFullContent } from '../service-content/RegenerativeRestoration';
+import CognitivePreservationRepairContent, { CognitivePreservationRepairFullContent } from '../service-content/CognitivePreservationRepair';
+import AdvancedRecoverySupportContent, { AdvancedRecoverySupportFullContent } from '../service-content/AdvancedRecoverySupport';
+import ImmuneRegulationResilienceContent, { ImmuneRegulationResilienceFullContent } from '../service-content/ImmuneRegulationResilience';
+import MetabolicResetRenewalContent, { MetabolicResetRenewalFullContent } from '../service-content/MetabolicResetRenewal';
+import LongevityHealthspanSupportContent, { LongevityHealthspanSupportFullContent } from '../service-content/LongevityHealthspanSupport';
 
 type ServiceInfo = {
   title: string;
@@ -83,6 +88,26 @@ const SERVICE_MAP: Record<string, ServiceInfo> = {
     title: 'IMI: Regenerative Restoration',
     img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/assets/production/practices/5f50911825dfafd2a1cea2ae6c62e600fe136970/images/2707649.png',
   },
+  'cognitive-preservation-repair': {
+    title: 'IMI: Cognitive Preservation & Repair',
+    img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/AdobeStock_185411450.jpeg',
+  },
+  'advanced-recovery-support': {
+    title: 'IMI: Advanced Recovery Support',
+    img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/AdobeStock_185411450.jpeg',
+  },
+  'immune-regulation-resilience': {
+    title: 'IMI: Immune Regulation & Resilience',
+    img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/AdobeStock_185411450.jpeg',
+  },
+  'metabolic-reset-renewal': {
+    title: 'IMI: Metabolic Reset & Renewal',
+    img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/AdobeStock_185411450.jpeg',
+  },
+  'longevity-healthspan-support': {
+    title: 'IMI: Longevity & Healthspan Support',
+    img: 'https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/AdobeStock_185411450.jpeg',
+  },
 };
 
 export default function ServiceDetail() {
@@ -146,6 +171,21 @@ export default function ServiceDetail() {
     if (slug === 'regenerative-restoration') {
       return <RegenerativeRestorationContent />;
     }
+    if (slug === 'cognitive-preservation-repair') {
+      return <CognitivePreservationRepairContent />;
+    }
+    if (slug === 'advanced-recovery-support') {
+      return <AdvancedRecoverySupportContent />;
+    }
+    if (slug === 'immune-regulation-resilience') {
+      return <ImmuneRegulationResilienceContent />;
+    }
+    if (slug === 'metabolic-reset-renewal') {
+      return <MetabolicResetRenewalContent />;
+    }
+    if (slug === 'longevity-healthspan-support') {
+      return <LongevityHealthspanSupportContent />;
+    }
     if (slug === 'aletheia-cell-therapy') {
       return (
         <div className="text-slate-700 mt-4 max-w-[620px] space-y-4">
@@ -193,7 +233,7 @@ export default function ServiceDetail() {
             We provide in‑office vasectomy procedures that are efficient, discreet, and focused on comfort and
             recovery.
           </p>
-          <div className="mt-3 p-6" style={{ background: 'rgba(38,69,123,.20)' }}>
+          <div className="mt-3 p-6" style={{ background: 'rgba(0,0,0,0.08)' }}>
             <h3 className="text-[20px] text-[rgb(38,69,123)] font-semibold">What to Expect</h3>
             <ul className="list-disc pl-5 space-y-2 mt-3">
               <li>Consultation, preparation, and clear aftercare guidance</li>
@@ -211,7 +251,7 @@ export default function ServiceDetail() {
             Aletheia Cell Therapy focuses on supporting the body’s regenerative capacity with evidence‑informed
             protocols and careful screening.
           </p>
-          <div className="mt-3 p-6" style={{ background: 'rgba(38,69,123,.20)' }}>
+          <div className="mt-3 p-6" style={{ background: 'rgba(0,0,0,0.08)' }}>
             <h3 className="text-[20px] text-[rgb(38,69,123)] font-semibold">Areas of Support</h3>
             <ul className="list-disc pl-5 space-y-2 mt-3">
               <li>Joint and soft‑tissue recovery</li>
@@ -228,7 +268,7 @@ export default function ServiceDetail() {
           <p>
             Comprehensive wound care with integrative strategies to promote healing and reduce complications.
           </p>
-          <div className="mt-3 p-6" style={{ background: 'rgba(38,69,123,.20)' }}>
+          <div className="mt-3 p-6" style={{ background: 'rgba(0,0,0,0.08)' }}>
             <h3 className="text-[20px] text-[rgb(38,69,123)] font-semibold">Care Approach</h3>
             <ul className="list-disc pl-5 space-y-2 mt-3">
               <li>Assessment, cleaning, and dressing strategies</li>
@@ -293,7 +333,7 @@ export default function ServiceDetail() {
             </div>
           </div>
           <div>
-            {slug !== 'primary-care' && slug !== 'thermography' && slug !== 'wound-care' && slug !== 'hormone-balance-therapy' && slug !== 'vasectomies' && slug !== 'vitamins-and-supplements' && slug !== 'weight-loss' && slug !== 'hyperbaric-oxygen-therapy' && slug !== 'red-light-therapy' && slug !== 'infusion-therapy' && slug !== 'aletheia-cell-therapy' && slug !== 'integrative-medicine-intensive' && slug !== 'hormone-balance-vitality' && slug !== 'foundational-health-shift' && slug !== 'regenerative-restoration' && (
+            {slug !== 'primary-care' && slug !== 'thermography' && slug !== 'wound-care' && slug !== 'hormone-balance-therapy' && slug !== 'vasectomies' && slug !== 'vitamins-and-supplements' && slug !== 'weight-loss' && slug !== 'hyperbaric-oxygen-therapy' && slug !== 'red-light-therapy' && slug !== 'infusion-therapy' && slug !== 'aletheia-cell-therapy' && slug !== 'integrative-medicine-intensive' && slug !== 'hormone-balance-vitality' && slug !== 'foundational-health-shift' && slug !== 'regenerative-restoration' && slug !== 'cognitive-preservation-repair' && slug !== 'advanced-recovery-support' && slug !== 'immune-regulation-resilience' && slug !== 'metabolic-reset-renewal' && slug !== 'longevity-healthspan-support' && (
               <>
                 <h2 className="text-[28px] text-[rgb(38,69,123)] font-semibold">About {svc.title}</h2>
                 <hr className="w-20 h-[2px] bg-[rgb(199,90,51)] border-0 mt-2" />
@@ -334,13 +374,38 @@ export default function ServiceDetail() {
         <RegenerativeRestorationFullContent />
       )}
 
+      {/* IMI: Cognitive Preservation & Repair Full Content */}
+      {slug === 'cognitive-preservation-repair' && (
+        <CognitivePreservationRepairFullContent />
+      )}
+
+      {/* IMI: Advanced Recovery Support Full Content */}
+      {slug === 'advanced-recovery-support' && (
+        <AdvancedRecoverySupportFullContent />
+      )}
+
+      {/* IMI: Immune Regulation & Resilience Full Content */}
+      {slug === 'immune-regulation-resilience' && (
+        <ImmuneRegulationResilienceFullContent />
+      )}
+
+      {/* IMI: Metabolic Reset & Renewal Full Content */}
+      {slug === 'metabolic-reset-renewal' && (
+        <MetabolicResetRenewalFullContent />
+      )}
+
+      {/* IMI: Longevity & Healthspan Support Full Content */}
+      {slug === 'longevity-healthspan-support' && (
+        <LongevityHealthspanSupportFullContent />
+      )}
+
       {/* Red Light Therapy Q&A full-width */}
       {slug === 'red-light-therapy' && (
         <section className="py-12">
           <div className="container max-w-[1100px] px-6 space-y-8">
             <h2 className="text-[32px] text-[rgb(199,90,51)] font-semibold">Red Light Therapy Q&amp;A</h2>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">How does red light therapy promote healing?</h3>
               <p>
                 Red light therapy uses low‑wavelength red light to activate the mitochondria — the “power plant” inside of your body’s
@@ -353,7 +418,7 @@ export default function ServiceDetail() {
               </p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What types of medical issues can benefit from red light therapy?</h3>
               <p>Red Light Therapy can benefit a wide range of health and cosmetic concerns, including:</p>
               <ul className="list-disc pl-6 space-y-2">
@@ -375,7 +440,7 @@ export default function ServiceDetail() {
               </p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What happens during red light therapy?</h3>
               <p>
                 You will relax and lie down while the light shines onto your skin. The device emits low‑wavelength red light that penetrates
@@ -384,7 +449,7 @@ export default function ServiceDetail() {
               </p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">How many red light therapy treatments will I need?</h3>
               <p>
                 The number of red light therapy treatments you need depends on several things, including your age, the severity of your
@@ -402,7 +467,7 @@ export default function ServiceDetail() {
               </p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">Is red light therapy safe?</h3>
               <p>
                 Red light therapy is safe and usually well‑tolerated. Because the treatment is noninvasive, you don’t have to worry about
@@ -423,7 +488,7 @@ export default function ServiceDetail() {
           <div className="container max-w-[1100px] px-6 space-y-8">
             <h2 className="text-[32px] text-[rgb(199,90,51)] font-semibold">Cell Therapy Q&A</h2>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">How are Aletheia Cell Therapy, peptide and hormone therapy different?</h3>
               <p>Aletheia Cell Therapy, peptide and hormone therapy are minimally invasive treatments designed to promote healing and wellness; however, they have distinct differences:</p>
               <p><strong>Cell Therapy (Aletheia Cell Therapy)</strong></p>
@@ -435,7 +500,7 @@ export default function ServiceDetail() {
               <p>Hormone therapy uses synthetic (man‑made) hormones to restore hormone balance. You might benefit from this type of treatment if you’re going through menopause or experiencing symptoms of low testosterone.</p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What types of medical issues can benefit from Cell Therapy (Aletheia Cell Therapy)?</h3>
               <p>The Aletheia Integrative team uses cell therapy to treat various medical issues, including:</p>
               <ul className="list-disc pl-6 space-y-2">
@@ -453,7 +518,7 @@ export default function ServiceDetail() {
               <p>Cell Therapy (Aletheia Cell Therapy) can help speed up your recovery after orthopedic surgery. It can also be used to encourage hair growth if you have male pattern baldness (androgenic alopecia).</p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What types of medical issues can benefit from LifeWave patches?</h3>
               <p>The Aletheia Integrative team uses phototherapy patches to support:</p>
               <ul className="list-disc pl-6 space-y-2">
@@ -468,7 +533,7 @@ export default function ServiceDetail() {
               </ul>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">How does Cell Therapy (Aletheia Cell Therapy) work?</h3>
               <p>Cell therapy is an outpatient procedure that averages 60‑120 minutes.</p>
               <p>Your blood sample will be drawn and placed into a centrifuge — a machine that separates your platelets from the rest of your blood.</p>
@@ -477,7 +542,7 @@ export default function ServiceDetail() {
               <p>Activate your stem cells with our non‑medicated patches that fit into your daily lifestyle. Your body emits heat, including heat energy in the infrared spectrum. Our patches are designed to reflect particular wavelengths of this energy back to stimulate specific points on the skin that can promote a general state of health and wellness unique to each patch. Patients have experienced an increase in strength, energy, mental clarity, restored muscle, stamina, sleep and reduction in inflammation.</p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">Is Cell Therapy safe?</h3>
               <p>The side effects of Aletheia Cell Therapy are limited and reduced because the injection uses substances from your own body. After treatment, it’s normal to experience mild bruising and redness at the injection sites, but these symptoms should improve within a day or two. Systemic treatments may result in longer recovery, please discuss with the Aletheia provider. After each session, avoid strenuous activity for at least 24 hours and follow the team’s recovery instructions.</p>
               <p>Call Aletheia Integrative today to schedule a Cell Therapy appointment or book your visit online.</p>
@@ -492,14 +557,14 @@ export default function ServiceDetail() {
           <div className="container max-w-[1100px] px-6 space-y-8">
             <h2 className="text-[32px] text-[rgb(199,90,51)] font-semibold">Infusion Therapy Q&A</h2>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">Is it true that infusion therapy is more beneficial than oral supplements?</h3>
               <p>Yes. Infusion therapy administers vitamins, minerals, and nutrients directly into your bloodstream.</p>
               <p>When taken orally, nutrients break down in the stomach first, so only about 50% of the benefits are absorbed. Infusion therapy bypasses digestion so cells can receive about 90% of the benefits.</p>
               <p>Infusion therapy is quick, convenient, and affordable. There aren’t any side effects for most people, so you can return to your normal routine immediately afterward.</p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What types of medical issues can benefit from infusion therapy?</h3>
               <p>The Aletheia Integrative team uses infusion therapy to treat various medical issues, including:</p>
               <ul className="list-disc pl-6 space-y-2">
@@ -519,7 +584,7 @@ export default function ServiceDetail() {
               <p>You don’t need to be sick to benefit from infusion therapy. Many runners and athletes schedule infusion therapy after races and competitions to speed up the body’s natural recovery process. Infusion therapy can also be used to relieve anxiety, depression, and other mental health conditions that affect mood and outlook.</p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What Specialty IV Infusions Do You Offer?</h3>
               <p>
                 At Aletheia Integrative, we offer a range of specialty IV infusions designed to target specific health needs and enhance overall wellness. Each infusion is formulated with <strong>clinical‑grade nutrients</strong> and can be customized based on your symptoms, lab findings, or wellness goals. Our specialty IV offerings include:
@@ -535,13 +600,13 @@ export default function ServiceDetail() {
               <p>Every infusion is delivered in a relaxing, monitored setting and can be paired with other therapies such as <strong>Red Light Therapy</strong> or <strong>Hyperbaric Oxygen</strong> for synergistic results.</p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">How do I prepare for infusion therapy?</h3>
               <p>Your Aletheia Integrative provider reviews your medical records, asks about your treatment goals, and completes a physical exam.</p>
               <p>Your provider makes personalized infusion therapy recommendations. Infusion therapy is administered intravenously with a drip. The drip is a saline (salt water) solution containing vitamins, minerals, antioxidants, and other nutrients.</p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What happens during infusion therapy?</h3>
               <p>Infusion therapy is an outpatient procedure that averages 45–90 minutes.</p>
               <p>At the beginning of treatment, your Aletheia Integrative provider prepares the drip. Then, they clean your arm and carefully insert a very thin needle into a vein in your inner elbow. The needle connects to a catheter attached to the IV drip. The IV slowly lets nutrients into your bloodstream, where they’re processed by your cells.</p>
@@ -558,13 +623,13 @@ export default function ServiceDetail() {
           <div className="container max-w-[1100px] px-6 space-y-8">
             <h2 className="text-[32px] text-[rgb(199,90,51)] font-semibold">Hyperbaric Oxygen Therapy Q&A</h2>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">How does hyperbaric oxygen therapy work?</h3>
               <p>Hyperbaric oxygen therapy is an outpatient treatment that involves sitting in a pressurized chamber for about 90 minutes. The chamber contains air that’s 100% oxygen. Sitting in the chamber lets your lungs gather and absorb more oxygen so your body can heal quicker and better withstand infections.</p>
               <p>Hyperbaric oxygen therapy (HBOT) is the medical use of oxygen in a pressurized environment, at a level higher than 1 atmosphere absolute (ATA). Increased pressure allows for oxygen to dissolve and saturate the blood plasma (independent of hemoglobin/red blood cells), which yields a broad variety of positive physiological, biochemical and cellular effects. This noninvasive therapy is the most trusted way to increase oxygen levels to all organs of the body.</p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What types of medical issues can benefit from hyperbaric oxygen therapy?</h3>
               <p>HBOT has been demonstrated in several clinical studies to enhance the body’s innate ability to repair and regenerate. It is used as an adjunct therapy to complement and enhance the healing process in both chronic and acute conditions. The Aletheia Integrative team uses hyperbaric oxygen therapy to treat various medical conditions, including:</p>
               <ul className="list-disc pl-6 space-y-2">
@@ -579,18 +644,18 @@ export default function ServiceDetail() {
               <p>Hyperbaric oxygen therapy promotes healing after accidents. So you might benefit if you run, play sports, or work a physically demanding job.</p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">How does hyperbaric oxygen therapy promote healing?</h3>
               <p>Your body needs rest and oxygen to heal after an accident, illness, injury, or surgery. The regular atmosphere outside of a hyperbaric oxygen chamber contains about 20% oxygen. But the air the patient is breathing inside the chamber contains five times more.</p>
               <p>As your body begins the healing process, it needs more oxygen. The increased oxygen inside the pressurized hyperbaric chamber helps your blood carry more oxygen to your damaged tissues. It also increases the transfer of white blood cells, which are responsible for fighting infection.</p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">How do I prepare for hyperbaric oxygen therapy?</h3>
               <p>Let your provider know if you take any prescription medication or have an implantable medical device, like a pacemaker. Certain devices and medications can interfere with hyperbaric oxygen therapy, so it’s important that the clinic is aware.</p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What happens during hyperbaric oxygen therapy?</h3>
               <p>Each session takes place in a comfortable, pressurized chamber where you can relax, listen to music or even take a nap. Our team monitors every session to ensure safety, comfort and optimal results.</p>
               <p>It’s normal for your ears to pop like they would on an airplane during the first 15–20 minutes. After one hour, the pressure will gradually decrease in the chamber. Feeling drowsy afterward is normal, so you might want to have a friend or family member drive you home.</p>
@@ -606,12 +671,12 @@ export default function ServiceDetail() {
           <div className="container max-w-[1100px] px-6 space-y-8">
             <h2 className="text-[32px] text-[rgb(199,90,51)] font-semibold">Weight Loss Q&A</h2>
 
-            <div className="p-6 md:p-8" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">Can medically supervised weight loss help me achieve my ideal weight?</h3>
               <p className="mt-3">Yes. Medically supervised weight loss uses a combination of routine checkups, health coaching, and nutrition education to help you live a healthier and more active lifestyle. Rather than relying on yo-yo dieting and other fads, the Aletheia Integrative team uses a practical and proven approach to weight loss management.</p>
             </div>
 
-            <div className="p-6 md:p-8 space-y-4" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8 space-y-4" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What does medically supervised weight loss involve?</h3>
               <p>The Aletheia Integrative team develops medically supervised weight loss programs that include:</p>
               <p><strong>Health coaching</strong></p>
@@ -626,7 +691,7 @@ export default function ServiceDetail() {
               <p>The older you get, the harder it is to effectively lose weight, even with improved diet and exercise. Your provider might prescribe medications when clinically appropriate to support your program.</p>
             </div>
 
-            <div className="p-6 md:p-8" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">When will I see results from medically supervised weight loss?</h3>
               <p className="mt-3">The time it takes to see results from medically supervised weight loss depends on your metabolism and commitment to the treatment plan. Many people lose 5–10 pounds during the first month, but it may take longer. Follow the Aletheia Integrative team’s instructions, attend each of your checkups, and commit to your treatment plan.</p>
               <p className="mt-3">Call Aletheia Integrative today to schedule a medically supervised weight loss visit or book your appointment online.</p>
@@ -685,13 +750,13 @@ export default function ServiceDetail() {
           <div className="container max-w-[1100px] px-6 space-y-8">
             <h2 className="text-[32px] text-[rgb(199,90,51)] font-semibold">Vasectomies Q&A</h2>
 
-            <div className="p-6 md:p-8" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">Are vasectomies the best way to prevent an unwanted pregnancy?</h3>
               <p className="mt-3">It depends. There are several ways for sexually active men to reduce the risk of unwanted pregnancy, like condoms and the withdrawal method. These approaches to contraception can help lower the risk of pregnancy, but they aren’t as effective as a vasectomy.</p>
               <p className="mt-3">Vasectomies surgically close off the vas deferens — hollow tubes that carry sperm to the urethra in preparation for ejaculation. Though no vasectomy is entirely effective, it has a failure rate far less than other birth control methods.</p>
             </div>
 
-            <div className="p-6 md:p-8" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">How do I prepare for a vasectomy?</h3>
               <p className="mt-3">The Aletheia Integrative team completes a presurgical consultation before recommending a vasectomy.</p>
               <p className="mt-3">Your provider reviews your medical records, completes a physical exam, and asks about your lifestyle and general health. Let your provider know if you take prescription medications, like blood thinners. These drugs won’t necessarily prevent you from undergoing a vasectomy, but they can increase the risk of complications, so it’s important your provider is aware.</p>
@@ -699,14 +764,14 @@ export default function ServiceDetail() {
               <p className="mt-3">You may need to fast or take certain medications before your vasectomy. Follow your provider’s instructions to ensure positive results.</p>
             </div>
 
-            <div className="p-6 md:p-8" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What do vasectomies involve?</h3>
               <p className="mt-3">Vasectomies are an outpatient procedure that averages 30–60 minutes. Aletheia utilizes the latest technology which includes a minimally invasive, scalpel-free procedure for permanent male sterilization.</p>
               <p className="mt-3">Our low-risk, in-office procedure includes oral and topical pain medications that are provided before the procedure to aid in relaxation and minor discomfort.</p>
               <p className="mt-3">Patients may experience minor soreness, tightness, and swelling for a few days after the procedure. Your physician administers local and general anesthesia. After the anesthetic sets in, they use surgical tools to close off the vas deferens, preventing sperm from exiting your body with semen. Since it takes several hours for the anesthetic to wear off, you need a friend or family member to drive you home.</p>
             </div>
 
-            <div className="p-6 md:p-8" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What is recovery like after a vasectomy?</h3>
               <p className="mt-3">After a vasectomy, it’s normal to have mild bruising, swelling, and discomfort for several days. Follow your provider’s recovery instructions. Take your medication as prescribed, apply ice to your crotch several times daily, and change your dressings whenever they get dirty.</p>
               <p className="mt-3">Most people return to work and other activities within three days, but it may take longer.</p>
@@ -931,7 +996,7 @@ export default function ServiceDetail() {
       {slug === 'thermography' && (
         <section className="py-10">
           <div className="container max-w-[1100px] px-6 space-y-10">
-            <div className="p-6 md:p-8" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What type of medical information can thermography provide?</h3>
               <p className="mt-3">
                 Thermography is a diagnostic screening procedure free of radiation. It uses an infrared camera and other heat‑detecting
@@ -947,7 +1012,7 @@ export default function ServiceDetail() {
               </p>
             </div>
 
-            <div className="p-6 md:p-8" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What types of medical issues can thermography detect?</h3>
               <p className="mt-3">The Aletheia Integrative team uses thermography to detect various medical issues, including:</p>
               <ul className="list-disc pl-6 space-y-4 mt-4">
@@ -964,7 +1029,7 @@ export default function ServiceDetail() {
               </ul>
             </div>
 
-            <div className="p-6 md:p-8" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">What happens during thermography screening?</h3>
               <p className="mt-3">At Aletheia Integrative, thermography screenings average 30–60 minutes.</p>
               <p className="mt-3">Don’t wear deodorant on the day of your exam, as it can interfere with your results.</p>
@@ -982,7 +1047,7 @@ export default function ServiceDetail() {
               </p>
             </div>
 
-            <div className="p-6 md:p-8" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">Is thermography safe?</h3>
               <p className="mt-3">
                 Thermography is safe and typically well‑tolerated. The machine doesn’t emit any radiation or compress breast tissue
@@ -1003,7 +1068,7 @@ export default function ServiceDetail() {
           <div className="container max-w-[1100px] px-6 space-y-10">
             <h2 className="text-[28px] text-[rgb(199,90,51)] font-semibold">Primary Care Q&amp;A</h2>
 
-            <div className="p-6 md:p-8" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8" style={{ background: '#e5e7eb' }}>
               <h3 className="text-[18px] font-semibold text-[rgb(38,69,123)]">Is primary care necessary if I’m in good health?</h3>
               <p className="mt-3">Absolutely. Primary care is a foundational part of preventive, whole-body health.</p>
               <p className="mt-3">
@@ -1019,7 +1084,7 @@ export default function ServiceDetail() {
               </p>
             </div>
 
-            <div className="p-6 md:p-8" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8" style={{ background: '#e5e7eb' }}>
               <h2 className="text-[24px] text-[rgb(199,90,51)] font-semibold">What Primary Care Services Does Aletheia Integrative Offer?</h2>
               <p className="mt-3">
                 At Aletheia Integrative, primary care is more than just routine checkups — it’s a proactive partnership in your
@@ -1061,7 +1126,7 @@ export default function ServiceDetail() {
               <hr className="border-slate-300 mt-6" />
             </div>
 
-            <div className="p-6 md:p-8" style={{ background: '#D2D8E9' }}>
+            <div className="p-6 md:p-8" style={{ background: '#e5e7eb' }}>
               <h2 className="text-[24px] text-[rgb(199,90,51)] font-semibold">Why Choose Our Direct Primary Care Membership?</h2>
               <p className="mt-3">
                 Our DPC model is designed to restore the relationship between patient and provider—focusing on accessibility, trust,
@@ -1089,9 +1154,9 @@ export default function ServiceDetail() {
       <section
         className="pt-20 pb-20"
         style={{
-          backgroundColor: '#D2D8E9',
+          backgroundColor: '#e5e7eb',
           backgroundImage:
-            "radial-gradient(1200px 600px at -200px 0px, rgba(38,69,123,0.06), rgba(255,255,255,0) 60%), url('https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/Artboard%201m-1693234887334.png')",
+            "radial-gradient(1200px 600px at -200px 0px, rgba(0,0,0,0.03), rgba(255,255,255,0) 60%), url('https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/Artboard%201m-1693234887334.png')",
           backgroundRepeat: 'no-repeat, no-repeat',
           backgroundPosition: 'left top, center',
           backgroundSize: 'auto, 700px',

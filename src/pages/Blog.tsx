@@ -37,7 +37,7 @@ export default function Blog() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {sortedPosts.map((p) => (
-              <article key={p.slug} className="bg-[#eef2f6] p-8">
+              <article key={p.slug} className="bg-[#f3f4f6] p-8">
                 <div className="aspect-video mb-4 overflow-hidden">
                   <img 
                     src={p.image} 

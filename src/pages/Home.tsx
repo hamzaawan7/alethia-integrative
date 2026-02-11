@@ -48,7 +48,7 @@ function ReviewsCarousel() {
                   const idx = p * perView + i;
                   const t = testimonials[idx];
                   return t ? (
-                    <article key={`${p}-${i}`} className="bg-[rgba(246,248,252,1)] p-6 min-h-[240px] border-2 border-[rgba(38,69,123,0.35)]">
+                    <article key={`${p}-${i}`} className="bg-[rgba(243,244,246,1)] p-6 min-h-[240px] border-2 border-[rgba(156,163,175,0.4)]">
                       <div className="text-[rgb(38,69,123)] text-[16px] leading-relaxed">"{t.quote}"</div>
                       {stars}
                       <hr className="h-[2px] w-full bg-[rgba(199,90,51,0.46)] border-0" />
@@ -254,6 +254,15 @@ export default function Home() {
             <p className="mt-6 text-gray-700 text-[17px] leading-[1.8] max-w-[900px] mx-auto">
               You hold yourself to a high bar. You expect the same from your healthcare. At Aletheia Integrative Medical, we believe your body has an innate ability to heal. Our job isn't to override that intelligence with endless prescriptions. It's to remove the obstacles, provide the right support, and let your body do what it's designed to do.
             </p>
+            <p className="mt-4 text-gray-700 text-[17px] leading-[1.8] max-w-[900px] mx-auto">
+              We combine the rigor of conventional medicine with the depth of functional and integrative approaches. We look at the whole picture: your labs, your history, your lifestyle, your goals. And we build a plan that addresses root causes, not just symptoms.
+            </p>
+            <p className="mt-4 text-gray-700 text-[17px] leading-[1.8] max-w-[900px] mx-auto">
+              That means longer visits, deeper investigation, and a plan built around your goals—energy, clarity, performance, and long-term health.
+            </p>
+            <p className="mt-4 text-gray-700 text-[17px] leading-[1.8] max-w-[900px] mx-auto">
+              This is medicine practiced with freedom. No insurance company telling us what we can test, prescribe, or spend time discussing. No fifteen-minute limits. Just you, your physician, and a shared commitment to finding real answers.
+            </p>
           </div>
           <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
@@ -311,6 +320,8 @@ export default function Home() {
             <p className="text-white font-medium">Direct Primary Care gets you to base camp.</p>
             <p>Direct Primary Care (DPC) is membership-based primary care that removes insurance barriers and restores the doctor–patient relationship.</p>
             <p>As a DPC member, you have a physician who actually knows you. You're seen twice a year for comprehensive wellness visits focused on prevention and optimization. When acute issues come up, we're here. You have direct access and a medical home you can rely on.</p>
+            <p>Even at base camp, the Aletheia approach is different. We look at the whole person. We support your body's ability to heal rather than just suppressing symptoms. We take an integrative approach, blending conventional medicine with functional insights. And because we operate outside the insurance system, you have the freedom to pursue the care that's right for you, not just what's covered.</p>
+            <p>For many people, base camp is exactly the right altitude. It's stable, sustainable, and far above where most people ever reach. You're not settling. You're building a foundation.</p>
           </div>
           <div className="mt-10">
             <Link to="/service/primary-care" className="inline-flex items-center gap-2 px-8 py-4 text-white text-[13px] uppercase tracking-[0.15em] font-bold bg-[#C75A33] hover:bg-[#B3502E] rounded-lg transition-all duration-300 hover:translate-x-1 shadow-lg">
@@ -334,7 +345,9 @@ export default function Home() {
           <div className="mt-10 space-y-6 text-gray-700 text-[17px] leading-[1.8] max-w-[850px]">
             <p>Some people get to base camp and realize they want more. Maybe you've been stuck at the same altitude for too long, managing symptoms that never fully resolve. Maybe you're facing a challenge that requires focused effort. Maybe you want to see how high you can go.</p>
             <p className="text-[rgb(38,69,123)] font-medium text-[19px]">That's when we gear up for an Integrative Medicine Intensive (IMI)—a focused program designed to restore function, resolve what's been stuck, and optimize performance.</p>
+            <p>An IMI takes everything we believe about medicine and goes deeper. We investigate root causes, not just symptoms. We support your body's innate healing capacity with targeted interventions. We use an integrative approach that draws on conventional medicine, functional diagnostics, and regenerative modalities. And we do it all with the freedom that comes from practicing outside the insurance system.</p>
             <p>You'll work closely with Dr. Dodge and our provider team. Nutritional consultations are provided by Sara Miller, M.Ed., INHC. Therapies and supplements including IV infusions, hyperbaric oxygen, and regenerative treatments are woven in based on what your body needs to restore balance and heal from within.</p>
+            <p className="text-[rgb(38,69,123)] font-medium text-[19px]">DPC is the foundation. IMI is the summit path. Some patients do one or the other. Many do both. Your initial conversation with our team helps determine where to start.</p>
           </div>
           <div className="mt-10">
             <Link to="/service/integrative-medicine-intensive" className="inline-flex items-center gap-2 px-8 py-4 text-white text-[13px] uppercase tracking-[0.15em] font-bold bg-[rgb(38,69,123)] hover:bg-[#1F3761] rounded-lg transition-all duration-300 hover:translate-x-1 shadow-lg shadow-[rgb(38,69,123)]/20">
@@ -400,7 +413,7 @@ export default function Home() {
                       <h3 className="text-white text-[20px] md:text-[22px]">Jaime K Dodge, MD</h3>
                     </Link>
                     <p className="mt-4 text-white/80 text-[14px] leading-relaxed max-w-[300px] mx-auto">
-                      Dr. Jaime Dodge spent 20+ years inside the conventional system. Family practice, hospital medicine, emergency rooms. He's held clinical professorships at three universities. He's deployed with the Army National Guard to Iraq and Afghanistan.
+                      Dr. Jaime Dodge spent 20+ years inside the conventional system. Family practice, hospital medicine, emergency rooms. He's held clinical professorships at three universities. He's deployed with the Army National Guard to Iraq and Afghanistan. He built Aletheia for people who expect high standards, clear thinking, and results-driven medicine.
                     </p>
                     <hr className="mt-4 mb-4 h-[2px] w-48 bg-[#C75A33]/60 border-0 mx-auto" />
                     <Link to="/providers" className="inline-block px-6 py-3 text-white uppercase tracking-[0.1em] bg-[#C75A33] hover:bg-[#B3502E] transition-colors duration-200">
@@ -412,6 +425,12 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-10 max-w-[800px] mx-auto text-center">
+            <p className="text-gray-700 text-[17px] leading-[1.8] mb-6">
+              He's seen medicine at its best, and watched it fail the people who needed it most.
+            </p>
+            <p className="text-gray-700 text-[17px] leading-[1.8] mb-8">
+              He built Aletheia Integrative Medical because he got tired of watching driven, intelligent people get stuck in a system that wasn't designed for them. People who deserved real answers, not dismissive shrugs. People who wanted a partner, not a prescription pad.
+            </p>
             <blockquote className="text-[20px] md:text-[24px] text-[rgb(38,69,123)] italic leading-relaxed">
               "My patients aren't broken. They're stuck in a broken system. Aletheia exists to give them something better."
             </blockquote>
@@ -429,7 +448,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className="pt-20 pb-20" style={{ minHeight: 118, backgroundColor: '#D2D8E9', backgroundImage: "radial-gradient(1200px 600px at -200px 0px, rgba(38,69,123,0.06), rgba(255,255,255,0) 60%), url('https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/Artboard%201m-1693234887334.png')", backgroundRepeat: 'no-repeat, no-repeat', backgroundPosition: 'left top, center', backgroundSize: 'auto, 700px', backgroundAttachment: 'scroll, fixed' }}>
+      <section className="pt-20 pb-20" style={{ minHeight: 118, backgroundColor: '#e5e7eb', backgroundImage: "radial-gradient(1200px 600px at -200px 0px, rgba(0,0,0,0.03), rgba(255,255,255,0) 60%), url('https://sa1s3optim.patientpop.com/filters:format(webp)/sc-assets/prd/practices/01e81043-25b6-46c2-bd88-dc1830708de7/Artboard%201m-1693234887334.png')", backgroundRepeat: 'no-repeat, no-repeat', backgroundPosition: 'left top, center', backgroundSize: 'auto, 700px', backgroundAttachment: 'scroll, fixed' }}>
         <div className="container max-w-[1100px] px-6">
           <h2 className="text-center text-[32px] text-[rgb(38,69,123)]">Services</h2>
           <ServicesGrid items={services} />

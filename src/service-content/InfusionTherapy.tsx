@@ -1,16 +1,17 @@
-import { Link } from 'react-router-dom';
-
 // Short intro for 2-column grid
 export default function InfusionTherapyContent() {
   return (
     <div className="text-slate-700 mt-4 space-y-6">
       <div className="border-l-4 border-[#C75A33] pl-6">
-        <p className="text-[20px] font-semibold text-[rgb(38,69,123)]">Targeted nutrients. Delivered directly.</p>
-        <p className="mt-2 text-slate-600">Bypass the gut for maximum absorption and immediate cellular benefit.</p>
+        <p className="text-[20px] font-semibold text-[rgb(38,69,123)]">IV Therapy and Infusions</p>
+        <p className="mt-2 text-slate-600">Delivering nutrients directly into your bloodstream where your cells can use them immediately.</p>
       </div>
       
       <p className="text-slate-600 leading-relaxed">
-        IV therapy works because it bypasses the gut. When you take supplements orally, absorption depends on digestive function and gut integrity. IV infusions deliver nutrients directly into your bloodstream, where they can be used immediately by your cells.
+        When you take vitamins orally, your body absorbs roughly half of what you swallow—sometimes less, depending on your gut health. Intravenous infusion therapy bypasses digestion entirely, delivering nutrients directly into your bloodstream where your cells can use them immediately.
+      </p>
+      <p className="text-slate-600 leading-relaxed">
+        This isn't about luxury wellness. It's functional medicine—giving your body the raw materials it needs to produce energy, fight inflammation, clear toxins, and repair itself from the inside out.
       </p>
     </div>
   );
@@ -26,7 +27,7 @@ export function InfusionTherapyFullContent() {
         </svg>
       ),
       title: 'Energy & Recovery',
-      description: 'Built around B vitamins, magnesium, and amino acids—the building blocks your mitochondria need to produce cellular energy. Perfect for fatigue, burnout, or running on empty.',
+      description: 'We use formulations built around B vitamins, magnesium, and amino acids—the building blocks your mitochondria need to produce cellular energy. If you\'re dealing with fatigue, burnout, or just running on empty, these infusions help restore what\'s been depleted.',
       benefits: ['B-Complex Vitamins', 'Magnesium', 'Amino Acids', 'Mitochondrial Support'],
     },
     {
@@ -36,7 +37,7 @@ export function InfusionTherapyFullContent() {
         </svg>
       ),
       title: 'Immune Support',
-      description: 'Targeted blends designed to strengthen your body\'s natural defenses. Especially useful during cold and flu season, after travel, or when fighting something off.',
+      description: 'Targeted blends designed to strengthen your body\'s natural defenses. These are especially useful during cold and flu season, after travel, or when you\'re fighting something off.',
       benefits: ['Vitamin C', 'Zinc', 'Selenium', 'Immune Boosters'],
     },
     {
@@ -46,7 +47,7 @@ export function InfusionTherapyFullContent() {
         </svg>
       ),
       title: 'Detox & Cellular Repair',
-      description: 'Glutathione is the cornerstone—your body\'s master antioxidant. Essential for clearing toxins, reducing oxidative stress, and supporting liver function to skin health.',
+      description: 'Glutathione is the cornerstone. It\'s your body\'s master antioxidant—essential for clearing toxins, reducing oxidative stress, and supporting everything from liver function to skin health.',
       benefits: ['Glutathione', 'Antioxidants', 'Liver Support', 'Cellular Repair'],
     },
     {
@@ -56,7 +57,7 @@ export function InfusionTherapyFullContent() {
         </svg>
       ),
       title: 'Brain Function & Longevity',
-      description: 'NAD+ therapy supports mitochondrial health, mental clarity, and cellular repair at a foundational level. Patients with brain fog, chronic stress, or accelerated aging notice a significant shift.',
+      description: 'NAD+ therapy supports mitochondrial health, mental clarity, and cellular repair at a foundational level. Patients dealing with brain fog, chronic stress, or accelerated aging often notice a significant shift.',
       benefits: ['NAD+', 'Cognitive Support', 'Anti-Aging', 'Mental Clarity'],
     },
   ];
@@ -92,7 +93,7 @@ export function InfusionTherapyFullContent() {
           
           <div className="mt-10 grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-[rgba(38,69,123,0.1)] rounded-full flex items-center justify-center mx-auto text-[rgb(38,69,123)]">
+              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto text-[rgb(38,69,123)]">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -101,7 +102,7 @@ export function InfusionTherapyFullContent() {
               <p className="mt-2 text-slate-600 text-[15px]">Bypasses digestive system for immediate cellular availability</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-[rgba(38,69,123,0.1)] rounded-full flex items-center justify-center mx-auto text-[rgb(38,69,123)]">
+              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto text-[rgb(38,69,123)]">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -110,7 +111,7 @@ export function InfusionTherapyFullContent() {
               <p className="mt-2 text-slate-600 text-[15px]">Feel the difference often within hours of your session</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-[rgba(38,69,123,0.1)] rounded-full flex items-center justify-center mx-auto text-[rgb(38,69,123)]">
+              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto text-[rgb(38,69,123)]">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
@@ -130,7 +131,10 @@ export function InfusionTherapyFullContent() {
             IV Infusion Categories
           </h2>
           <p className="mt-4 text-center text-slate-600 max-w-2xl mx-auto">
-            Our infusions fall into categories based on what your body needs. Every infusion is customized to your symptoms, labs, and goals.
+            Every infusion is customized. We look at your symptoms, your labs, and your goals to determine what your body actually needs—not a one-size-fits-all drip menu. Infusions are delivered in a comfortable, monitored setting and typically take 45 to 90 minutes.
+          </p>
+          <p className="mt-4 text-center text-slate-500 italic text-[14px] max-w-2xl mx-auto">
+            IV therapy is also included as part of some of the IMI protocols or used independently for ongoing optimization.
           </p>
           
           <div className="mt-12 grid md:grid-cols-2 gap-8">
@@ -145,7 +149,7 @@ export function InfusionTherapyFullContent() {
                     <p className="mt-2 text-slate-600 text-[15px] leading-relaxed">{item.description}</p>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {item.benefits.map((benefit, i) => (
-                        <span key={i} className="px-3 py-1 bg-[rgba(38,69,123,0.08)] text-[rgb(38,69,123)] rounded-full text-[12px] font-medium">
+                        <span key={i} className="px-3 py-1 bg-gray-100 text-[rgb(38,69,123)] rounded-full text-[12px] font-medium">
                           {benefit}
                         </span>
                       ))}
@@ -185,7 +189,7 @@ export function InfusionTherapyFullContent() {
                 ))}
               </ul>
             </div>
-            <div className="bg-[rgba(38,69,123,0.05)] p-8 rounded-xl">
+            <div className="bg-gray-100 p-8 rounded-xl">
               <h4 className="text-[20px] font-semibold text-[rgb(38,69,123)]">Customized to Your Needs</h4>
               <p className="mt-4 text-slate-600 leading-relaxed">
                 Every infusion is customized. We look at your symptoms, your labs, and your goals to determine what your body actually needs—not a one-size-fits-all drip menu.
@@ -224,18 +228,18 @@ export function InfusionTherapyFullContent() {
       <section className="py-20 bg-[rgb(38,69,123)]">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-[32px] md:text-[40px] font-semibold text-white leading-tight">
-            Ready to Experience IV Therapy?
+            Questions about IV therapy?
           </h2>
           <p className="mt-6 text-white/90 text-[18px] leading-relaxed">
             Whether you're looking to boost energy, support your immune system, or optimize your health, we'll help you find the right infusion protocol.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              to="/book-online"
+            <a
+              href="tel:531-333-2037"
               className="inline-block px-10 py-4 text-white text-[14px] uppercase tracking-[0.15em] font-semibold bg-[#C75A33] hover:bg-[#B3502E] transition-colors duration-200 rounded"
             >
-              Book an Infusion
-            </Link>
+              Call 531-333-2037
+            </a>
             <a
               href="tel:531-333-2037"
               className="inline-flex items-center gap-2 px-8 py-4 text-white text-[14px] font-semibold hover:text-white/80 transition-colors"

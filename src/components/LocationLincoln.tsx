@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function LocationLincoln() {
   return (
-    <section className="py-14" style={{ backgroundColor: '#eef2f6' }}>
+    <section className="py-14" style={{ backgroundColor: '#f3f4f6' }}>
       <div className="container max-w-[1100px] px-6 grid md:grid-cols-2 gap-10 items-start">
         {/* Left: Info card */}
         <div>

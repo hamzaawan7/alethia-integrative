@@ -5,16 +5,17 @@ export default function IntegrativeMedicineIntensiveContent() {
     <div className="text-slate-700 mt-4 max-w-[620px] space-y-5">
       {/* Short intro for the grid layout */}
       <div className="border-l-4 border-[#C75A33] pl-6">
-        <p className="text-[20px] font-semibold text-[rgb(38,69,123)]">Focused programs designed to restore function, resolve what's been stuck, and optimize performance.</p>
-        <p className="mt-2 text-slate-600">For those ready to go beyond base camp and climb to the summit.</p>
+        <p className="text-[20px] font-semibold text-[rgb(38,69,123)]">The Summit Paths: For those ready to climb higher.</p>
+        <p className="mt-2 text-slate-600">Focused, intensive work designed to create real transformation.</p>
       </div>
 
       {/* Brief intro */}
       <div className="space-y-3">
-        <p className="text-[#C75A33] text-[12px] uppercase tracking-[0.2em] font-semibold">The Summit Paths</p>
-        <h3 className="text-[22px] font-semibold text-[rgb(38,69,123)]">For those ready to climb higher.</h3>
         <p className="text-[15px] leading-relaxed">
-          Some people get to base camp and realize they want more. Maybe you've been stuck at the same altitude for too long, managing symptoms that never fully resolve. Maybe you're facing a challenge that requires focused effort.
+          Some people get to base camp and realize they want more. Maybe you've been stuck at the same altitude for years. Maybe you're facing a challenge that requires focused effort. Maybe you want to see how high you can go.
+        </p>
+        <p className="text-[15px] leading-relaxed">
+          An IMI Package is where our integrative philosophy goes deepest.
         </p>
       </div>
     </div>
@@ -36,108 +37,116 @@ export function IntegrativeMedicineIntensiveFullContent() {
             What is an Integrative Medicine Intensive?
           </h2>
           <div className="mt-8 space-y-5 text-gray-700 text-[17px] leading-[1.8]">
-            <p>
-              An IMI is a structured, time-limited engagement—typically <strong>90 days</strong>—where we go deep. We're not managing your symptoms indefinitely. We're identifying root causes, implementing targeted interventions, and building a foundation you can sustain.
+            <p className="font-medium text-[rgb(38,69,123)] text-[19px]">
+              The Aletheia approach at its fullest:
             </p>
-            <p className="font-medium text-[rgb(38,69,123)]">
-              You'll work closely with Dr. Dodge and our provider team.
-            </p>
+            <ul className="space-y-3 ml-2">
+              {[
+                'Root cause investigation using comprehensive functional testing',
+                "Support for your body's innate healing capacity",
+                'Integrative protocols that blend the best of conventional and functional medicine',
+                'Complete medical freedom to pursue what\'s right for your body',
+                'Therapies that work with your natural systems, not against them',
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-[#C75A33] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
             <p>
-              Nutritional consultations are provided by Sara Miller, M.Ed., INHC. Therapies and supplements—including IV infusions, hyperbaric oxygen, and regenerative treatments—are woven in based on what your body needs to restore balance and heal from within.
+              Our flagship program, <strong>The Foundational Health Shift</strong>, uncovers root causes, runs comprehensive labs that go far beyond standard panels, and builds a protocol that addresses what's actually going on. You'll work closely with Dr. Dodge and our provider team for 90 days. This also includes nutritional consultations provided by Sara Miller, M.Ed., INHC.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Three Pathways */}
+      {/* IMI Pathways */}
       <section className="py-16 bg-white">
         <div className="container max-w-[1000px] px-6">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-1 h-8 bg-[#C75A33] rounded-full"></div>
-            <p className="text-[#C75A33] text-[13px] uppercase tracking-[0.25em] font-bold">Three Pathways</p>
+            <p className="text-[#C75A33] text-[13px] uppercase tracking-[0.25em] font-bold">IMI Pathways</p>
           </div>
           <h2 className="text-[32px] md:text-[40px] text-[rgb(38,69,123)] leading-tight font-bold">
-            Three Pathways to the Summit
+            Other IMI pathways include:
           </h2>
           <p className="mt-6 text-gray-700 text-[17px] leading-[1.8]">
-            We've designed three focused IMI pathways based on the most common challenges our patients face. Each is customized to you, but the framework ensures we're not guessing.
+            Each pathway is customized to your situation. Your initial conversation with our team helps determine where to start.
           </p>
 
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
-            {/* Pathway 1 */}
-            <div className="bg-white rounded-2xl border-2 border-gray-100 overflow-hidden hover:border-[#C75A33]/30 hover:shadow-xl transition-all duration-300 group">
-              <div className="h-2 bg-[#C75A33]"></div>
-              <div className="p-6">
-                <div className="w-14 h-14 rounded-xl bg-[#C75A33]/10 flex items-center justify-center mb-4 group-hover:bg-[#C75A33] transition-colors duration-300">
-                  <svg className="w-7 h-7 text-[#C75A33] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+          <div className="mt-12 grid md:grid-cols-2 gap-6">
+            {[
+              {
+                title: 'Foundational Health Shift',
+                description: 'For those dealing with fatigue, brain fog, gut dysfunction, or chronic inflammation. We dig into the root causes and build a protocol that restores your baseline.',
+                link: '/service/foundational-health-shift',
+                color: '#C75A33',
+              },
+              {
+                title: 'Hormone Balance & Vitality',
+                description: 'For patients experiencing fatigue, brain fog, low libido, mood changes, or metabolic shifts that point to hormone imbalance. We run comprehensive hormone panels and create a personalized protocol using bioidentical hormones, peptides, and targeted lifestyle support.',
+                link: '/service/hormone-balance-vitality',
+                color: 'rgb(38,69,123)',
+              },
+              {
+                title: 'Regenerative Restoration',
+                description: 'For patients living with joint pain, soft tissue injuries, or degenerative conditions who want to heal rather than just manage symptoms. We use advanced regenerative therapies to stimulate tissue repair, reduce inflammation, and restore function.',
+                link: '/service/regenerative-restoration',
+                color: '#C75A33',
+              },
+              {
+                title: 'Cognitive Preservation & Repair',
+                description: 'For patients experiencing brain fog, memory concerns, cognitive decline, or those with a family history who want to be proactive about brain health. We investigate the underlying factors and build a protocol designed to protect and restore your brain.',
+                link: '/service/cognitive-preservation-repair',
+                color: 'rgb(38,69,123)',
+              },
+              {
+                title: 'Advanced Recovery Support',
+                description: 'For patients recovering from serious illness, surgery, injury, or a major health event who need intensive support to get back to full function. Combines HBOT, IV infusions, and regenerative medicine with personalized nutrition.',
+                link: '/service/advanced-recovery-support',
+                color: '#C75A33',
+              },
+              {
+                title: 'Immune Regulation & Resilience',
+                description: 'For patients dealing with autoimmune conditions, chronic infections, or immune dysfunction. We investigate root causes from gut health and environmental triggers to hidden infections and inflammatory patterns.',
+                link: '/service/immune-regulation-resilience',
+                color: 'rgb(38,69,123)',
+              },
+              {
+                title: 'Metabolic Reset & Renewal',
+                description: 'For patients struggling with stubborn weight, blood sugar dysregulation, or metabolic syndrome. We go beyond calories and willpower to investigate hormonal, inflammatory, and cellular factors driving metabolic dysfunction.',
+                link: '/service/metabolic-reset-renewal',
+                color: '#C75A33',
+              },
+              {
+                title: 'Longevity & Healthspan Support',
+                description: 'For high-performers who want their bodies to keep up with their ambitions for decades to come. Advanced diagnostics, peptide therapies, hormone optimization, and regenerative interventions designed to slow biological aging.',
+                link: '/service/longevity-healthspan-support',
+                color: 'rgb(38,69,123)',
+              },
+            ].map((pathway, idx) => (
+              <div key={idx} className="bg-white rounded-2xl border-2 border-gray-100 overflow-hidden hover:border-[#C75A33]/30 hover:shadow-xl transition-all duration-300 group">
+                <div className="h-2" style={{ backgroundColor: pathway.color }}></div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-[rgb(38,69,123)] mb-3">IMI: {pathway.title}</h3>
+                  <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
+                    {pathway.description}
+                  </p>
+                  <Link 
+                    to={pathway.link}
+                    className="inline-flex items-center gap-2 text-[#C75A33] font-semibold text-[14px] hover:gap-3 transition-all"
+                  >
+                    Learn more
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </Link>
                 </div>
-                <h3 className="text-xl font-bold text-[rgb(38,69,123)] mb-3">Foundational Health Shift</h3>
-                <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
-                  For those dealing with fatigue, brain fog, gut dysfunction, or chronic inflammation. We dig into the root causes and build a protocol that restores your baseline.
-                </p>
-                <Link 
-                  to="/service/foundational-health-shift"
-                  className="inline-flex items-center gap-2 text-[#C75A33] font-semibold text-[14px] hover:gap-3 transition-all"
-                >
-                  Learn more
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
               </div>
-            </div>
-
-            {/* Pathway 2 */}
-            <div className="bg-white rounded-2xl border-2 border-gray-100 overflow-hidden hover:border-[#C75A33]/30 hover:shadow-xl transition-all duration-300 group">
-              <div className="h-2 bg-[rgb(38,69,123)]"></div>
-              <div className="p-6">
-                <div className="w-14 h-14 rounded-xl bg-[rgb(38,69,123)]/10 flex items-center justify-center mb-4 group-hover:bg-[rgb(38,69,123)] transition-colors duration-300">
-                  <svg className="w-7 h-7 text-[rgb(38,69,123)] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-[rgb(38,69,123)] mb-3">Hormone Balance & Vitality</h3>
-                <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
-                  For those experiencing hormonal decline, metabolic dysfunction, or loss of vitality. We optimize the full hormonal picture using bioidentical hormones and peptides.
-                </p>
-                <Link 
-                  to="/service/hormone-balance-vitality"
-                  className="inline-flex items-center gap-2 text-[#C75A33] font-semibold text-[14px] hover:gap-3 transition-all"
-                >
-                  Learn more
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-
-            {/* Pathway 3 */}
-            <div className="bg-white rounded-2xl border-2 border-gray-100 overflow-hidden hover:border-[#C75A33]/30 hover:shadow-xl transition-all duration-300 group">
-              <div className="h-2 bg-[#C75A33]"></div>
-              <div className="p-6">
-                <div className="w-14 h-14 rounded-xl bg-[#C75A33]/10 flex items-center justify-center mb-4 group-hover:bg-[#C75A33] transition-colors duration-300">
-                  <svg className="w-7 h-7 text-[#C75A33] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-[rgb(38,69,123)] mb-3">Regenerative Restoration</h3>
-                <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
-                  For those with joint pain, soft tissue injuries, or structural issues limiting function. We combine regenerative cell therapies and peptides to help repair damage.
-                </p>
-                <Link 
-                  to="/service/regenerative-restoration"
-                  className="inline-flex items-center gap-2 text-[#C75A33] font-semibold text-[14px] hover:gap-3 transition-all"
-                >
-                  Learn more
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

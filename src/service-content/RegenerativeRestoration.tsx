@@ -175,7 +175,7 @@ export function RegenerativeRestorationFullContent() {
       </section>
 
       {/* What We Offer */}
-      <section className="py-20 bg-[rgba(38,69,123,0.05)]">
+      <section className="py-20 bg-gray-100">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-[#C75A33] text-[12px] uppercase tracking-[0.2em] font-semibold text-center">What We Offer</p>
           <h2 className="mt-4 text-[32px] md:text-[40px] font-semibold text-[rgb(38,69,123)] text-center leading-tight">
@@ -188,7 +188,7 @@ export function RegenerativeRestorationFullContent() {
           <div className="mt-12 grid md:grid-cols-3 gap-8">
             {therapies.map((item, idx) => (
               <div key={idx} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-16 h-16 bg-[rgba(38,69,123,0.1)] rounded-xl flex items-center justify-center text-[rgb(38,69,123)] mb-6">
+                <div className="w-16 h-16 bg-gray-200 rounded-xl flex items-center justify-center text-[rgb(38,69,123)] mb-6">
                   {item.icon}
                 </div>
                 <h4 className="font-semibold text-[rgb(38,69,123)] text-[20px]">{item.title}</h4>
@@ -246,7 +246,7 @@ export function RegenerativeRestorationFullContent() {
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {imiIncludes.map((item, idx) => (
               <div key={idx} className="bg-white p-6 rounded-xl shadow-sm">
-                <div className="w-12 h-12 bg-[rgba(199,90,51,0.1)] rounded-lg flex items-center justify-center text-[#C75A33] mb-4">
+                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-[#C75A33] mb-4">
                   {item.icon}
                 </div>
                 <h4 className="font-semibold text-[rgb(38,69,123)] text-[17px]">{item.title}</h4>
@@ -282,7 +282,7 @@ export function RegenerativeRestorationFullContent() {
       </section>
 
       {/* Is This Right for You */}
-      <section className="py-20 bg-[rgba(38,69,123,0.05)]">
+      <section className="py-20 bg-gray-100">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-white p-8 rounded-xl shadow-sm">
