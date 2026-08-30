@@ -1,4 +1,4 @@
-# Aletheia Integrative – React App
+# Aletheia Integrative - React App
 
 A React + TypeScript app bootstrapped with Vite that mirrors the legacy Aletheia template and integrates the Tebra booking modal, AudioEye accessibility widget, and LeadConnector chat.
 
@@ -31,7 +31,7 @@ npm run preview   # optional: serve the production build locally
 ```
 
 ## Environment notes (widgets)
-The following third‑party widgets load from index.html:
+The following third-party widgets load from index.html:
 - Tebra WidgetManager (booking modal)
 - AudioEye (accessibility)
 - LeadConnector chat
@@ -44,6 +44,10 @@ These vendors may behave differently on localhost vs. the live domain. For full 
 - Port conflicts: set Vite port with `--port` (package.json) or use a different free port.
 
 ## Scripts
-- `npm run dev` – start dev server
-- `npm run build` – build production assets
-- `npm run preview` – serve the built app locally
+- `npm run dev` - start dev server
+- `npm run build` - build production assets
+- `npm run preview` - serve the built app locally
+
+## Work with me
+
+Need a React, Next.js, TypeScript, or healthcare integration project? [View my Upwork profile](https://www.upwork.com/freelancers/hamzaawan07) or [see more client work](https://3amigos.tech/work).
